@@ -6,13 +6,109 @@
 
 .sectionTop {
   min-height: 100vh;
-  border: 1px solid #000;
 }
 
 .sectionMiddle {
   min-height: 100vh;
-  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 24px;
 }
+
+.MiddleContent {
+  width: 100%;
+  max-width: 1306px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(24px, 4vw, 60px);
+
+  padding: clamp(24px, 4vw, 60px);
+  border: 1px solid #000;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 2px 8px 15px 8px rgba(187, 186, 220, 0.5);
+}
+
+.LeftContent {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 4vw, 60px);
+
+  flex: 1;
+  max-width: 667px;
+}
+
+.RightContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex: 1;
+
+}
+
+.BoldIntro {
+  font-weight: 700;
+}
+
+.MissionTitle {
+  font-family: var(--font-dm-sans);
+  font-size: clamp(42px, 6vw, 70px);
+  font-weight: 700;
+  line-height: 1;
+  color: #000; 
+  margin: 0;
+}
+
+.MissionText {
+  font-family: var(--font-dm-sans);
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 400;
+  line-height: 1;
+  color: #000; 
+  margin: 0;
+}
+
+.MissionImgCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: clamp(260px, 40vw, 462px);
+  aspect-ratio: 462 / 444;
+  border-radius: 50%;
+  background-color: #F5F5F5;
+
+  box-shadow: 0px -4px 35px 0px rgba(187, 186, 220, 0.5);
+}
+
+.MissionImg {
+  width: clamp(200px, 30vw, 350px);
+  max-width: 345px;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .MiddleContent{
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .LeftContent, .RightContent {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .RightContent {
+    justify-content: flex-start;
+  }
+}
+
 
 .sectionBottom {
   min-height: 100vh;
