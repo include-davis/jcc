@@ -16,5 +16,49 @@
 
 .sectionBottom {
   min-height: 100vh;
-  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  padding: 1rem;
+  background: #FFFFFF;
+}
+
+.primaryButton {
+  border: 0;
+  border-radius: 14px;
+  padding: 1rem 3rem;
+  background: #3C3B72;
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.learnMoreCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  background: #3C3B72;
+  padding: 2.5rem;
+  margin: 2rem;
+}
+
+.learnMoreText {
+  max-width: 46rem;
+  color: #FFFFFF;
+  font-size: 1.4rem;
+}
+
+.secondaryButton {
+  border: 0;
+  border-radius: 14px;
+  padding: 0.7rem 2.6rem;
+  background: #5181BD;
+  color: #FFFFFF;
+  font-size: 1.7rem;
+  font-weight: 700;
 }
