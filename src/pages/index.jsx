@@ -13,8 +13,9 @@ export default function Home() {
       title: "High-quality care for those who need it most.",
       subtitle: "We deliver care and assistance to underprivileged communities facing higher risk for toxic stress — using an intersectional approach that acknowledges the signs, symptoms, and risks of trauma..",
       btnText: "Apply to Join",
+      tags: ["Leadership", "Empathy", "Responsibility"],
       btnLink: "/join",
-      align: "left",
+      //align: "left",
     },
     {
       img: "/second.jpg",
@@ -52,10 +53,18 @@ export default function Home() {
          {
         <div className={styles.img_container}>
         <img src={slides[currentSlide].img} alt={slides[currentSlide].title} className={styles.image} />
+        <img src="/gradient.svg" alt="" className={styles.gradient_overlay} />
         <div className={styles.content_left}>
         <p className={styles.slide_label}>{slides[currentSlide].label}</p>
         <h1 className={styles.clinic_heading}>{slides[currentSlide].title}</h1>
         <p className={styles.clinic_subheading}>{slides[currentSlide].subtitle}</p>
+        {slides[currentSlide].tags && (
+        <div className={styles.tags}>
+          {slides[currentSlide].tags.map((tag) => (
+          <span key={tag} className={styles.tag}>{tag}</span>
+          ))}
+        </div>
+        )}
         <a href={slides[currentSlide].btnLink} className={styles.learn_more_btn}>
             {slides[currentSlide].btnText} →
         </a>
