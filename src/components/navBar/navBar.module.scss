@@ -3,3 +3,39 @@
 .container {
   width: 100%;
 }
+
+.navShell {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  font-size: 1rem;
+  padding: 1rem 6.25rem;
+}
+
+.navButtons {
+  display: flex;
+  margin-left: auto;
+}
+
+.homeBtn, .aboutBtn, .committeesBtn, .contactBtn {
+  padding: 0.3125rem 1.25rem;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+}
+
+.homeBtn, .aboutBtn, .committeesBtn, .contactBtn {
+  padding: 0.3125rem 1.25rem;
+  border: none;
+}
+
+.joinBtn {
+  background-color: #3C3B72;
+  border: none;
+  padding: 0.8125rem 3.125rem;
+  color: #ffffff;
+  border-radius: 1.25rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
