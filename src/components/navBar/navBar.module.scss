@@ -18,24 +18,66 @@
   margin-left: auto;
 }
 
-.homeBtn, .aboutBtn, .committeesBtn, .contactBtn {
+.homeBtn, .aboutBtn, .contactBtn {
   padding: 0.3125rem 1.25rem;
   background-color: transparent;
   border: none;
   font-size: 1rem;
 }
 
-.homeBtn, .aboutBtn, .committeesBtn, .contactBtn {
-  padding: 0.3125rem 1.25rem;
-  border: none;
-}
-
 .joinBtn {
   background-color: #3C3B72;
   border: none;
   padding: 0.8125rem 3.125rem;
+  margin: 0 1.25rem;
   color: #ffffff;
   border-radius: 1.25rem;
   font-weight: bold;
   font-size: 1rem;
+}
+
+.committeeDropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem; 
+  padding: 0.3125rem 1.25rem; 
+  cursor: pointer;
+  position: relative; 
+}
+
+.committeesBtn {
+  background: transparent;
+  border: none;
+  padding: 0; 
+  font-size: 1rem;
+  color: inherit;
+  cursor: pointer;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 20;
+  z-index: 100;
+  background-color: #ffffff;
+  min-width: 21rem;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+  display: none; 
+  border-radius: 1.25rem;
+}
+
+.committeeDropdown:hover .dropdownMenu {
+  display: block;
+  padding: 1rem 1.25rem;
+}
+
+.dropdownMenu a {
+  display: block;
+  padding: 0.25rem 0;
+  text-decoration: none;
+  color: #0C0B0B;
+}
+
+.dropdownMenu a:hover {
+  text-decoration: underline;
 }
