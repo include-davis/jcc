@@ -3,3 +3,105 @@
 .container {
   width: 100%;
 }
+
+.committees_top{
+  background-color: #A4C2F4;
+  height: 623px;
+  display: flex;
+  align-items: center;
+}
+
+.committees_top_inside{
+  background-color: #3C3B72;
+  display: flex;
+  align-items: center;
+  height: 573px;
+  width: 100%; // 100% of parent container's width
+} 
+
+.committees_top_content{
+  padding-left: 102px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  justify-content: space-between;
+  height: 100%;
+}
+
+.committees_top_content_left{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.committees_top_content_left h1{
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 1;          /* 100% = 1 */
+  letter-spacing: 0;       /* 0% = 0 */
+}
+
+.committees_top_content_left p{
+  font-family: 'Khula', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: 0;
+} 
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.button {
+  background-color: #5181BD;
+  width: 150px;
+  height: 34px;
+  color: white;
+
+  border-radius: 15px;
+  //cursor: pointer;
+
+  /* topography */
+  font-family: 'Khula', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1;        /* 100% */
+  letter-spacing: 0;
+  text-align: center;
+
+  /* optional but recommended for centering text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0; /* important since you're using fixed height */
+}
+
+
+
+
+
+.committees_top_content_right_logo_frame{
+  width: 316px;
+  height: 316px;
+  background-color: white;
+  border-radius: 50%; /* makes it a perfect circle */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+.committees_top_content_right_logo_frame img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}

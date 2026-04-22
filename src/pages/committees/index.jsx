@@ -16,10 +16,8 @@ export default function Committees() {
                 <button className={styles.button}>Collaboration</button>
               </div>
             </div>
-            <div className={styles.committees_top_content_right}>
-              <div className={styles.committees_top_content_logo_frame}>
-                <img src="public/Dark_Blue_Logo.png" alt="JCC Logo"/>
-              </div>
+            <div className={styles.committees_top_content_right_logo_frame}>
+              <img src="public/Dark_Blue_Logo.png" alt="JCC Logo"/>
             </div>
           </div> 
         </div>
