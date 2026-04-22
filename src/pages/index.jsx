@@ -15,7 +15,7 @@ export default function Home() {
       <div className={styles.sectionMiddle}>
         <div className={styles.MiddleContent}>
           <div className={styles.LeftContent}>
-            <h1 className={styles.MissionTitle}> Our Mission</h1>
+            <h2 className={styles.MissionTitle}> Our Mission</h2>
             <p className={styles.MissionText}> 
               <span className={styles.BoldIntro}>In Juvenile Caduceus Clinic,</span> we aims to deliver high-quality care and assistance 
               to the underprivileged youth and older adolescents who are struggling and seek help. Addressing the public health issues 
@@ -31,6 +31,8 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        
       </div>
 
       {/* TODO: bottom-page section - Refer to Figma file for

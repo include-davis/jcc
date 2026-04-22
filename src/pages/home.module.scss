@@ -13,21 +13,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 24px;
+  padding: 140px 60px;
 }
 
 .MiddleContent {
   width: 100%;
-  max-width: 1306px;
+  max-width: 1240px;
   margin: 0 auto;
 
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(24px, 4vw, 60px);
+  gap: 40px;
 
-  padding: clamp(24px, 4vw, 60px);
+  padding: 60px 147px;
   border: 1px solid #000;
   border-radius: 15px;
   background-color: #fff;
@@ -37,9 +36,9 @@
 .LeftContent {
   display: flex;
   flex-direction: column;
-  gap: clamp(24px, 4vw, 60px);
+  gap: 35px;
 
-  flex: 1;
+  flex: 0 1 667px;
   max-width: 667px;
 }
 
@@ -48,28 +47,29 @@
   justify-content: center;
   align-items: center;
 
-  flex: 1;
+  flex: 0 0 300px;
 
-}
-
-.BoldIntro {
-  font-weight: 700;
 }
 
 .MissionTitle {
   font-family: var(--font-dm-sans);
-  font-size: clamp(42px, 6vw, 70px);
+  font-size: 55px;
   font-weight: 700;
   line-height: 1;
   color: #000; 
   margin: 0;
 }
 
+.BoldIntro {
+  font-weight: 700;
+  font-family: var(--font-khula);
+}
+
 .MissionText {
-  font-family: var(--font-dm-sans);
-  font-size: clamp(16px, 2vw, 24px);
+  font-family: var(--font-khula);
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1;
+  line-height: 22px;
   color: #000; 
   margin: 0;
 }
@@ -79,17 +79,16 @@
   justify-content: center;
   align-items: center;
 
-  width: clamp(260px, 40vw, 462px);
-  aspect-ratio: 462 / 444;
-  border-radius: 50%;
-  background-color: #F5F5F5;
+  width: 219px;
+  height: 204px;
+  border-radius: 345px;
+  background-color: rgba(245, 245, 245, 1);
 
   box-shadow: 0px -4px 35px 0px rgba(187, 186, 220, 0.5);
 }
 
 .MissionImg {
-  width: clamp(200px, 30vw, 350px);
-  max-width: 345px;
+  width: 155px;
   height: auto;
 }
 
@@ -99,13 +98,16 @@
     text-align: left;
   }
 
-  .LeftContent, .RightContent {
+  .LeftContent, 
+  .RightContent {
     max-width: 100%;
     width: 100%;
+
+    flex: unset;
   }
 
   .RightContent {
-    justify-content: flex-start;
+    justify-content: center;
   }
 }
 
