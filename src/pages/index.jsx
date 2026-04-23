@@ -36,13 +36,14 @@ export default function Home() {
       align: "left",
     },
     {
-      img: "/fourth.jpg",
+      img: "/JCC Tabling (10_17).jpg",
       label: "OUR HISTORY",
       title: "Founded by students. Still is.",
       subtitle: "Learn how this clinic started, who built it, and the milestones that shaped what it is today.",
       btnText: "Read Our History",
       btnLink: "/history",
       align: "left",
+      position: "center 70%",
     },
   ];
   
@@ -52,9 +53,13 @@ export default function Home() {
          +design specs. Write your code here. */}
          {
         <div className={styles.img_container}>
-        <img src={slides[currentSlide].img} alt={slides[currentSlide].title} className={styles.image} />
+        <img src={slides[currentSlide].img} alt={slides[currentSlide].title} className={styles.image} style={{objectPosition: slides[currentSlide].position}} />
         <img src="/gradient.svg" alt="" className={styles.gradient_overlay} />
-        <div className={styles.content_left}>
+        <div className={styles.content_left}
+        style={
+          currentSlide === 1 ? { paddingTop: '2rem' } : 
+          currentSlide === 3 ? { paddingTop: '3.35rem' } : 
+          {}}>
         <p className={styles.slide_label}>{slides[currentSlide].label}</p>
         <h1 className={styles.clinic_heading}>{slides[currentSlide].title}</h1>
         <p className={styles.clinic_subheading}>{slides[currentSlide].subtitle}</p>
@@ -63,6 +68,7 @@ export default function Home() {
           {slides[currentSlide].tags.map((tag) => (
           <span key={tag} className={styles.tag}>{tag}</span>
           ))}
+          
         </div>
         )}
         <a href={slides[currentSlide].btnLink} className={styles.learn_more_btn}>
