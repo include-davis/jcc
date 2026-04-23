@@ -70,20 +70,19 @@
 .clinic_subheading {
   font-size: 1.35rem;
   font-weight: 240;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-family: 'DM Sans Variable', sans-serif;
 }
 .learn_more_btn {
   display: inline-block;
   background-color: #3c3b72;
   color: white;
-  padding: 0.2rem 1.1rem;
+  padding: 0.5rem 1.25rem 0.5rem 1.25rem;
   border-radius: 14px;
-  font-weight: 700;
   font-size: 1.5rem;
   font-family: 'Khula', sans-serif;
   text-decoration: none;
-
+  //font-weight: 800;
 }
 
 .learn_more_btn:hover {
@@ -105,19 +104,46 @@
 .tags {
   display: flex;
   gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .tag {
   background: #5181BD;
   color: white;
-  padding: 0.4rem 1.4rem;
+  padding: 0.3rem 1.25rem 0.1rem 1.25rem;
   border-radius: 12.5px;
-  font-size: 0.85rem;
+  font-size: 1rem;
   backdrop-filter: blur(4px);
   font-family: 'Khula', sans-serif;
 }
+.arrow {
+  font-family: 'calibri';
+  font-weight: "bold";
+  -webkit-text-stroke: 0px;
+}
+.dots {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 1;
+}
 
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid white;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dot_active {
+  background: white;
+}
 .sectionMiddle {
   min-height: 100vh;
   border: 1px solid #000;

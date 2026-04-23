@@ -53,6 +53,15 @@ export default function Home() {
          +design specs. Write your code here. */}
          {
         <div className={styles.img_container}>
+        <div className={styles.dots}>
+            {slides.map((_, index) => (
+            <button
+              key={index}
+              className={`${styles.dot} ${currentSlide === index ? styles.dot_active : ''}`}
+              onClick={() => setCurrentSlide(index)}
+              />
+            ))}
+        </div>
         <img src={slides[currentSlide].img} alt={slides[currentSlide].title} className={styles.image} style={{objectPosition: slides[currentSlide].position}} />
         <img src="/gradient.svg" alt="" className={styles.gradient_overlay} />
         <div className={styles.content_left}
@@ -72,7 +81,7 @@ export default function Home() {
         </div>
         )}
         <a href={slides[currentSlide].btnLink} className={styles.learn_more_btn}>
-            {slides[currentSlide].btnText} →
+        <h4>{slides[currentSlide].btnText} <span className={styles.arrow}>→</span> </h4>
         </a>
         </div>
 
