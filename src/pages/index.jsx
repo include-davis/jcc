@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from "./home.module.scss";
 import { useState } from 'react';
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Home() {
   
@@ -81,7 +82,7 @@ export default function Home() {
         </div>
         )}
         <a href={slides[currentSlide].btnLink} className={styles.learn_more_btn}>
-        <h4>{slides[currentSlide].btnText} <span className={styles.arrow}>→</span> </h4>
+        <h6>{slides[currentSlide].btnText} <span className={styles.arrow}><FaArrowRight /></span></h6>
         </a>
         </div>
 

@@ -77,14 +77,16 @@
   display: inline-block;
   background-color: #3c3b72;
   color: white;
-  padding: 0.5rem 1.25rem 0.5rem 1.25rem;
-  border-radius: 14px;
-  font-size: 1.5rem;
+  padding: 0.5rem 1rem 0.5rem 0.9rem;
+  border-radius: 10px;
+  font-size: 1.85rem;
   font-family: 'Khula', sans-serif;
   text-decoration: none;
-  //font-weight: 800;
+  //font-weight: 700;
 }
-
+.arrow {
+  vertical-align: middle;
+}
 .learn_more_btn:hover {
   background-color: #4e3db5;
 }
@@ -116,11 +118,7 @@
   backdrop-filter: blur(4px);
   font-family: 'Khula', sans-serif;
 }
-.arrow {
-  font-family: 'calibri';
-  font-weight: "bold";
-  -webkit-text-stroke: 0px;
-}
+
 .dots {
   position: absolute;
   bottom: 2rem;
