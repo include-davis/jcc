@@ -1,5 +1,7 @@
 @use "src/styles/mixins.scss";
-
+@import "@fontsource-variable/dm-sans";
+@import "@fontsource/khula";
+@import "@fontsource/dm-mono";
 :root {
   // colors: rgba/hex
   --primary: #4287f5;
