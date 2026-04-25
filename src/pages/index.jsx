@@ -5,8 +5,9 @@ import { FaArrowRight } from "react-icons/fa";
 
 export default function Home() {
   
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0); // using useState to move through the slides
 
+  // made a slides array for content of each slide
   const slides = [
     {
       img: "/first.svg",
@@ -53,8 +54,8 @@ export default function Home() {
       {/* TODO: top-page section - Refer to Figma file for
          +design specs. Write your code here. */}
          {
-        <div className={styles.img_container}>
-        <div className={styles.dots}>
+        <div className={styles.img_container}> {/* Image container to write over the image */}
+        <div className={styles.dots}>  {/* made a separate div element for the dots at bottom to indiciate which slide user is on*/}
             {slides.map((_, index) => (
             <button
               key={index}
@@ -63,9 +64,13 @@ export default function Home() {
               />
             ))}
         </div>
-        <img src={slides[currentSlide].img} alt={slides[currentSlide].title} className={styles.image} style={{objectPosition: slides[currentSlide].position}} />
-        <img src="/gradient.svg" alt="" className={styles.gradient_overlay} />
-        <div className={styles.content_left}
+        <img src={slides[currentSlide].img} alt={slides[currentSlide].title} className={styles.image} />  {/* Uploading the background image */}
+        <img src="/gradient.svg" alt="" className={styles.gradient_overlay} />  {/* Uploading the gradient for background image */}
+        {/*  Div element for the text, different padding for slide 2 and 4 to keep up the aesthetic
+        Got the text on slide from the slides array 
+        Also added small tag buttons for the first slide
+        */}
+        <div className={styles.content_left} 
         style={
           currentSlide === 1 ? { paddingTop: '2rem' } : 
           currentSlide === 3 ? { paddingTop: '3.35rem' } : 
@@ -81,11 +86,14 @@ export default function Home() {
           
         </div>
         )}
+        {/* Div element for the button with that links to different pages for more information
+        got its txt from the slides array 
+        */}
         <a href={slides[currentSlide].btnLink} className={styles.learn_more_btn}>
         <h6>{slides[currentSlide].btnText} <span className={styles.arrow}><FaArrowRight /></span></h6>
         </a>
         </div>
-
+        {/*Buttons for moving through the slides*/}
         <button className={styles.arrow_left} onClick={() => setCurrentSlide((currentSlide - 1 + slides.length) % slides.length)}>
         ‹
         </button>
