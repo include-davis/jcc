@@ -3,3 +3,47 @@
 .container {
   width: 100%;
 }
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.subheading {
+  color: #666;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+}
+
+.cards {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.card_title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.card_desc {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
