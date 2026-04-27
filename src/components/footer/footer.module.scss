@@ -25,14 +25,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 6px;
 
-  padding-left: 12%;
-  padding-right: 12%;
+  padding-left: 8%;
+  padding-right: 8%;
   padding-top: 3%;
   padding-bottom: 3%;
 
   border-bottom: 1px solid #3a3a3a;
+}
+
+.subscribeContainer p {
+  max-width: 300px;
 }
 
 .inputWrapper {
@@ -74,8 +77,8 @@
   justify-content: space-between;
   align-items: center;
 
-  padding-left: 12%;
-  padding-right: 12%;
+  padding-left: 8%;
+  padding-right: 8%;
   padding-top: 2%;
   padding-bottom: 2%;
 }
@@ -127,8 +130,8 @@
   display: flex;
   justify-content: space-between;
 
-  padding-left: 12%;
-  padding-right: 12%;
+  padding-left: 8%;
+  padding-right: 8%;
   margin-bottom: 20px;
   margin-top: 20px;
 }
