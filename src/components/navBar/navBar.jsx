@@ -23,7 +23,7 @@ export default function Navbar() {
     <div className={styles.navShell} ref={navRef}>
       <img src="/Dark_Blue_Logo.svg" alt="JCC logo" />
       <div className={styles.navButtons}>
-        <button className={styles.homeBtn}>Home</button>
+        <a href="/home" className = {styles.homeBtn}>Home</a>
         <div className={`${styles.aboutDropdown} ${openMenu === "about" ? styles.active : ""}`} onClick={() => toggleMenu("about")}>
           <button className={styles.aboutBtn}>About</button>
           <img className={styles.dropdownArrow} src="/dropdown_arrow.svg" alt="dropdown arrow"/>
@@ -44,8 +44,8 @@ export default function Navbar() {
             <a href="/committees_sexual">Sexual & Reproductive Committee</a>
           </div>
         </div>
-        <button className={styles.contactBtn}>Contact Us</button>
-        <button className={styles.joinBtn}>Join Us</button>
+        <a href="/contact" className={styles.contactBtn}>Contact Us</a>
+        <a href="/join" className = {styles.joinBtn}>Join Us</a>
       </div>
     </div>
   );
