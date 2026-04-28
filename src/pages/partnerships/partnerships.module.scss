@@ -58,14 +58,14 @@
   margin-left: 600px;
   width: 600px;    
   height: 600px;
-  opacity: 0.23;      
+  opacity: 0.25;      
   z-index: 0;
   transform: rotate(-7.5deg);
 
   //3d effect
   filter:
-  brightness(1.7)
-        drop-shadow(0px 30px 0px rgba(80, 60, 200, 0.9))
+  brightness(2)
+        drop-shadow(0px 30px 0px rgba(70, 60, 400, 1))
 }
 .heading, .subheading, .cards {
   position: relative;
