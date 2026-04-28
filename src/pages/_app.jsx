@@ -10,14 +10,14 @@ const inter = Inter({
 });
 
 const dmSans = DM_Sans({
-  weight: ["400", "700", "500"],
+  weight: ["200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-dm-sans",
 });
 
 const khula = Khula({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["300", "400", "600", "700"],
   variable: "--font-khula",
 });
 
