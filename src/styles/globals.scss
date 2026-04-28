@@ -1,27 +1,51 @@
 @use "src/styles/mixins.scss";
 
 :root {
-  // colors: rgba/hex
+  /* JCC Master File — WS26 · branding & assets (Figma 2488:2394, node-id=2488-2394) */
+
+  --color-cream-off-white: #fffaf4;
+  --color-purple: #3c3b72;
+  --color-client-light-blue: #a4c2f4;
+  --color-pink-accent: #e0d0db;
+  --color-client-dark-blue: #5181bd;
+  --color-white: #ffffff;
+  --color-black: #0c0b0b;
+
+  /* Original palette */
   --primary: #4287f5;
   --secondary: #eba134;
   --text-light: #f0f6ff;
-  --color-black: #000000;
-  --color-white: #ffffff;
   --include-purple: #3c257e;
-  --gradient-purple: linear-gradient(68deg,
-      #332950 10.09%,
-      #3c257e 50.92%,
-      #322d41 93.48%);
 
-  // spacers: px
+  /* Purple gradient — keep (backgrounds / hero) */
+  --gradient-purple: linear-gradient(
+    68deg,
+    #332950 10.09%,
+    #3c257e 50.92%,
+    #322d41 93.48%
+  );
+
+  --font-family-heading: "DM Sans", system-ui, sans-serif;
+  --font-family-body: "DM Sans", system-ui, sans-serif;
+  --font-family-ui: "Khula", system-ui, sans-serif;
+
+  /* Figma text styles · sizes in rem (base 16px) */
+  --font-size-h1: 4.375rem; /* H1 · DM Sans Bold 70 */
+  --font-size-nav: 1.5625rem; /* Nav · Khula Regular 25 */
+  --font-size-s2-body-blurbs: 1.5rem; /* S2 body blurbs · DM Sans Regular 24 */
+  --font-size-s1: 1.125rem; /* S1 · DM Sans Regular 18 */
+  --font-size-button: 1rem; /* Button · Khula Bold 16 */
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --line-height-tight: 1; /* Figma line height 100% on styles */
+
   --edge-spacer: 24px;
-
-  // font sizes: ALWAYS IN REM
 }
 
 * {
   box-sizing: border-box;
-  font-family: var(--font-inter);
+  font-family: var(--font-family-body);
   padding: 0;
   margin: 0;
 }
