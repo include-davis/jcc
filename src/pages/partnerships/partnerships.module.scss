@@ -2,22 +2,26 @@
 
 .container {
   width: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(232, 230, 255, 1));
 }
 .heading {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
+  margin-left: 250px;
 }
 
 .subheading {
   color: #666;
   margin-bottom: 2.5rem;
   max-width: 700px;
+  margin-left: 250px;
 }
 
 .cards {
   display: flex;
   gap: 1.5rem;
+  margin-left: 250px;
 }
 
 .card {
@@ -46,4 +50,24 @@
   color: #444;
   font-size: 0.95rem;
   line-height: 1.6;
+}
+.bgImage{
+  position: absolute;
+  margin-top: 200px;   
+  margin-right: 20px; 
+  margin-left: 600px;
+  width: 600px;    
+  height: 600px;
+  opacity: 0.23;      
+  z-index: 0;
+  transform: rotate(-7.5deg);
+
+  //3d effect
+  filter:
+  brightness(1.7)
+        drop-shadow(0px 30px 0px rgba(80, 60, 200, 0.9))
+}
+.heading, .subheading, .cards {
+  position: relative;
+  z-index: 1;
 }

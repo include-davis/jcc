@@ -24,11 +24,16 @@ export default function Partnerships() {
   return (
     <div className={styles.container}>
       Partnerships
+      {/* Watermark circle */}
+      <img src="Dark_Blue_Logo.png" 
+      className={styles.bgImage}
+      alt="watermark"/>
       {/* Header and sub-header for the page */}
       <h1 className={styles.heading}>What we offer</h1> 
       <p className={styles.subheading}>Partners gain meaningful visibility within a mission-driven community while making a
          direct impact on the health and well-being of underserved youth.</p>
       <div className = {styles.cards}>
+        {/* used map() to make the cards */}
       {offers.map((item) => (
           <div key={item.title} className={styles.card}>
             <span className={styles.icon}>{item.icon}</span>
