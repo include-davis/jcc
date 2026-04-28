@@ -1,5 +1,127 @@
-@import "@/styles/mixins.scss";
+//@import "@/styles/mixins.scss";
 
-.container {
-  width: 100%;
+//.container {
+  //width: 100%;
+//}
+.contactPage {
+  padding: 80px 10%;
+  background: #fafafa;
+}
+
+.contactContainer {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.leftColumn {
+  flex: 2;
+
+  h1 {
+    font-size: 40px;
+    color: #3c3b72;
+    margin-bottom: 10px;
+  }
+}
+
+.rightColumn {
+  flex: 1;
+  padding-top: 20px;
+}
+
+.description {
+  max-width: 550px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    background: #ffffff;
+  }
+
+  textarea {
+    min-height: 130px;
+    resize: none;
+  }
+
+  button {
+    align-self: flex-end;
+    padding: 6px 20px;
+    border-radius: 20px;
+    border: 1px solid #3c3b72;
+    background: #ffffff;
+    color: #3c3b72;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+
+  button:hover {
+    background: #3c3b72;
+    color: #ffffff;
+  }
+}
+
+.infoBox {
+  margin-bottom: 18px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  p {
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
+.mapBox {
+  height: 230px;
+  background: #dddddd;
+  border-radius: 8px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+
+  span {
+    cursor: pointer;
+  }
+
+  span:hover {
+    color: #3c3b72;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactPage {
+    padding: 50px 6%;
+  }
+
+  .contactContainer {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .rightColumn {
+    padding-top: 0;
+  }
 }
