@@ -18,7 +18,7 @@
   margin-left: auto;
 }
 
-.homeBtn, .aboutBtn, .contactBtn {
+.homeBtn, .contactBtn {
   padding: 0.3125rem 1.25rem;
   background-color: transparent;
   border: none;
@@ -36,6 +36,10 @@
   font-size: 1rem;
 }
 
+.joinBtn:hover {
+  background-color: #24244a;
+}
+
 .committeeDropdown {
   display: flex;
   align-items: center;
@@ -45,7 +49,16 @@
   position: relative; 
 }
 
-.committeesBtn {
+.aboutDropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem; 
+  padding: 0.3125rem 1.25rem; 
+  cursor: pointer;
+  position: relative; 
+}
+
+.committeesBtn, .aboutBtn {
   background: transparent;
   border: none;
   padding: 0; 
@@ -54,30 +67,33 @@
   cursor: pointer;
 }
 
-.dropdownMenu {
+.committeeDropdownMenu, .aboutDropdownMenu {
   position: absolute;
   top: 100%;
   left: 20;
   z-index: 100;
   background-color: #ffffff;
-  min-width: 21rem;
   box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
   display: none; 
   border-radius: 1.25rem;
 }
 
-.committeeDropdown:hover .dropdownMenu {
+.committeeDropdownMenu {
+  min-width: 21rem;
+}
+
+.committeeDropdown:hover .committeeDropdownMenu, .aboutDropdown:hover .aboutDropdownMenu {
   display: block;
   padding: 1rem 1.25rem;
 }
 
-.dropdownMenu a {
+.committeeDropdownMenu a, .aboutDropdownMenu a {
   display: block;
   padding: 0.25rem 0;
   text-decoration: none;
   color: #0C0B0B;
 }
 
-.dropdownMenu a:hover {
+.committeeDropdownMenu a:hover, .aboutDropdownMenu a:hover {
   text-decoration: underline;
 }
