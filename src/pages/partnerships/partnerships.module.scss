@@ -3,35 +3,38 @@
 .container {
   width: 100%;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(232, 230, 255, 1));
+  padding: 2rem;
+  align-items: center;
 }
 .heading {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
-  margin-left: 250px;
+  margin-left: 100px;
+  margin-right: 120px;
 }
 
 .subheading {
   color: #666;
   margin-bottom: 2.5rem;
-  max-width: 700px;
-  margin-left: 250px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .cards {
   display: flex;
   gap: 1.5rem;
-  margin-left: 250px;
+  margin-left: 100px;
+  margin-right: 120px;
 }
-
 .card {
-  width: 300px;
-  height: 300px;
+  width: 220px;
   background: white;
   border-radius: 16px;
   padding: 2rem;
   border: 1px solid #e0e0e0;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  height: fit-content;
 }
 
 .icon {
