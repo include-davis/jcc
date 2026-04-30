@@ -5,6 +5,8 @@
   background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(232, 230, 255, 1));
   padding: 2rem;
   align-items: center;
+  padding: 3rem 10%; 
+  
 }
 .heading {
   font-size: 2.5rem;
@@ -12,6 +14,7 @@
   margin-bottom: 0.75rem;
   margin-left: 100px;
   margin-right: 120px;
+  font-family: 'DM Sans Variable', sans-serif;
 }
 
 .subheading {
@@ -19,8 +22,20 @@
   margin-bottom: 2.5rem;
   margin-left: 100px;
   margin-right: 100px;
+  max-width: 905px;
+  font-family: 'DM Sans Variable', sans-serif;
 }
-
+.cards {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: 100px;
+  font-family: 'DM Sans Variable', sans-serif;
+}
+.cards > * {
+  flex: 1;    /* targets each card component and makes them share space equally */
+  min-width: 0;
+}
+/*
 .cards {
   display: flex;
   gap: 1.5rem;
@@ -28,7 +43,7 @@
   margin-right: 120px;
 }
 .card {
-  width: 220px;
+  width: 150px;
   background: white;
   border-radius: 16px;
   padding: 2rem;
@@ -54,11 +69,12 @@
   font-size: 0.95rem;
   line-height: 1.6;
 }
+  */
 .bgImage{
   position: absolute;
   margin-top: 200px;   
   margin-right: 20px; 
-  margin-left: 600px;
+  margin-left: 425px;
   width: 600px;    
   height: 600px;
   opacity: 0.25;      
