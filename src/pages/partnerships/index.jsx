@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./partnerships.module.scss";
 import PartnerCards from '@/components/partnerships/partner-cards';
 import { partnershipsData } from './data';
@@ -13,9 +13,21 @@ const dmSans = DM_Sans({
 
 export default function Partnerships() {
   const [index, setIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const cardsToShow = isMobile ? 1 : 2;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    }
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [])
 
   const handleNext = () => {
-    if (index < partnershipsData.length - 2) {
+    if (index < partnershipsData.length - cardsToShow) {
       setIndex(index + 1);
     }
   };
@@ -34,12 +46,12 @@ export default function Partnerships() {
             <p className={dmSans.className}>Our current partners.</p>
             <div className={styles.arrows}>
               <button className={styles.arrow} onClick={handlePrev} disabled={index === 0}><MdArrowBack /></button>
-              <button className={styles.arrow} onClick={handleNext} disabled={index >= partnershipsData.length - 2}><MdArrowForward /></button>
+              <button className={styles.arrow} onClick={handleNext} disabled={index >= partnershipsData.length - cardsToShow}><MdArrowForward /></button>
             </div>
           </div>
         </div>
         <div className={styles.cards}>
-          {partnershipsData.slice(index, index + 2).map(partnership => (
+          {partnershipsData.slice(index, index + cardsToShow).map(partnership => (
             <PartnerCards
               key={partnership.key}
               image={partnership.image}
