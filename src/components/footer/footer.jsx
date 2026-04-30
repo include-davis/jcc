@@ -121,11 +121,11 @@ export default function Footer() {
             onClick={() => console.log("Instagram clicked")}>
             <FaInstagram style={{ fontSize: "30px"}} />
           </Link>
-          <Link href="/contact" 
+          <a href="mailto:jcc.jcc@gmail.com" 
             className={styles.linkReset}
             onClick={() => console.log("Email clicked")}>
             <MdEmail style={{ fontSize: "30px" }} />
-          </Link>
+          </a>
         </div>
       </div>
     </div>
