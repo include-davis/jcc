@@ -2,4 +2,62 @@
 
 .container {
   width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    white 0%,
+    #DAD8F4 100%
+  );
+}
+
+.inner {
+  max-width: 1300px;
+  margin: 0 auto; 
+  padding: 0 40px; 
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+}
+
+.top h2 {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 1.2;
+  padding-bottom: 10px;
+}
+
+.top p {
+  font-size: 18px;
+  font-weight: 300;
+  color: #7c7c80;
+  padding-bottom: 5px;
+}
+
+.sub {
+  display: flex;
+}
+
+.arrows {
+  margin-left: auto;
+  display: flex;
+}
+
+.arrows button {
+  all: unset;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.arrows button:disabled {
+  cursor: not-allowed;
+  color: #c0c0c0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  justify-content: center;
 }

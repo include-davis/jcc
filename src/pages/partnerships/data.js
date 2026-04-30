@@ -1,0 +1,34 @@
+export const partnershipsData = [
+  {
+    key: "afghan_clinic",
+    image: "/afghan_clinic_logo.jpg",
+    title: "Afghan Clinic",
+    committee: "Committee A",
+    description: "The Afghan Clinic exists to bring about genuine healing by nurturing the restoration of the body, mind, and soul in each patient through leading-edge and individualized care. Through our partnership, JCC and the Afghan Clinic are committed to providing holistic primary care, offering specialized services to uninsured patients, and working with government and volunteer providers to ensure affordable access to essential treatment.",
+    websiteLink: "https://www.afghanclinic.com"
+  }, 
+  {
+    key: "carlton_senior_living",
+    image: "/carlton_senior_living_logo.jpg",
+    title: "Carlton Senior Living",
+    committee: "Committee B",
+    description: "The Memory Care facility at the Carlton Senior Center offer exceptional dementia support. The memory care facility is centered around fostering meaningful relationships, upholding each resident’s dignity, and honoring their unique needs. As a volunteer you will support the staff with preparing activities for the seniors and  building connections with the seniors.",
+    websiteLink: "https://www.carltonseniorliving.com"
+  }, 
+  {
+    key: "healing_grove_health_center",
+    image: "/healing_grove_logo.jpg",
+    title: "Healing Grove Health Center",
+    committee: "Committee A",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    websiteLink: "https://healinggrove.org"
+  }, 
+  {
+    key: "princeton_review",
+    image: "/princeton_review_logo.png",
+    title: "The Princeton Review",
+    committee: "Committee B",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    websiteLink: "https://www.princetonreview.com"
+  }, 
+]
