@@ -22,6 +22,14 @@
   gap: 0.05rem;
 }
 
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
 .homeBtn, .aboutBtn, .committeesBtn, .contactBtn, .joinBtn {
   box-sizing: border-box; 
   height: 1.5625rem; 
@@ -50,11 +58,8 @@
 
 .joinBtn {
   background: linear-gradient(to right, #3C3B72, #4B49A5, #6462BE);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   border: none;
-  padding: 0.7rem 3rem; 
+  padding: 0.8rem 3rem 0.7rem 3rem;
   height: auto; 
   box-sizing: border-box;
   margin: 0 1.25rem;

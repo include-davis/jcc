@@ -21,7 +21,9 @@ export default function Navbar() {
 
   return (
     <div className={styles.navShell} ref={navRef}>
-      <img src="/Dark_Blue_Logo.svg" alt="JCC logo" />
+      <a href="/" className={styles.logoLink}>
+        <img src="/Dark_Blue_Logo.svg" alt="JCC logo" />
+      </a>
       <div className={styles.navButtons}>
         <a href="/" className = {styles.homeBtn}>Home</a>
         <div className={`${styles.aboutDropdown} ${openMenu === "about" ? styles.active : ""}`} onClick={() => toggleMenu("about")}>
