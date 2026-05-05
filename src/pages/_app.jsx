@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
   return (
     <div className={`${inter.variable}`}>
       <Navbar></Navbar>
-      <Component {...pageProps} />
+      {/* <Component {...pageProps} /> */}
       <Footer></Footer>
     </div>
   );

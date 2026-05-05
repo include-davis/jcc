@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from "./committees.module.scss";
+import { committeesData } from "./data";
+import Link from "next/link";
 
 export default function Committees() {
   return (
@@ -25,7 +25,6 @@ export default function Committees() {
       <div className={styles.committees_bottom}>
         {/* Here will be committee cards map */}
       </div>
-
 
     </div>
   );
