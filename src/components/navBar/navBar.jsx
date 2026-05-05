@@ -26,18 +26,32 @@ export default function Navbar() {
       </a>
       <div className={styles.navButtons}>
         <a href="/" className = {styles.homeBtn}>Home</a>
-        <div className={`${styles.aboutDropdown} ${openMenu === "about" ? styles.active : ""}`} onClick={() => toggleMenu("about")}>
-          <button className={styles.aboutBtn}>About</button>
-          <img className={styles.dropdownArrow} src="/dropdown_arrow.svg" alt="dropdown arrow"/>
+        <div className={`${styles.aboutDropdown} ${openMenu === "about" ? styles.active : ""}`}>
+          <a href="/about" className={styles.aboutBtn}>About</a>
+          <img 
+            className={styles.dropdownArrow}
+            src="/dropdown_arrow.svg" alt="dropdown arrow"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleMenu("about");
+            }}/>
           <div className={styles.aboutDropdownMenu}>
             <a href="/history">History</a>
             <a href="/partnerships">Partnership</a>
             <a href="/alumni">Alumni</a>
           </div>
         </div>
-        <div className={`${styles.committeeDropdown} ${openMenu === "committees" ? styles.active : ""}`} onClick={() => toggleMenu("committees")}>
-          <button className={styles.committeesBtn}>Committees</button>
-          <img className={styles.dropdownArrow} src="/dropdown_arrow.svg" alt="dropdown arrow"/>
+        <div className={`${styles.committeeDropdown} ${openMenu === "committees" ? styles.active : ""}`}>
+          <a href="/committees" className={styles.committeesBtn}>Committees</a>
+          <img 
+            className={styles.dropdownArrow}
+            src="/dropdown_arrow.svg" alt="dropdown arrow"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleMenu("committees");
+            }}/>
           <div className={styles.committeeDropdownMenu}>
             <a href="/committees_dental">Dental Committee</a>
             <a href="/committees_mental">Mental Health & Wellness Committee</a>

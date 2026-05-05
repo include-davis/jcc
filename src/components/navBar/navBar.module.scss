@@ -6,7 +6,7 @@
 }
 
 .navShell {
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
   position: fixed;
@@ -128,7 +128,7 @@
 }
 
 .committeeDropdownMenu {
-  min-width: 20rem;
+  min-width: 29rem;
 }
 
 .committeeDropdownMenu a, .aboutDropdownMenu a {
