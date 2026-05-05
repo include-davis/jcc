@@ -1,0 +1,130 @@
+@import "@/styles/mixins.scss";
+
+/* Frame 77 — outer CTA band (Figma 2488:2425) */
+.frame77 {
+  width: 100%;
+  max-width: 1242px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 356px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 54px var(--edge-spacer);
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(
+    124.8deg,
+    rgb(60, 59, 114) 14.16%,
+    rgb(75, 73, 165) 52.12%,
+    rgb(100, 98, 190) 88.12%
+  );
+}
+
+/* Frame 345 — inner column (Figma 2745:2801) */
+.frame345 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  max-width: 789px;
+}
+
+.frame344 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.headingFrame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Figma H2 — DM Sans Bold 55px */
+.title {
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 3.4375rem; /* 55px */
+  line-height: normal;
+  color: var(--color-white);
+  text-align: center;
+}
+
+/* Figma body — DM Sans Regular 20px / 23px, 75% opacity */
+.body {
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem; /* 20px */
+  line-height: 23px;
+  color: var(--color-white);
+  text-align: center;
+  opacity: 0.75;
+  max-width: 789px;
+  margin: 0;
+}
+
+/* Figma "Join us CTA/Default" — Khula Bold 16px, fill #3c3b72 */
+.cta {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 50px;
+  border-radius: 16px;
+  border: none;
+  background: var(--color-white);
+  font-family: "Khula", sans-serif;
+  font-weight: 700;
+  font-size: 1rem; /* 16px */
+  line-height: normal;
+  color: #3c3b72;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.cta:hover {
+  filter: brightness(0.97);
+}
+
+.cta:active {
+  transform: scale(0.99);
+}
+
+.cta:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 3px;
+}
+
+@include tablet {
+  .frame77 {
+    min-height: 0;
+    padding: 40px var(--edge-spacer);
+  }
+
+  .title {
+    font-size: clamp(2rem, 8vw, 3.4375rem);
+  }
+
+  .body {
+    font-size: 1.125rem;
+    line-height: 1.45;
+  }
+
+  .cta {
+    white-space: normal;
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+@include phone {
+  .cta {
+    width: 100%;
+    padding: 12px 24px;
+  }
+}

@@ -1,5 +1,24 @@
 @import "@/styles/mixins.scss";
 
-.container {
+.page {
   width: 100%;
+  min-height: 50vh;
+  box-sizing: border-box;
+  padding: 2.5rem var(--edge-spacer) 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
