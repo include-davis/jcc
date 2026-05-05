@@ -1,5 +1,144 @@
 @import "@/styles/mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Khula:wght@300;400;700;800&display=swap');
 
 .container {
   width: 100%;
+}
+
+.navShell {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  font-size: 1.5625rem;
+  padding: 2.3125rem 5rem;
+  background-color: #ffffff;
+}
+
+.navButtons {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  gap: 0.05rem;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+.homeBtn, .aboutBtn, .committeesBtn, .contactBtn, .joinBtn {
+  box-sizing: border-box; 
+  height: 1.5625rem; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.homeBtn, .aboutBtn, .committeesBtn, .contactBtn {
+  text-decoration: none;
+  color: inherit;
+  padding: 0 1.25rem;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  font-family: 'Khula', sans-serif;
+  cursor: pointer;
+  transform: translateY(0.2rem);
+}
+
+.homeBtn:hover, .aboutBtn:hover, .committeesBtn:hover, .contactBtn:hover {
+  font-weight: bold;
+  letter-spacing: -0.055rem;
+}
+
+.joinBtn {
+  background: linear-gradient(to right, #3C3B72, #4B49A5, #6462BE);
+  border: none;
+  padding: 0.8rem 3rem 0.7rem 3rem;
+  height: auto; 
+  box-sizing: border-box;
+  margin: 0 1.25rem;
+  color: #f1f1f1;
+  border-radius: 1rem;
+  font-weight: bold;
+  line-height: 1;
+  font-family: 'Khula', sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.joinBtn:hover {
+  opacity: 0.9;
+  background: linear-gradient(to right, #4B49A5, #6462BE, #7A78D1);
+}
+
+.dropdownArrow {
+  transition: transform 0.2s ease;
+  width: 2rem;
+  height: auto;
+  display: block;
+  margin-left: 0.25rem;
+}
+
+.committeeDropdown, .aboutDropdown {
+  display: flex;
+  align-items: center;
+  padding: 0 1.25rem;
+  height: 1.5625rem;
+  cursor: pointer;
+  position: relative; 
+
+  &.active {
+    .committeeDropdownMenu, .aboutDropdownMenu {
+      display: block;
+      padding: 1rem 1.25rem;
+    }
+
+    .dropdownArrow {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.committeesBtn, .aboutBtn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 1.5625rem;
+  color: inherit;
+  cursor: pointer;
+}
+
+.committeeDropdownMenu, .aboutDropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 1.25rem;
+  z-index: 100;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+  display: none; 
+  border-radius: 1.25rem;
+}
+
+.committeeDropdownMenu {
+  min-width: 20rem;
+}
+
+.committeeDropdownMenu a, .aboutDropdownMenu a {
+  display: block;
+  padding: 0.3rem 0;
+  text-decoration: none;
+  color: #0C0B0B;
+  font-family: 'Khula', sans-serif;
+}
+
+.committeeDropdownMenu a:hover, .aboutDropdownMenu a:hover {
+  text-decoration: underline;
 }
