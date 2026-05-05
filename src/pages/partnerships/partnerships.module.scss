@@ -25,51 +25,51 @@
   max-width: 905px;
   font-family: 'DM Sans Variable', sans-serif;
 }
+/*
+.cards > * {
+  flex: 1;   
+  min-width: 0;
+}*/
 .cards {
   display: flex;
   gap: 1.5rem;
-  margin-left: 100px;
+  justify-content: center;
+  //flex-wrap: wrap;
   font-family: 'DM Sans Variable', sans-serif;
 }
-.cards > * {
-  flex: 1;    /* targets each card component and makes them share space equally */
-  min-width: 0;
-}
-/*
-.cards {
-  display: flex;
-  gap: 1.5rem;
-  margin-left: 100px;
-  margin-right: 120px;
-}
 .card {
-  width: 150px;
   background: white;
   border-radius: 16px;
   padding: 2rem;
   border: 1px solid #e0e0e0;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  height: fit-content;
+  //height: fit-content;
+  max-width: 320px;
+  max-height: 300px;
+  font-family: 'DM Sans Variable', sans-serif;
+  //flex-wrap: wrap;
 }
 
 .icon {
   font-size: 2rem;
   display: block;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.25rem;
+
 }
 
 .card_title {
   font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  font-family: 'DM Sans Variable', sans-serif;
 }
 
 .card_desc {
   color: #444;
   font-size: 0.95rem;
   line-height: 1.6;
+  font-family: 'DM Sans Variable', sans-serif;
 }
-  */
 .bgImage{
   position: absolute;
   margin-top: 200px;   
@@ -86,6 +86,7 @@
   brightness(2)
         drop-shadow(0px 30px 0px rgba(70, 60, 400, 1))
 }
+
 .heading, .subheading, .cards {
   position: relative;
   z-index: 1;

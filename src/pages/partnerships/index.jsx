@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./partnerships.module.scss";
 import { FaEye, FaUsers, FaCheckCircle } from "react-icons/fa";
-import OfferCard from "../../components/partnerships-what-we-offer-cards/partnerships-what-we-offer-cards";
+//import OfferCard from "../../components/partnerships-what-we-offer-cards/partnerships-what-we-offer-cards";
 
 export default function Partnerships() {
   {/* Made an array to eventually implement the cards from the design */}
@@ -34,14 +34,13 @@ export default function Partnerships() {
       <p className={styles.subheading}>Partners gain meaningful visibility within a mission-driven community while making a
          direct impact on the health and well-being of underserved youth.</p>
          <div className={styles.cards}>
-        {offers.map((item) => (
-          <OfferCard 
-            key={item.title}
-            icon={item.icon}
-            title={item.title}
-            desc={item.desc}
-          />
-        ))}
+         {offers.map((item) => (
+    <div className={styles.card} key={item.title}>
+      <div className={styles.icon}>{item.icon}</div>
+      <h2 className={styles.card_title}>{item.title}</h2>
+      <p className={styles.card_desc}>{item.desc}</p>
+    </div>
+  ))}
       </div>
     </div>
   );
