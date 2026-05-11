@@ -10,13 +10,44 @@
 
 .sectionMiddle {
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 240px;
   padding: 140px 60px;
-  border: 1px solid #000
+  border: 1px solid #000;
+}
+
+.sectionMiddle::before {
+  content: "";
+  position: absolute;
+  width: 722px;
+  height: 722px;
+  left: -200px;
+  top: 680px;
+
+  background-image: url("/jcc_logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  opacity: 0.76;
+  mix-blend-mode: color-burn;
+  transform: rotate(-16deg);
+
+  pointer-events: none;
+  z-index: 0;
+  filter: drop-shadow(0 35px 4px rgba(0, 0, 0, 0.2));
+}
+
+.OurMissionContainer,
+.OurCommitteesContainer {
+  position: relative;
+  z-index: 1;
 }
 
 .OurMissionContainer {
@@ -45,21 +76,12 @@
   max-width: 667px;
 }
 
-.OurMissionRightContent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  flex: 0 0 220px;
-
-}
-
 .MissionTitle {
   font-family: var(--font-dm-sans);
   font-size: 3.4375rem;
   font-weight: 600;
   line-height: 1;
-  color: #000; 
+  color: #000;
   margin: 0;
 }
 
@@ -73,19 +95,23 @@
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.375rem;
-  color: #000; 
+  color: #000;
   margin: 0;
 }
 
 .MissionImgCircle {
+  flex: 0 0 220px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 219px;
   height: 204px;
+  margin: 0;
+
   border-radius: 345px;
   background-color: rgba(245, 245, 245, 1);
-
   box-shadow: 0px -4px 35px 0px rgba(187, 186, 220, 0.5);
 }
 
@@ -94,30 +120,10 @@
   height: auto;
 }
 
-@media (max-width: 56.25rem) {
-  .OurMissionContainer{
-    flex-direction: column;
-    text-align: left;
-  }
-
-  .OurMissionLeftContent, 
-  .OurMissionRightContent {
-    max-width: 100%;
-    width: 100%;
-
-    flex: unset;
-  }
-
-  .OurMissionRightContent {
-    justify-content: center;
-  }
-}
-
 .OurCommitteesContainer {
   display: flex;
   flex-direction: column;
   gap: 50px;
-
 }
 
 .OurCommitteesTopContent {
@@ -129,22 +135,20 @@
 }
 
 .OurCommitteesTitle {
-  height: 121.05px;
   font-family: var(--font-dm-sans);
   font-size: 4.375rem;
   font-weight: 600;
   line-height: 1;
-  color: #000; 
+  color: #000;
   margin: 0;
 }
 
 .OurCommitteesDescription {
-  height: 84px;
   font-family: var(--font-dm-sans);
   font-size: 1.5rem;
   font-weight: 300;
-  line-height: 1;
-  color: #000; 
+  line-height: 1.45;
+  color: #000;
   margin: 0;
 }
 
@@ -152,6 +156,7 @@
   width: 100%;
   max-width: 1275px;
   height: auto;
+
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -163,10 +168,6 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
-}
-
-.CommitteeIconContainer {
-  
 }
 
 .CommitteeIcon {
@@ -187,6 +188,10 @@
   justify-content: space-between;
   text-align: left;
   gap: 8px;
+
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .CommitteeButtonText {
@@ -194,27 +199,57 @@
 
   font-family: var(--font-dm-sans);
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.2;
   color: #000;
   margin: 0;
   text-align: left;
 }
 
-.CommitteeButtonArrow {
-  flex: 0 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .CommitteeArrowIcon {
+  flex: 0 0 auto;
   width: 1.875rem;
   height: auto;
 }
 
-
 .sectionBottom {
   min-height: 100vh;
   border: 1px solid #000;
+}
+
+@media (max-width: 56.25rem) {
+  .sectionMiddle {
+    gap: 120px;
+    padding: 100px 30px;
+  }
+
+  .OurMissionContainer {
+    flex-direction: column;
+    text-align: left;
+    padding: 50px 40px;
+  }
+
+  .OurMissionLeftContent,
+  .MissionImgCircle {
+    max-width: 100%;
+    width: 100%;
+    flex: unset;
+  }
+
+  .MissionImgCircle {
+    align-self: center;
+  }
+
+  .OurCommitteesBottomContent {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .OurCommitteesTitle {
+    font-size: 3.25rem;
+  }
+
+  .OurCommitteesDescription {
+    font-size: 1.25rem;
+  }
 }
