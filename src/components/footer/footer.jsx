@@ -96,7 +96,7 @@ export default function Footer() {
             onClick={() => console.log("Home section clicked")}>
             <p>Section</p>
           </Link>
-          <Link href="/e"
+          <Link href="/" 
             className={styles.linkReset}
             onClick={() => console.log("Home section clicked")}>
             <p>Section</p>
