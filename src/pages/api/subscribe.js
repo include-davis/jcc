@@ -17,6 +17,7 @@ export default async function handler(req, res) {
     // read existing emails
     const fileData = await fs.readFile(filePath, "utf-8");
 
+    // parse existing emails or initialize empty array
     const subscribers = fileData.trim() 
       ? JSON.parse(fileData)
       : [];
@@ -26,6 +27,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Email already subscribed" });
     }
 
+    // add new email and save
     subscribers.push({ email: email });
     await fs.writeFile(filePath, JSON.stringify(subscribers, null, 2));
 
