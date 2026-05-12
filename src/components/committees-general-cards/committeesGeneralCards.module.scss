@@ -9,18 +9,18 @@
 
 .committeesCards {
     display: grid;
-    grid-template-columns: repeat(2, 22.61625rem);
+    grid-template-columns: repeat(2, 35rem);
     gap: 4rem;
     max-width: 1200px;
     width: 100%;
     justify-content: center;
-    padding-top: 4rem;
+    padding: 4rem 1rem;
     margin: 0 auto;
 
     .card {
         width: 100%;
-        max-width: 22.61625rem;
-        height: 25.7925rem;
+        max-width: 35rem;
+        height: 35rem;
         border-radius: 2.25rem;
         overflow: hidden; 
         display: flex;
@@ -31,21 +31,21 @@
         &:last-child:nth-child(odd) {
             grid-column: 1 / span 2;
             width: 100%;
-            max-width: 22.61625rem;
+            max-width: 35rem;
             margin: auto;
         }
     }
 
     .cardTop {
         background: linear-gradient(to bottom, #3C3B72, #4B49A5, #6462BE);
-        padding: 3rem 0;
+        padding: 5rem 0;
         display: flex;
         justify-content: center;
         align-items: center;
 
         img {
-            width: 8.3125rem;
-            height: 8.0625rem;
+            width: 11rem;
+            height: 11rem;
             object-fit: contain;
         }
     }
@@ -58,31 +58,33 @@
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
-        line-height: 1.75rem;
+        line-height: 2.5rem;
 
         h3 {
             font-family: 'Khula', sans-serif;
             color: #000;
-            font-size: 1.25rem;
+            font-size: 2rem;
             margin: 0;
             font-weight: 500;
-            max-width: 200px;
+            max-width: 21.875rem;
         }
     }
 
     .learnMoreBtn {
         background-color: #3C3B72;
-        padding: 0.3125rem 1rem;
-        border-radius: 0.75rem;
+        padding: 0.5rem 2rem;
+        border-radius: 1.25rem;
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.75rem;
+        cursor: pointer;
         transition: transform 0.2s ease;
 
         .learnMore {
             font-weight: 600;
             text-decoration: none;
             color: white;
+            font-size: 1.5rem;
         }
 
         &:hover {
