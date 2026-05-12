@@ -20,7 +20,7 @@ export const partnershipsData = [
     image: "/healing_grove_logo.jpg",
     title: "Healing Grove Health Center",
     committee: "Committee A",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    description: "The Healing Grove Health Center is dedicated to offering indvidualized, whole-person wellness through Healthcare, Soul Care, and Culture Care. They offer memnbers with unlimited primary care, direct physician access, and same day appointments.",
     websiteLink: "https://healinggrove.org"
   }, 
   {
@@ -28,7 +28,7 @@ export const partnershipsData = [
     image: "/princeton_review_logo.png",
     title: "The Princeton Review",
     committee: "Committee B",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    description: "The Princeton Review supports students and families to help them get into their dream schools. They provide personalized, innovative, and best in class tutoring, test prep, and admission services to help students achieve their academic goals.",
     websiteLink: "https://www.princetonreview.com"
   }, 
 ]
