@@ -9,10 +9,12 @@
   width: 100vw;
   display: flex;
   align-items: center;
-  position: fixed;
+  position: sticky;
+  top: 0;
   font-size: 1.5625rem;
   padding: 2.3125rem 5rem;
   background-color: #ffffff;
+  z-index: 1000;
 }
 
 .navButtons {
