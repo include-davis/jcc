@@ -53,11 +53,11 @@ export default function Navbar() {
               toggleMenu("committees");
             }}/>
           <div className={styles.committeeDropdownMenu}>
-            <a href="/committees_dental">Dental Committee</a>
-            <a href="/committees_mental">Mental Health & Wellness Committee</a>
-            <a href="/committees_physical">Physical Integrated Health Committee</a>
-            <a href="/committees_community">Community Outreach Committee</a>
-            <a href="/committees_sexual">Sexual & Reproductive Committee</a>
+            <a href="/committees/dental">Dental Committee</a>
+            <a href="/committees/mental">Mental Health & Wellness Committee</a>
+            <a href="/committees/physical">Physical Integrated Health Committee</a>
+            <a href="/committees/community">Community Outreach Committee</a>
+            <a href="/committees/sexual">Sexual & Reproductive Committee</a>
           </div>
         </div>
         <a href="/contact" className={styles.contactBtn}>Contact Us</a>

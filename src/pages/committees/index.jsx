@@ -1,6 +1,7 @@
 import { committeesData } from "./data";
 import Link from "next/link";
 import styles from "./committees.module.scss";
+import CommitteesGeneralCards from "../../components/committees-general-cards/committeesGeneralCards";
 
 export default function Committees() {
   return (
@@ -24,7 +25,7 @@ export default function Committees() {
       </div>
 
       <div className={styles.committees_bottom}>
-        {/* Here will be committee cards map */}
+        <CommitteesGeneralCards />
       </div>
 
     </div>

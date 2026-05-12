@@ -1,0 +1,84 @@
+@import "@/styles/mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Khula:wght@300;400;700;800&display=swap');
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.committeesCards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: center;
+    padding-top: 4rem;
+
+    .card {
+        width: 22.61625rem;
+        height: 25.7925rem;
+        border-radius: 2.25rem;
+        overflow: hidden; 
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+        background: white; 
+    }
+
+    &:last-child:nth-child(odd) {
+        grid-column: 1 / span 2;
+        width: 50%;
+    }
+
+    .cardTop {
+        background: linear-gradient(to bottom, #3C3B72, #4B49A5, #6462BE);
+        padding: 3rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 8.3125rem;
+            height: 8.0625rem;
+            object-fit: contain;
+        }
+    }
+
+    .cardBottom {
+        background: white;
+        padding-top: 2rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        line-height: 1.75rem;
+
+        h3 {
+            font-family: 'Khula', sans-serif;
+            color: #000;
+            font-size: 1.25rem;
+            margin: 0;
+            font-weight: 500;
+            max-width: 200px;
+        }
+    }
+
+    .learnMoreBtn {
+        background-color: #3C3B72;
+        color: white;
+        font-weight: 600;
+        padding: 0.3125rem 1rem;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
