@@ -68,12 +68,18 @@
     grid-template-columns: 1fr;
   }
 
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(232, 230, 255, 1));
-  padding: 2rem;
-  align-items: center;
-  padding: 3rem 10%; 
-  
+  .container {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1),
+      rgba(232, 230, 255, 1)
+    );
+
+    padding: 3rem 10%;
+    align-items: center;
+  }
 }
+
 .heading {
   font-size: 2.5rem;
   font-weight: 700;

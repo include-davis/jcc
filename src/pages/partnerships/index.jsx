@@ -6,6 +6,8 @@ import PartnerCards from '@/components/partnerships/partner-cards';
 import { partnershipsData } from './data';
 import { DM_Sans } from 'next/font/google'
 import { MdArrowForward, MdArrowBack } from "react-icons/md";
+import { FaEye, FaUsers, FaCheckCircle } from "react-icons/fa";
+import OfferCard from "../../components/partnerships-what-we-offer-cards/partnerships-what-we-offer-cards";
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -38,37 +40,7 @@ export default function Partnerships() {
       setIndex(index - 1);
     }
   }
-  return (
-    <div className={styles.container}>
-      <div className={styles.inner}>
-        <div className={styles.top}>
-          <h2 className={dmSans.className}>Our Partners</h2>
-          <div className={styles.sub}>
-            <p className={dmSans.className}>Our current partners.</p>
-            <div className={styles.arrows}>
-              <button className={styles.arrow} onClick={handlePrev} disabled={index === 0}><MdArrowBack /></button>
-              <button className={styles.arrow} onClick={handleNext} disabled={index >= partnershipsData.length - cardsToShow}><MdArrowForward /></button>
-            </div>
-          </div>
-        </div>
-        <div className={styles.cards}>
-          {partnershipsData.slice(index, index + cardsToShow).map(partnership => (
-            <PartnerCards
-              key={partnership.key}
-              image={partnership.image}
-              title={partnership.title}
-              committee={partnership.committee}
-              description={partnership.description}
-              websiteLink={partnership.websiteLink}
-            />
-          ))}
-        </div>
-
-import { FaEye, FaUsers, FaCheckCircle } from "react-icons/fa";
-import OfferCard from "../../components/partnerships-what-we-offer-cards/partnerships-what-we-offer-cards";
-
-export default function Partnerships() {
-  {/* Made an array to eventually implement the cards from the design */}
+  // Made an array to eventually implement the cards from the design 
   const offers = [
     {
       icon: <FaEye size={32} color="black"/>,
@@ -86,29 +58,58 @@ export default function Partnerships() {
       desc: "Make a meaningful difference in the health and well-being of underserved youth in our community.",
     },
   ];
+
   return (
-    <div className={styles.container}>
-      Partnerships
-      {/* Watermark circle */}
-      <img src="Dark_Blue_Logo.png" 
-      className={styles.bgImage}
-      alt="watermark"/>
-      {/* Header and sub-header for the page */}
-      <h1 className={styles.heading}>What we offer</h1> 
-      <p className={styles.subheading}>Partners gain meaningful visibility within a mission-driven community while making a
-         direct impact on the health and well-being of underserved youth.</p>
-         <div className={styles.cards}>
-        {offers.map((item) => (
-          <OfferCard 
-            key={item.title}
-            icon={item.icon}
-            title={item.title}
-            desc={item.desc}
-          />
-        ))}
+    <div>
+      <div className={styles.container1}>
+        Partnerships
+        {/* Watermark circle */}
+        <img src="Dark_Blue_Logo.png" 
+        className={styles.bgImage}
+        alt="watermark"/>
+        {/* Header and sub-header for the page */}
+        <h1 className={styles.heading}>What we offer</h1> 
+        <p className={styles.subheading}>Partners gain meaningful visibility within a mission-driven community while making a
+          direct impact on the health and well-being of underserved youth.</p>
+          <div className={styles.cards}>
+          {offers.map((item) => (
+            <OfferCard 
+              key={item.title}
+              icon={item.icon}
+              title={item.title}
+              desc={item.desc}
+            />
+          ))}
+        </div>
+      </div>
 
+      <div className={styles.container}>
+        <div className={styles.inner}>
+          <div className={styles.top}>
+            <h2 className={dmSans.className}>Our Partners</h2>
+            <div className={styles.sub}>
+              <p className={dmSans.className}>Our current partners.</p>
+              <div className={styles.arrows}>
+                <button className={styles.arrow} onClick={handlePrev} disabled={index === 0}><MdArrowBack /></button>
+                <button className={styles.arrow} onClick={handleNext} disabled={index >= partnershipsData.length - cardsToShow}><MdArrowForward /></button>
+              </div>
+            </div>
           </div>
-    </div>
+          <div className={styles.cards}>
+            {partnershipsData.slice(index, index + cardsToShow).map(partnership => (
+              <PartnerCards
+                key={partnership.key}
+                image={partnership.image}
+                title={partnership.title}
+                committee={partnership.committee}
+                description={partnership.description}
+                websiteLink={partnership.websiteLink}
+              />
+            ))}
+          </div>
 
+        </div>
+      </div>
+    </div>
   );
 }
