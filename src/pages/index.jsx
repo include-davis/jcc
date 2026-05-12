@@ -53,7 +53,8 @@ export default function Home() {
     <div className={styles.container}>
       {/* TODO: top-page section - Refer to Figma file for
          +design specs. Write your code here. */}
-         {
+
+      <div className={styles.sectionTop}></div>
         <div className={styles.img_container}> {/* Image container to write over the image */}
         <div className={styles.dots}>  {/* made a separate div element for the dots at bottom to indiciate which slide user is on*/}
             {slides.map((_, index) => (
@@ -101,10 +102,7 @@ export default function Home() {
         ›
         </button>
          </div>
-}
-      <div className={styles.sectionTop}>
-        top-page
-      </div>
+
 
       {/* TODO: middle-page section - Refer to Figma file for
          + design specs. Write your code here. */}
@@ -112,10 +110,17 @@ export default function Home() {
         middle-page
       </div>
 
-      {/* TODO: bottom-page section - Refer to Figma file for
-         + design specs. Write your code here. */}
       <div className={styles.sectionBottom}>
-        bottom-page
+        <div className={styles.learnMoreCard}>
+          <h2 className={styles.learnMoreTitle}>Recruitment</h2>
+
+          <p className={styles.learnMoreText}>
+            Want to learn more about our clinic and how to get involved? Click here to learn more about our recruitment process.
+          </p>
+          <a href="/contact" className={styles.secondaryButton}>
+            Join Us 
+          </a>
+        </div>
       </div>
     </div>
   );
