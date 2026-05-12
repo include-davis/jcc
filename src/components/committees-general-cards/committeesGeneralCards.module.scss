@@ -9,15 +9,17 @@
 
 .committeesCards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 22.61625rem);
     gap: 4rem;
     max-width: 1200px;
     width: 100%;
     justify-content: center;
     padding-top: 4rem;
+    margin: 0 auto;
 
     .card {
-        width: 22.61625rem;
+        width: 100%;
+        max-width: 22.61625rem;
         height: 25.7925rem;
         border-radius: 2.25rem;
         overflow: hidden; 
@@ -25,11 +27,13 @@
         flex-direction: column;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
         background: white; 
-    }
 
-    &:last-child:nth-child(odd) {
-        grid-column: 1 / span 2;
-        width: 50%;
+        &:last-child:nth-child(odd) {
+            grid-column: 1 / span 2;
+            width: 100%;
+            max-width: 22.61625rem;
+            margin: auto;
+        }
     }
 
     .cardTop {
@@ -68,14 +72,18 @@
 
     .learnMoreBtn {
         background-color: #3C3B72;
-        color: white;
-        font-weight: 600;
         padding: 0.3125rem 1rem;
         border-radius: 0.75rem;
-        text-decoration: none;
         display: flex;
         align-items: center;
+        gap: 0.5rem;
         transition: transform 0.2s ease;
+
+        .learnMore {
+            font-weight: 600;
+            text-decoration: none;
+            color: white;
+        }
 
         &:hover {
             transform: scale(1.05);

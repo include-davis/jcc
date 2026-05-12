@@ -15,9 +15,10 @@ export default function CommitteesGeneralCards() {
                     </div>
                     <div className={styles.cardBottom}>
                         <h3>{committee.name}</h3>
-                        <a href={committee.link} className={styles.learnMoreBtn}>
-                            Learn More
-                        </a>
+                        <div className={styles.learnMoreBtn}>
+                            <a href={committee.link} className={styles.learnMore}>Learn More</a>
+                            <img src="/arrow_pointing_sideways.svg" alt="arrow pointing sideways" />
+                        </div>
                     </div>
                 </div>
             ))}
