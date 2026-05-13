@@ -14,13 +14,14 @@ export default async function handler(req, res) {
 
     const filePath = "subscribers.json";
 
-    // read existing emails
-    const fileData = await fs.readFile(filePath, "utf-8");
-
-    // parse existing emails or initialize empty array
-    const subscribers = fileData.trim() 
-      ? JSON.parse(fileData)
-      : [];
+    // read existing emails or initialize empty array if file doesn't exist
+    let subscribers = [];
+    try {
+      const fileData = await fs.readFile(filePath, "utf-8");
+      subscribers = fileData.trim() ? JSON.parse(fileData) : [];
+    } catch {
+      // file doesn't exist yet, use empty array
+    }
 
     // prevent duplicates
     if (subscribers.some(subscriber => subscriber.email === email)) {
