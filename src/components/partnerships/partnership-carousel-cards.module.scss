@@ -1,0 +1,54 @@
+.carouselCard {
+  width: 260px;
+  height: 96px;
+  flex: 0 0 260px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  border: 1px solid #deddea;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(32, 28, 80, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.carouselCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(32, 28, 80, 0.14);
+}
+
+.logo {
+  max-width: 78%;
+  max-height: 64px;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .carouselCard {
+    width: 200px;
+    height: 78px;
+    flex: 0 0 200px;
+  }
+
+  .logo {
+    max-height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carouselCard {
+    width: 170px;
+    height: 68px;
+    flex: 0 0 170px;
+  }
+
+  .logo {
+    max-height: 42px;
+  }
+}
