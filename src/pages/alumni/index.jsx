@@ -13,8 +13,12 @@ export default function Alumni() {
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.
             </p>
             <div className={styles.topAlumniButtons}>
-              <button className={styles.button}>Alumni</button>
-              <button className={styles.button}>Connecting</button>
+              <a href="mailto:email@example.com" className={styles.button}>
+                Alumni
+              </a>
+              <a href="mailto:email@example.com" className={styles.button}>
+                Connecting
+              </a>
             </div>
           </div>
           <div className={styles.topAlumniRight}>
