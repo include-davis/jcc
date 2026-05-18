@@ -64,7 +64,8 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  gap: 0.6rem
+  gap: 0.6rem;
+  text-decoration: none;
 }
 
 .button:hover {
@@ -146,7 +147,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 3.2rem 1.5rem 6rem;
+  padding: 3.2rem 1.5rem 0rem;
   background: transparent;
 }
 .shareCard {
@@ -182,6 +183,5 @@
   font-size: 1.25rem;
   line-height: 1.375rem;
   font-family: 'Khula', sans-serif;
-  horizontal-align: center;
 }
 
