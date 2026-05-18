@@ -4,34 +4,49 @@ import styles from "./alumni.module.scss";
 export default function Alumni() {
   return (
     <div className={styles.alumniContainer}>
-      <div className={styles.topAlumniSection}>
-        {/*
-          Top section of alumni page
-        */}
 
-
+      <div className={styles.topAlumniSection}> {/* Top section of the alumni page */}
+        <div className={styles.topAlumniContent}>
+          <div className={styles.topAlumniLeft}>
+            <h1 className={styles.topAlumniTitle}>See What Alumni Is Up To Now</h1>
+            <p className={styles.topAlumniText}>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.
+            </p>
+            <div className={styles.topAlumniButtons}>
+              <button className={styles.button}>Alumni</button>
+              <button className={styles.button}>Connecting</button>
+            </div>
+          </div>
+          <div className={styles.topAlumniRight}>
+            <img src="/alumni.png" className={styles.topAlumniImage} />
+          </div>
+        </div>
       </div>
-      <div className={styles.updateAlumniSection}>
-        {/*
-          Update card section
-        */}
+
+      <div className={styles.updateAlumniSection}> {/* Update card section */}
+        
         <div className={styles.learnMoreCard}>
-          <h2 className={styles.learnMoreTitle}>Recruitment</h2>
+          <h2 className={styles.learnMoreTitle}>Get the Latest Updates!</h2>
 
           <p className={styles.learnMoreText}>
             Want to learn more about our clinic and how to get involved? Click here to learn more about our recruitment process.
           </p>
-          <a href="mailto:email@example.com" className={styles.secondaryButton}>
+          <a href="mailto:email@example.com" className={styles.learn_more_btn}>
             Join Us
           </a>
         </div>
 
       </div>
-      <div className={styles.bottomAlumniSection}> 
-        {/*
-          Share your JCC Experience section 
-        */}
-        
+      <div className={styles.bottomAlumniSection}> {/* Bottom section of the alumni page */}
+        <div className={styles.shareCard}>
+          <h2 className={styles.shareTitle}>Share Your JCC Experience</h2>
+          <p className={styles.shareText}>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+          </p>
+          <a href="mailto:email@example.com" className={styles.learn_more_btn}>
+            Share Your Story
+          </a>
+        </div>
       </div>
     </div>
   );
