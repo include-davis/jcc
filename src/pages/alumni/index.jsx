@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from "./alumni.module.scss";
+import { DM_Sans, Khula } from 'next/font/google'
 
 export default function Alumni() {
   return (
