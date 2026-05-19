@@ -5,11 +5,10 @@ export default function Contact() {
     <main className={styles.contactPage}>
       <section className={styles.contactContainer}>
         <div className={styles.leftColumn}>
-          <h1>Contact Us</h1>
+          <h1 className={styles.title}>Contact Us</h1>
 
           <p className={styles.description}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Send us a
-            message and we will get back to you as soon as possible.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
 
           <form className={styles.form}>
@@ -32,28 +31,50 @@ export default function Contact() {
 
         <div className={styles.rightColumn}>
           <div className={styles.infoBox}>
-            <h3>Email</h3>
-            <p>example@ucdavis.edu</p>
+            <h3 className={styles.infoTitle}>Email</h3>
+            <p className={styles.infoText}>ilovejcc@ucdavis.edu</p>
           </div>
 
           <div className={styles.infoBox}>
-            <h3>Phone</h3>
-            <p>999-999-9999</p>
+            <h3 className={styles.infoTitle}>Phone</h3>
+            <p className={styles.infoText}>999-999-9999</p>
           </div>
 
           <div className={styles.infoBox}>
-            <h3>Location</h3>
-            <p>1 Shields Ave, Davis, CA 95616</p>
+            <h3 className={styles.infoTitle}>Location</h3>
+            <p className={styles.infoText}>1 Shields Ave, Davis, <br /> CA 95616</p>
           </div>
 
           <div className={styles.mapBox}>
             Map Placeholder
           </div>
 
+
           <div className={styles.icons}>
-            <span>in</span>
-            <span>ig</span>
-          </div>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            <img
+              src="/icons/insta.png"
+              alt="Instagram"
+              className={styles.iconImage}
+            />
+            </a>
+
+            <a
+              href="https://indeed.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            <img
+              src="/icons/indeed.png"
+              alt="Indeed"
+              className={styles.iconImage}
+              />
+            </a>
+            </div>
         </div>
       </section>
     </main>

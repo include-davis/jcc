@@ -1,117 +1,151 @@
-//@import "@/styles/mixins.scss";
+@import "@/styles/mixins.scss";
 
-//.container {
-  //width: 100%;
-//}
-.contactPage {
-  padding: 80px 10%;
+.contactPage { /* container */
+  padding: 120px 10% 80px;
   background: #fafafa;
 }
 
-.contactContainer {
+.contactContainer { /* left and right columns container */
+   max-width: 930px;
+  margin: 0 auto;
   display: flex;
-  gap: 80px;
+  gap: 55px;
   align-items: flex-start;
 }
 
-.leftColumn {
-  flex: 2;
-
-  h1 {
-    font-size: 40px;
-    color: #3c3b72;
-    margin-bottom: 10px;
-  }
+.leftColumn { /* left column */
+  width: 595px;
 }
 
-.rightColumn {
-  flex: 1;
-  padding-top: 20px;
+.title { /* title in left column */
+  font-size: 55px;
+  font-weight: 530;
+  line-height: 1;
+  color: #3c3b72;
+  margin-bottom: 18px;
+  text-align: center;
 }
 
-.description {
-  max-width: 550px;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 20px;
+.rightColumn { /* right column */
+  width: 260px;
+  padding-top: 90px;
 }
 
-.form {
+.description { /* description text in left column */
+  max-width: 595px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #444444;
+  margin-bottom: 22px;
+}
+
+.form { /* form in left column */
   display: flex;
   flex-direction: column;
   gap: 12px;
-
-  input,
-  select,
-  textarea {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 14px;
-    background: #ffffff;
-  }
-
-  textarea {
-    min-height: 130px;
-    resize: none;
-  }
-
-  button {
-    align-self: flex-end;
-    padding: 6px 20px;
-    border-radius: 20px;
-    border: 1px solid #3c3b72;
-    background: #ffffff;
-    color: #3c3b72;
-    cursor: pointer;
-    transition: 0.2s ease;
-  }
-
-  button:hover {
-    background: #3c3b72;
-    color: #ffffff;
-  }
 }
 
-.infoBox {
-  margin-bottom: 18px;
+.form input { /* input fields in form: name, email, phone number */
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background: #ffffff;
 
-  h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 2px;
-  }
+  font-size: 14px;
+  font-weight: 400;
+  color: #5a5a5a;
+}
 
-  p {
-    font-size: 14px;
-    margin: 0;
-  }
+.form select { /* select field in form , commitee */
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background: #ffffff;
+
+  font-size: 14px;
+  font-weight: 400;
+  color: #5a5a5a;
+}
+
+.form textarea { /* textarea in form , message */
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background: #ffffff;
+
+  font-size: 14px;
+  font-weight: 400;
+  color: #5a5a5a;
+
+  min-height: 170px;
+  resize: none;
+}
+
+.form button { /* submit button in form */
+  width: 170px;
+  height: 34px;
+  border-radius: 15px;
+  border: 1px solid #000000;
+  background: #ffffff;
+
+  font-size: 14px;
+  font-weight: 400;
+  color: #5a5a5a;
+
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background: #3c3b72;
+  color: #ffffff;
+}
+
+.infoBox { /* info boxes in right column */
+  margin-bottom: 32px;
+}
+
+.infoTitle { /* title in info boxes */
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.infoText { /* text in info boxes */
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
 }
 
 .mapBox {
   height: 230px;
   background: #dddddd;
-  border-radius: 8px;
   margin-top: 10px;
   padding: 10px;
 }
 
-.icons {
+.icons { /* social media icons container in right column */
   display: flex;
   gap: 10px;
   margin-top: 10px;
-
-  span {
-    cursor: pointer;
-  }
-
-  span:hover {
-    color: #3c3b72;
-  }
+  justify-content: flex-end;
 }
 
-@media (max-width: 768px) {
+.iconImage {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.iconImage:hover {
+  transform: scale(1.08);
+}
+
+@media (max-width: 768px) { /* mobile styles */
   .contactPage {
     padding: 50px 6%;
   }
@@ -122,6 +156,6 @@
   }
 
   .rightColumn {
-    padding-top: 0;
+    padding-top: 0; // 
   }
 }
