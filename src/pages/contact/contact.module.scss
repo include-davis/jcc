@@ -121,11 +121,19 @@
   line-height: 1.5;
 }
 
-.mapBox {
-  height: 230px;
-  background: #dddddd;
+
+.mapContainer {
+  width: 600px;
+  height: 600px;
+  overflow: hidden;
   margin-top: 10px;
   padding: 10px;
+}
+
+.mapFrame {
+  width: 50%;
+  height: 50%;
+  border: 0;
 }
 
 .icons { /* social media icons container in right column */
