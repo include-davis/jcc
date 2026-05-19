@@ -1,5 +1,7 @@
 @import "@/styles/mixins.scss";
 
+
+
 .alumniContainer {
   width: 100%;
 }
@@ -38,6 +40,8 @@
   line-height: 1;
   font-style: bold;
   letter-spacing: 0rem;
+  font-family: 'DM Sans Variable', sans-serif;
+
 
 }
 
@@ -45,6 +49,7 @@
   font-size: 1.5rem;
   color: #ffffff;
   line-height: 1.6;
+  font-family: 'Khula', sans-serif;
 
 }
 
@@ -115,6 +120,7 @@
   color: #3C3B72;
   font-size: 3.4rem;
   font-weight: 700;
+  font-family: "DM Sans Variable", sans-serif;
 }
 
 .learnMoreText {
@@ -122,6 +128,7 @@
   color: #000000;
   font-size: 1.5rem;
   line-height: 1;
+  font-family: "DM Sans Variable", sans-serif;
 }
 
 .learn_more_btn {
@@ -137,9 +144,6 @@
   text-decoration: none;
 }
 
-.learn_more_btn:hover {
-  background-color: #4e3db5;
-}
 
 .bottomAlumniSection {
   min-height: 100vh;
@@ -168,7 +172,7 @@
   color: #FFFFFF;
   font-size: 2.5rem;
   font-weight: 700;
-  font-family: 'DM Sans';
+  font-family: 'DM Sans Variable', sans-serif;
   font-style: bold;
   letter-spacing: 0;
   vertical-align: middle;
