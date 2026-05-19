@@ -55,6 +55,67 @@
   color: #c0c0c0;
 }
 
+/* Second Carousel feature */
+.partnershipsCarousel {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  
+  padding: 76px 0 64px;
+}
+
+.partnershipsCarouselRow {
+  width: 100%;
+  overflow: hidden;
+}
+
+.partnershipsCarouselTrack {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  gap: 35px;
+
+  animation-duration: 35s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.partnershipsCarouselTrack:hover {
+  animation-play-state: paused;
+}
+
+.moveLeft {
+  animation-name: partnershipsScrollLeft;
+}
+
+.moveRight {
+  animation-name: partnershipsScrollRight;
+}
+
+@keyframes partnershipsScrollLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes partnershipsScrollRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -66,4 +127,16 @@
   .cards {
     grid-template-columns: 1fr;
   }
+
+  .partnershipsCarouselRow {
+    gap: 40px;
+    padding: 48px 0 48px;
+  }
+
+  .partnershipsCarouselTrack {
+    gap: 24px;
+    animation-duration: 28s;
+  }
 }
+
+

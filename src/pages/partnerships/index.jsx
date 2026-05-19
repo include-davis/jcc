@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import styles from "./partnerships.module.scss";
 import PartnerCards from '@/components/partnerships/partner-cards';
-import PartnershipsCarouselCards from "@/components/partnerships/parternship-carousel-cards";
+import PartnershipsCarouselCards from "@/components/partnerships/partnerships-carousel-cards";
 import { partnershipsData } from './data';
 import { DM_Sans } from 'next/font/google'
 import { MdArrowForward, MdArrowBack } from "react-icons/md";
@@ -58,6 +58,7 @@ export default function Partnerships() {
             </div>
           </div>
         </div>
+
         <div className={styles.cards}>
           {partnershipsData.slice(index, index + cardsToShow).map(partnership => (
             <PartnerCards
@@ -69,6 +70,32 @@ export default function Partnerships() {
               websiteLink={partnership.websiteLink}
             />
           ))}
+        </div>
+
+                <div className={styles.partnershipsCarousel}>
+          <div className={styles.partnershipsCarouselRow}>
+            <div className={`${styles.partnershipsCarouselTrack} ${styles.moveLeft}`}>
+              {repeatedPartners.map((partnership, carouselIndex) => (
+                <PartnershipsCarouselCards
+                  key={carouselIndex}
+                  image={partnership.image}
+                  title={partnership.title}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.partnershipCarouselRow}>
+            <div className={`${styles.partnershipsCarouselTrack} ${styles.moveRight}`}>
+              {repeatedPartners.map((partnership, carouselIndex) => (
+                <PartnershipsCarouselCards
+                  key={`bottom-carousel-${partnership.key}-${carouselIndex}`}
+                  image={partnership.image}
+                  title={partnership.title}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
