@@ -3,3 +3,15 @@
 .container {
   width: 100%;
 }
+.mapContainer {
+  width: 600px;
+  height: 600px;
+  overflow: hidden;
+  margin-left: 100px;
+}
+
+.mapFrame {
+  width: 50%;
+  height: 50%;
+  border: 0;
+}
