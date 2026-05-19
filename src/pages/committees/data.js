@@ -1,4 +1,4 @@
-//migrated to components/committees-general-cards/data/committeesData.jsx 
+//migrated to components/committees-general-cards/data/committeesData.jsx
 
 //export const committeesData = [
 //   {
