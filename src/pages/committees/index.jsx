@@ -16,10 +16,10 @@ export default function Committees() {
       .then(data => {
         const formatted = data.map(event => ({
           month: new Date(event.start.dateTime || event.start.date)
-            .toLocaleString('en-US', { month: 'long' }).toUpperCase(),
-          day: new Date(event.start.dateTime || event.start.date)
-            .getDate().toString().padStart(2, '0'),
-          name: event.summary,
+          .toLocaleString('en-US', { month: 'short' }).toUpperCase(),
+        day: new Date(event.start.dateTime || event.start.date)
+          .getDate().toString().padStart(2, '0'),
+          name: event.summary || 'Untitled Event',
           time: event.start.dateTime
             ? `${new Date(event.start.dateTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} - ${new Date(event.end.dateTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`
             : 'All day',
@@ -57,6 +57,7 @@ export default function Committees() {
         {/* Here will be committee cards map */}
       </div>
 
+      {/* Calender starts here */}
       <div className={styles.events_section}>
         <h2 className={styles.heading}>
           Upcoming Events <FaRegCalendarAlt size={22} />
