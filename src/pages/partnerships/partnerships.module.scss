@@ -8,6 +8,7 @@
     white 0%,
     #DAD8F4 100%
   );
+  padding-bottom: 5rem;
 }
 
 .inner {
@@ -121,6 +122,48 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 50px;
   justify-content: center;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  font-family: 'DM Sans Variable', sans-serif;
+}
+
+.subheading {
+  color: #666;
+  margin-bottom: 2.5rem;
+  max-width: 905px;
+  font-family: 'DM Sans Variable', sans-serif;
+}
+
+.offerCards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  padding-bottom: 2rem;
+  font-family: 'DM Sans Variable', sans-serif;
+}
+
+.bgImage {
+  position: absolute;
+  top: 180px;
+  right: 5px;
+  width: 600px;
+  height: 600px;
+  opacity: 0.25;
+  z-index: 0;
+  transform: rotate(-7.5deg);
+  pointer-events: none;
+  filter:
+    brightness(2)
+    drop-shadow(0px 30px 0px rgba(70, 60, 400, 1));
+}
+
+.heading, .subheading, .cards, .offerCards, .inner, .top, .arrows {
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 900px) {
