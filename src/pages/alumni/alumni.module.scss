@@ -2,4 +2,86 @@
 
 .container {
   width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    white 0%,
+    #DAD8F4 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5rem;
+}
+
+.alumniNewsWrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5%;
+}
+
+.alumniHeader {
+  color: #3B3976;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 15px;
+}
+
+.alumniSubHeader {
+  color: #3C3B72;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  padding-bottom: 30px;
+}
+
+.carouselSection {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.jccLogo {
+  position: absolute; 
+  z-index: 0;
+  max-width: 700px;
+  opacity: 0.3;
+  pointer-events: none;
+
+  filter:
+    brightness(3)
+}
+
+.carouselWrapper {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+
+  animation: scrollCarousel 15s linear infinite;
+}
+
+.carouselWrapper:hover {
+  animation-play-state: paused;
+}
+
+.carouselWrapper > * {
+  flex: 0 0 auto;
+}
+
+@keyframes scrollCarousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
