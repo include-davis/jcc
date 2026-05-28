@@ -1,7 +1,7 @@
-import { committeesData } from "./data";
 import Link from "next/link";
 import styles from "./committees.module.scss";
-import CommitteesGeneralCards from "../../components/committees-general-cards/committeesGeneralCards";
+import { committeesData } from "../../components/committees-general-cards/data/committeesData";
+import CommitteeCard from "../../components/committees-general-cards/committeesGeneralCards";
 
 export default function Committees() {
   return (
@@ -25,7 +25,16 @@ export default function Committees() {
       </div>
 
       <div className={styles.committees_bottom}>
-        <CommitteesGeneralCards />
+        <div className={styles.cardsGrid}>
+          {committeesData.map((committee) => (
+            <CommitteeCard
+              key={committee.id}
+              name={committee.name}
+              icon={committee.icon}
+              link={committee.link}
+            />
+          ))}
+        </div>
       </div>
 
     </div>
