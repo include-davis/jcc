@@ -1,5 +1,7 @@
 import { committeesData } from "./data";
 import Link from "next/link";
+import styles from "./committees.module.scss";
+
 
 export default function Committees() {
   return (

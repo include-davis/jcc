@@ -13,7 +13,7 @@ export default function Home() {
         </>
       ),
       image: "/Mental_Health_and_Wellness_Logo.png",
-      route: "/committees_mental",
+      route: "/committees/mental-health",
     },
     {
       title: (
@@ -23,7 +23,7 @@ export default function Home() {
         </>
       ),
       image: "/Community_Outreach_Logo.png",
-      route: "/committees_community",
+      route: "/committees/community-outreach",
     },
     {
       title: (
@@ -33,7 +33,7 @@ export default function Home() {
         </>
       ),
       image: "/Physical_and_Integrated_Health_Logo.png",
-      route: "/committees_physical",
+      route: "/committees/physical-and-integrated-health",
     },
     {
       title: (
@@ -43,7 +43,7 @@ export default function Home() {
         </>
       ),
       image: "/SNR_Logo.png",
-      route: "/committees_sexual",
+      route: "/committees/sexual-and-reproductive-health",
     },
     {
       title: (
@@ -53,7 +53,7 @@ export default function Home() {
         </>
       ),
       image: "/Dental_Health_Logo.png",
-      route: "/committees_dental",
+      route: "/committees/dental-health",
     },
   ];
 
