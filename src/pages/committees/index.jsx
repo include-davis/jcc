@@ -1,5 +1,9 @@
 import { committeesData } from "./data";
 import Link from "next/link";
+import styles from "./committees.module.scss";
+import { useState, useEffect } from "react";
+import { FaRegClock, FaRegCalendarAlt } from 'react-icons/fa';
+import { IoLocationOutline } from 'react-icons/io5';
 
 export default function Committees() {
   return (
