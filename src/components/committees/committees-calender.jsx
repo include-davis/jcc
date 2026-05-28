@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaRegClock, FaRegCalendarAlt } from 'react-icons/fa';
 import { IoLocationOutline } from 'react-icons/io5';
-import styles from "./UpcomingEvents.module.scss";
+import styles from "@/pages/committees/committees.module.scss";
 
 export default function UpcomingEvents() {
   const [events, setEvents] = useState([]);

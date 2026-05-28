@@ -6,16 +6,6 @@ import PartnershipsCarouselCards from "@/components/partnerships/partnerships-ca
 import { partnershipsData } from './data';
 import { DM_Sans } from 'next/font/google'
 import { MdArrowForward, MdArrowBack } from "react-icons/md";
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ["300", "400", "500", "700"],
-})
-
-import PartnerCards from '@/components/partnerships/partner-cards';
-import { partnershipsData } from './data';
-import { DM_Sans } from 'next/font/google'
-import { MdArrowForward, MdArrowBack } from "react-icons/md";
 import { FaEye, FaUsers, FaCheckCircle } from "react-icons/fa";
 import OfferCard from "../../components/partnerships-what-we-offer-cards/partnerships-what-we-offer-cards";
 
@@ -33,7 +23,6 @@ export default function Partnerships() {
     ...partnershipsData,
     ...partnershipsData,
     ...partnershipsData,
-
   ];
 
   useEffect(() => {
@@ -53,65 +42,12 @@ export default function Partnerships() {
   };
 
   const handlePrev = () => {
-    if  (index > 0) {
-      setIndex(index - 1);
-    }
-  }
-  return (
-    <div className={styles.container}>
-      <div className={styles.inner}>
-        <div className={styles.top}>
-          <h2 className={dmSans.className}>Our Partners</h2>
-          <div className={styles.sub}>
-            <p className={dmSans.className}>Our current partners.</p>
-            <div className={styles.arrows}>
-              <button className={styles.arrow} onClick={handlePrev} disabled={index === 0}><MdArrowBack /></button>
-              <button className={styles.arrow} onClick={handleNext} disabled={index >= partnershipsData.length - cardsToShow}><MdArrowForward /></button>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.cards}>
-          {partnershipsData.slice(index, index + cardsToShow).map(partnership => (
-            <PartnerCards
-              key={partnership.key}
-              image={partnership.image}
-              title={partnership.title}
-              committee={partnership.committee}
-              description={partnership.description}
-              websiteLink={partnership.websiteLink}
-            />
-          ))}
-        </div>
-
-                <div className={styles.partnershipsCarousel}>
-          <div className={styles.partnershipsCarouselRow}>
-            <div className={`${styles.partnershipsCarouselTrack} ${styles.moveLeft}`}>
-              {repeatedPartners.map((partnership, carouselIndex) => (
-                <PartnershipsCarouselCards
-                  key={carouselIndex}
-                  image={partnership.image}
-                  title={partnership.title}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className={styles.partnershipCarouselRow}>
-            <div className={`${styles.partnershipsCarouselTrack} ${styles.moveRight}`}>
-              {repeatedPartners.map((partnership, carouselIndex) => (
-                <PartnershipsCarouselCards
-                  key={`bottom-carousel-${partnership.key}-${carouselIndex}`}
-                  image={partnership.image}
-                  title={partnership.title}
-                />
-              ))}
-            </div>
     if (index > 0) {
       setIndex(index - 1);
     }
   }
-  // Made an array to eventually implement the cards from the design 
+
+  // Made an array to eventually implement the cards from the design
   const offers = [
     {
       icon: <FaEye size={32} color="black" />,
@@ -131,7 +67,8 @@ export default function Partnerships() {
   ];
 
   return (
-    <div>
+    <div className={styles.container}>
+      {/* Version 2: What we offer section */}
       <div className={styles.container1}>
         {/* Watermark circle */}
         <img src="Dark_Blue_Logo.png"
@@ -164,7 +101,7 @@ export default function Partnerships() {
                 </div>
               </div>
             </div>
-            <div className={styles.partnerCards}>
+            <div className={styles.cards}>
               {partnershipsData.slice(index, index + cardsToShow).map(partnership => (
                 <PartnerCards
                   key={partnership.key}
@@ -176,11 +113,36 @@ export default function Partnerships() {
                 />
               ))}
             </div>
+          </div>
+        </div>
+      </div>
 
+      {/* Version 1: Partnerships carousel */}
+      <div className={styles.partnershipsCarousel}>
+        <div className={styles.partnershipsCarouselRow}>
+          <div className={`${styles.partnershipsCarouselTrack} ${styles.moveLeft}`}>
+            {repeatedPartners.map((partnership, carouselIndex) => (
+              <PartnershipsCarouselCards
+                key={carouselIndex}
+                image={partnership.image}
+                title={partnership.title}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.partnershipCarouselRow}>
+          <div className={`${styles.partnershipsCarouselTrack} ${styles.moveRight}`}>
+            {repeatedPartners.map((partnership, carouselIndex) => (
+              <PartnershipsCarouselCards
+                key={`bottom-carousel-${partnership.key}-${carouselIndex}`}
+                image={partnership.image}
+                title={partnership.title}
+              />
+            ))}
           </div>
         </div>
       </div>
     </div>
-
   );
 }

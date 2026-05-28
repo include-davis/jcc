@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { committeesData } from "./data";
 import CommitteesIntro from "@/components/committees/committees-intro";
-import UpcomingEvents from "@/components/committees-calender/UpcomingEvents";
+import UpcomingEvents from "@/components/committees/committees-calender";
 
 export default function CommitteePage() {
   const router = useRouter();
