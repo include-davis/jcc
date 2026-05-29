@@ -5,7 +5,7 @@ export default function Contact() {
     name: '',
     email: '',
     phone: '',
-    committee: 'Committee',
+    committee: '',
     message: ''
   });
   const [successStatus, setSuccessStatus] = useState('');
@@ -88,11 +88,16 @@ export default function Contact() {
               name="committee"
               value={formData.committee}
               onChange={handleChange}
+              required
             >
-              <option value="Committee">Committee</option>
-              <option value="General">General</option>
-              <option value="Events">Events</option>
-              <option value="Partnerships">Partnerships</option>
+              <option value="" disabled>
+                Select a Committee
+              </option>
+              <option value="Dental Committee">Dental Committee</option>
+              <option value="Mental Health & Wellness Committee">Mental Health & Wellness Committee</option>
+              <option value="Physical Integrated Health Committee">Physical Integrated Health Committee</option>
+              <option value="Community Outreach Committee">Community Outreach Committee</option>
+              <option value="Sexual & Reproductive Health Committee">Sexual & Reproductive Health Committee</option>
             </select>
 
             <textarea
@@ -110,7 +115,7 @@ export default function Contact() {
         <div className={styles.rightColumn}>
           <div className={styles.infoBox}>
             <h3 className={styles.infoTitle}>Email</h3>
-            <p className={styles.infoText}>ilovejcc@ucdavis.edu</p>
+            <p className={styles.infoText}>ucd.jcc@gmail.com</p>
           </div>
 
           <div className={styles.infoBox}>
