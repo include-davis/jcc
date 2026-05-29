@@ -1,6 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "./contact.module.scss";
 export default function Contact() {
+  const [formData,  setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    committee: 'Committee',
+    message: ''
+  });
+  const [successStatus, setSuccessStatus] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }))
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSuccessStatus('Sending your message...');
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSuccessStatus('Message sent successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          committee: 'Committee',
+          message: ''
+        });
+      } else {
+        setSuccessStatus('Failed to send message.');
+      }
+    } catch (error) {
+      setSuccessStatus('An error occurred while sending your message.');
+      console.error('Error submitting form:', error);
+    }
+  }
+
   return (
     <main className={styles.contactPage}>
       <section className={styles.contactContainer}>
@@ -11,21 +58,50 @@ export default function Contact() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
 
-          <form className={styles.form}>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="tel" placeholder="Phone Number" />
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <input 
+              type="text"
+              placeholder="Name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange} 
+              required
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+            />
 
-            <select>
-              <option>Committee</option>
-              <option>General</option>
-              <option>Events</option>
-              <option>Partnerships</option>
+            <select
+              name="committee"
+              value={formData.committee}
+              onChange={handleChange}
+            >
+              <option value="Committee">Committee</option>
+              <option value="General">General</option>
+              <option value="Events">Events</option>
+              <option value="Partnerships">Partnerships</option>
             </select>
 
-            <textarea placeholder="Your Message"></textarea>
+            <textarea
+              placeholder="Your Message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
 
-            <button type="button">Send</button>
+            <button type="submit">Send</button>
           </form>
         </div>
 
@@ -49,7 +125,7 @@ export default function Contact() {
             <iframe
               className={styles.mapFrame}
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6176.567440825006!2d-121.75263835211008!3d38.54389305473589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80852909a76deced%3A0xbdeb9ff130b7a9d0!2sMemorial%20Union%20%26%20Main%20Island!5e0!3m2!1sen!2sus!4v1778546594433!5m2!1sen!2sus" 
-              style={{ border:0 }} allowfullscreen loading="lazy" 
+              style={{ border:0 }} allowFullScreen={true} loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
               title="Location map"
             ></iframe>
