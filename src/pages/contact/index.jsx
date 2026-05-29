@@ -55,7 +55,6 @@ export default function Contact() {
             ></iframe>
           </div>
 
-
           <div className={styles.icons}>
             <a
               href="https://instagram.com"
