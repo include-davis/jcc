@@ -36,7 +36,7 @@ export default function Contact() {
           name: '',
           email: '',
           phone: '',
-          committee: 'Committee',
+          committee: '',
           message: ''
         });
       } else {
@@ -73,6 +73,7 @@ export default function Contact() {
               name="email"
               value={formData.email}
               onChange={handleChange}
+              required
             />
             <input
               type="tel"
@@ -80,6 +81,7 @@ export default function Contact() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
+              required
             />
 
             <select
