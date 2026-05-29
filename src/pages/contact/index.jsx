@@ -120,7 +120,7 @@ export default function Contact() {
 
           <div className={styles.infoBox}>
             <h3 className={styles.infoTitle}>Phone</h3>
-            <p className={styles.infoText}>999-999-9999</p>
+            <p className={styles.infoText}>(530) 752-1011</p>
           </div>
 
           <div className={styles.infoBox}>
