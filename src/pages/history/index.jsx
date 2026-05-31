@@ -96,7 +96,8 @@ export default function History() {
         {/* Back to Top */}
         <div className={styles.backToTopWrapper}>
           <button className={styles.backToTopBtn} onClick={scrollToTop}>
-            ↑ Back to Top
+            <img src="/back_to_top_arrow.png" alt="" className={styles.backToTopIcon} />
+            Back to Top
           </button>
         </div>
       </section>
