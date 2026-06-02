@@ -3,7 +3,6 @@
 .container1 {
   position: relative;
   width: 100%;
-
   min-height: 100vh;
   background: linear-gradient(
     to bottom,
@@ -58,23 +57,72 @@
   color: #c0c0c0;
 }
 
-.partnerCards {
+/* Second Carousel feature */
+.partnershipsCarousel {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  
+  padding: 76px 0 64px;
+}
+
+.partnershipsCarouselRow {
+  width: 100%;
+  overflow: hidden;
+}
+
+.partnershipsCarouselTrack {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  gap: 35px;
+
+  animation-duration: 35s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.partnershipsCarouselTrack:hover {
+  animation-play-state: paused;
+}
+
+.moveLeft {
+  animation-name: partnershipsScrollLeft;
+}
+
+.moveRight {
+  animation-name: partnershipsScrollRight;
+}
+
+@keyframes partnershipsScrollLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes partnershipsScrollRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 50px;
   justify-content: center;
-}
-
-@media (max-width: 900px) {
-  .partnerCards {
-    grid-template-columns: 1fr;
-  }
-
-  .partnershipCardsContainer {
-
-    padding: 3rem 10%;
-    align-items: center;
-  }
 }
 
 .heading {
@@ -96,31 +144,43 @@
   gap: 1.5rem;
   justify-content: center;
   padding-bottom: 2rem;
-  //flex-wrap: wrap;
   font-family: 'DM Sans Variable', sans-serif;
 }
 
-.bgImage{
+.bgImage {
   position: absolute;
   top: 180px;
   right: 5px;
-  
-  
-  width: 600px;    
+  width: 600px;
   height: 600px;
-  opacity: 0.25;      
+  opacity: 0.25;
   z-index: 0;
   transform: rotate(-7.5deg);
   pointer-events: none;
-
-  //3d effect
   filter:
-  brightness(2)
-        drop-shadow(0px 30px 0px rgba(70, 60, 400, 1))
+    brightness(2)
+    drop-shadow(0px 30px 0px rgba(70, 60, 400, 1));
 }
 
-.heading, .subheading, .partnerCards, .offerCards, .partnershipCardsContainer, .inner, .top, .arrows {
+.heading, .subheading, .cards, .offerCards, .inner, .top, .arrows {
   position: relative;
   z-index: 1;
-
 }
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .partnershipsCarouselRow {
+    gap: 40px;
+    padding: 48px 0 48px;
+  }
+
+  .partnershipsCarouselTrack {
+    gap: 24px;
+    animation-duration: 28s;
+  }
+}
+
+
