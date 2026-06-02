@@ -4,6 +4,10 @@ import { DM_Sans, Khula } from 'next/font/google'
 import AlumniNews from '@/components/alumni/alumnNews';
 import alumniData from "./data";
 
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+});
+
 export default function Alumni() {
   return (
     <div className={styles.alumniContainer}>
@@ -31,7 +35,7 @@ export default function Alumni() {
       </div>
 
       <div className={styles.updateAlumniSection}> {/* Update card section */}
-        
+
         <div className={styles.learnMoreCard}>
           <h2 className={styles.learnMoreTitle}>Get the Latest Updates!</h2>
 
@@ -45,36 +49,42 @@ export default function Alumni() {
 
       </div>
 
-      <div className={styles.container}>
+      <div className={styles.carouselContainer}>
         <img src="Dark_Blue_Logo.png" alt="JCC Logo" className={styles.jccLogo} />
         <div className={styles.alumniNewsWrapper}>
           <h1 className={`${dmSans.className} ${styles.alumniHeader}`}>ALUMNI NEWS</h1>
           <h2 className={`${dmSans.className} ${styles.alumniSubHeader}`}>What JCC meant to them?</h2>
+
           <div className={styles.carouselSection}>
             <div className={styles.carouselWrapper}>
               {[...alumniData, ...alumniData].map((alumni, index) => {
                 return (
                   <AlumniNews
-                    key={alumni.id}
+                    key={index}
                     name={alumni.name}
                     workplace={alumni.workplace}
                     testimony={alumni.testimony}
                     image={alumni.image}
                   />
-            )
-          })}
+                )
+              })}
+            </div>
+          </div>
         </div>
+      </div>
+
       <div className={styles.bottomAlumniSection}> {/* Bottom section of the alumni page */}
         <div className={styles.shareCard}>
           <h2 className={styles.shareTitle}>Share Your JCC Experience</h2>
           <p className={styles.shareText}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
           <a href="mailto:email@example.com" className={styles.learn_more_btn}>
             Share Your Story
           </a>
         </div>
       </div>
+
     </div>
   );
 }

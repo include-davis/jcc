@@ -4,6 +4,11 @@
 
 .alumniContainer {
   width: 100%;
+  background: linear-gradient(
+    to bottom,
+    white 0%,
+    #DAD8F4 100%
+  );
 }
 .topAlumniSection {
   min-height: 80vh;
@@ -87,14 +92,14 @@
 
 .topAlumniImage {
   width: 100%;
+  max-width: 32rem;
+  height: auto;
+  border-radius: 1.1rem;
+  object-fit: cover;
+}
   
 .carouselContainer{
   min-height: 100vh;
-  background: linear-gradient(
-    to bottom,
-    white 0%,
-    #DAD8F4 100%
-  );
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,10 +119,10 @@
 
 .alumniHeader {
   color: #3B3976;
-  font-size: 48px;
+  font-size: 60px;
   font-weight: 700;
   line-height: 1.5;
-  letter-spacing: 15px;
+  letter-spacing: 20px;
 }
 
 .alumniSubHeader {
@@ -153,7 +158,8 @@
   gap: 30px;
   width: max-content;
 
-  animation: scrollCarousel 15s linear infinite;
+  animation: scrollCarousel 20s linear infinite;
+  will-change: transform;
 }
 
 .carouselWrapper:hover {
@@ -172,20 +178,13 @@
     transform: translateX(-50%);
   }
 }
-=======
-  max-width: 32rem;
-  height: auto;
-  border-radius: 1.1rem;
-  object-fit: cover;
-}
 
 .updateAlumniSection {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 3.2rem 1.5rem 6rem;
+  padding: 15rem 1.5rem 10rem;
   background: transparent;
 }
 
@@ -232,12 +231,11 @@
 
 
 .bottomAlumniSection {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 3.2rem 1.5rem 0rem;
+  padding: 5rem 1.5rem 10rem;
   background: transparent;
 }
 .shareCard {
