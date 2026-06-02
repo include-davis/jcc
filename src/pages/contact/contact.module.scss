@@ -121,10 +121,11 @@
 }
 
 .mapBox {
+  width: 100%; // removed
   height: 230px;
   background: #dddddd;
   margin-top: 10px;
-  padding: 10px;
+  padding: 0px; 
 }
 
 .icons { /* social media icons container in right column */
@@ -160,14 +161,12 @@
   }
 }
 .mapContainer {
-  width: 600px;
-  height: 600px;
-  overflow: hidden;
-  margin-left: 100px;
+  width: 100%;
+  height: 100%;
 }
 
 .mapFrame {
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   border: 0;
 }
