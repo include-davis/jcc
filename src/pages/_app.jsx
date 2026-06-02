@@ -1,4 +1,4 @@
-import { Inter, DM_Sans, Khula } from "next/font/google";
+import { Inter } from "next/font/google";
 import Navbar from "@/components/navBar/navBar";
 import Footer from "@/components/footer/footer";
 import "@/styles/globals.scss";
@@ -9,21 +9,9 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const dmSans = DM_Sans({
-  weight: ["200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-});
-
-const khula = Khula({
-  subsets: ["latin"],
-  weight: ["300", "400", "600", "700"],
-  variable: "--font-khula",
-});
-
 export default function App({ Component, pageProps }) {
   return (
-    <div className={`${inter.variable} ${dmSans.variable} ${khula.variable}`}>
+    <div className={`${inter.variable}`}>
       <Navbar></Navbar>
       <Component {...pageProps} />
       <Footer></Footer>
