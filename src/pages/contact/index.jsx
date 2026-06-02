@@ -1,6 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "./contact.module.scss";
+
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    committee: '',
+    message: '',
+  });
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async () => {
+    setStatus('sending');
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+    if (res.ok) setStatus('sent');
+    else setStatus('error');
+  };
+
   return (
     <main className={styles.contactPage}>
       <section className={styles.contactContainer}>
@@ -8,24 +33,33 @@ export default function Contact() {
           <h1 className={styles.title}>Contact Us</h1>
 
           <p className={styles.description}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
           </p>
 
           <form className={styles.form}>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="tel" placeholder="Phone Number" />
+            <input type="text" name="name" placeholder="Name"
+              value={formData.name} onChange={handleChange} />
+            <input type="email" name="email" placeholder="Email"
+              value={formData.email} onChange={handleChange} />
+            <input type="tel" name="phone" placeholder="Phone Number"
+              value={formData.phone} onChange={handleChange} />
 
-            <select>
-              <option>Committee</option>
-              <option>General</option>
-              <option>Events</option>
-              <option>Partnerships</option>
+            <select name="committee" value={formData.committee} onChange={handleChange}>
+              <option value="">Committee</option>
+              <option value="General">General</option>
+              <option value="Events">Events</option>
+              <option value="Partnerships">Partnerships</option>
             </select>
 
-            <textarea placeholder="Your Message"></textarea>
+            <textarea name="message" placeholder="Your Message"
+              value={formData.message} onChange={handleChange} />
 
-            <button type="button">Send</button>
+            <button type="button" onClick={handleSubmit}>
+              {status === 'sending' ? 'Sending...' : 'Send'}
+            </button>
+
+            {status === 'sent' && <p style={{ color: 'green' }}>Message sent!</p>}
+            {status === 'error' && <p style={{ color: 'red' }}>Something went wrong.</p>}
           </form>
         </div>
 
@@ -57,37 +91,16 @@ export default function Contact() {
             </div>
           </div>
 
-
           <div className={styles.icons}>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-            <img
-              src="/icons/insta.png"
-              alt="Instagram"
-              className={styles.iconImage}
-            />
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <img src="/icons/insta.png" alt="Instagram" className={styles.iconImage} />
             </a>
-
-            <a
-              href="https://indeed.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-            <img
-              src="/icons/indeed.png"
-              alt="Indeed"
-              className={styles.iconImage}
-              />
+            <a href="https://indeed.com" target="_blank" rel="noopener noreferrer">
+              <img src="/icons/indeed.png" alt="Indeed" className={styles.iconImage} />
             </a>
-            </div>
-
+          </div>
         </div>
       </section>
     </main>
   );
 }
-
-Contact;

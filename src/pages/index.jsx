@@ -100,7 +100,7 @@ export default function Home() {
       position: "center 70%",
     },
   ];
-
+  /*
   const [currentSlide, setCurrentSlide] = useState(0); // using useState to move through the slides
 
   // made a slides array for content of each slide
@@ -143,7 +143,7 @@ export default function Home() {
       align: "left",
       position: "center 70%",
     },
-  ];
+  ];*/
 
   return (
     <main className={styles.container}>
