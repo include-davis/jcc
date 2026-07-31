@@ -2,6 +2,9 @@ import Link from "next/link";
 import styles from "./committees.module.scss";
 import { committeesData } from "../../components/committees-general-cards/data/committeesData";
 import CommitteeCard from "../../components/committees-general-cards/committeesGeneralCards";
+import { useState, useEffect } from "react";
+import { FaRegClock, FaRegCalendarAlt } from 'react-icons/fa';
+import { IoLocationOutline } from 'react-icons/io5';
 
 export default function Committees() {
   return (

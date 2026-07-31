@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   height: 593px;
-  width: 100%; // 100% of parent container's width
+  width: 100%; 
 } 
 
 .committees_top_content{
@@ -106,13 +106,97 @@
   object-fit: contain;
 }
 
-.cardsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 35rem);
-  gap: 4rem;
-  max-width: 1200px;
-  width: 100%;
+/* Card styles */
+.events_section {
+  padding: 3rem 102px;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.eventCard {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.dateBox {
+  background: #3c3b72;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 4rem 1rem;
-  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  min-width: 70px;
+}
+
+.month {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.day {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.details {
+  padding: 0.75rem 1rem;
+}
+
+.eventName {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+.meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #555;
+  align-items: center;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+}
+
+.toggleBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #333;
+  gap: 0.1rem;
+}
+
+.arrow {
+  font-size: 1.2rem;
 }

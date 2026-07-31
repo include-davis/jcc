@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { committeesData } from "../../components/committees-general-cards/data/committeesData";
 import CommitteesIntro from "@/components/committees/committees-intro";
+import UpcomingEvents from "@/components/committees/committees-calender";
 
 export default function CommitteePage() {
   const router = useRouter();
@@ -17,10 +18,13 @@ export default function CommitteePage() {
   }
 
   return (
+    <>
     <CommitteesIntro
       image={committee.page_img}
       title={committee.name}
       description={committee.description}
     />
+    <UpcomingEvents />
+    </>
   );
 }

@@ -6,7 +6,6 @@
 
 .sectionTop {
   min-height: 100vh;
-  border: 1px solid #000;
 }
 .img_container {
   position: relative;
@@ -141,10 +140,321 @@
 }
 .sectionMiddle {
   min-height: 100vh;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 240px;
+  padding: 140px 60px;
   border: 1px solid #000;
+}
+
+.OurMissionContainer,
+.OurCommitteesContainer {
+  position: relative;
+  z-index: 1;
+}
+
+.OurMissionContainer {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 70px;
+
+  padding: 60px 120px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 2px 8px 15px 8px rgba(187, 186, 220, 0.5);
+}
+
+.OurMissionLeftContent {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+
+  flex: 0 1 667px;
+  max-width: 667px;
+}
+
+.MissionTitle {
+  font-family: var(--font-dm-sans);
+  font-size: 3.4375rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #000;
+  margin: 0;
+}
+
+.BoldIntro {
+  font-weight: 700;
+  font-family: var(--font-khula);
+}
+
+.MissionText {
+  font-family: var(--font-khula);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.375rem;
+  color: #000;
+  margin: 0;
+}
+
+.MissionImgCircle {
+  flex: 0 0 220px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 219px;
+  height: 204px;
+  margin: 0;
+
+  border-radius: 345px;
+  background-color: rgba(245, 245, 245, 1);
+  box-shadow: 0px -4px 35px 0px rgba(187, 186, 220, 0.5);
+}
+
+.MissionImg {
+  width: 155px;
+  height: auto;
+}
+
+.OurCommitteesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 100px 60px;
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #DAD8F4 100%
+  );
+}
+
+.OurCommitteesContainer::before {
+  content: "";
+  position: absolute;
+  top: 60px;
+  right: 40px;
+  width: 600px;
+  height: 600px;
+
+  background-image: url("/jcc_logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  opacity: 0.25;
+  transform: rotate(-7.5deg);
+
+  pointer-events: none;
+  z-index: 0;
+  filter:
+    brightness(2)
+    drop-shadow(0px 30px 0px rgba(70, 60, 400, 1));
+}
+
+.OurCommitteesTopContent {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1210px;
+  gap: 35px;
+}
+
+.OurCommitteesTitle {
+  font-family: var(--font-dm-sans);
+  font-size: 4.375rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #000;
+  margin: 0;
+}
+
+.OurCommitteesDescription {
+  font-family: var(--font-dm-sans);
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.45;
+  color: #000;
+  margin: 0;
+}
+
+.OurCommitteesBottomContent {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1275px;
+  height: auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.CommitteeItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.CommitteeIcon {
+  width: 150px;
+  height: auto;
+}
+
+.CommitteeButton {
+  width: fit-content;
+  height: 3.625rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  padding: 0.625rem;
+  background: rgba(255, 255, 255, 1);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  gap: 8px;
+
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.CommitteeButtonText {
+  max-width: 11.7rem;
+
+  font-family: var(--font-dm-sans);
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 1.2;
+  color: #000;
+  margin: 0;
+  text-align: left;
+}
+
+.CommitteeArrowIcon {
+  flex: 0 0 auto;
+  width: 1.875rem;
+  height: auto;
 }
 
 .sectionBottom {
   min-height: 100vh;
-  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3.2rem 1.5rem 6rem;
+  background: transparent;
+}
+
+@media (max-width: 56.25rem) {
+  .sectionMiddle {
+    gap: 120px;
+    padding: 100px 30px;
+  }
+
+  .OurMissionContainer {
+    flex-direction: column;
+    text-align: left;
+    padding: 50px 40px;
+  }
+
+  .OurMissionLeftContent,
+  .MissionImgCircle {
+    max-width: 100%;
+    width: 100%;
+    flex: unset;
+  }
+
+  .MissionImgCircle {
+    align-self: center;
+  }
+
+  .OurCommitteesContainer {
+    padding: 60px 24px;
+  }
+
+  .OurCommitteesContainer::before {
+    width: 320px;
+    height: 320px;
+    top: 20px;
+    right: -60px;
+  }
+
+  .OurCommitteesBottomContent {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .OurCommitteesTitle {
+    font-size: 3.25rem;
+  }
+
+  .OurCommitteesDescription {
+    font-size: 1.25rem;
+  }
+}
+  
+.learnMoreCard {
+  width: min(100%,75rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 1.1rem;
+  padding: 1.8rem 2.4rem 2.2rem;
+}
+
+.learnMoreTitle {
+  color: #000000;
+  font-size: 3.4rem;
+  font-weight: 700;
+}
+
+.learnMoreText {
+  max-width: 56rem;
+  color: #000000;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.secondaryButton {
+  border: 1px solid #000000;
+  border-radius: 999px;
+  padding: 0.5rem 2rem;
+  background: #ffffff;
+  color: #3c3b72;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+
+  text-decoration: none;
+}
+
+.secondaryButton:hover {
+  text-decoration: none;
 }
