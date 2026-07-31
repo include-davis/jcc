@@ -1,0 +1,91 @@
+@import "@/styles/mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Khula:wght@300;400;700;800&display=swap');
+
+.container {
+    width: 100%;
+}
+
+.card {
+    width: 100%;
+    max-width: 35rem;
+    height: 35rem;
+    border-radius: 2.25rem;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    background: white; 
+    justify-self: center;
+
+    &:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        max-width: 35rem;
+        margin: 0 auto;
+    }
+}
+
+.cardTop {
+    background: linear-gradient(to bottom, #3C3B72, #4B49A5, #6462BE);
+    padding: 5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 11rem;
+        height: 11rem;
+        object-fit: contain;
+    }
+}
+
+.cardBottom {
+    background: white;
+    padding-top: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    line-height: 2.5rem;
+
+    h3 {
+        font-family: 'Khula', sans-serif;
+        color: #000;
+        font-size: 2rem;
+        margin: 0;
+        font-weight: 500;
+        max-width: 21.875rem;
+    }
+}
+
+.learnMoreBtn {
+    background-color: #3C3B72;
+    padding: 0.5rem 2rem;
+    border-radius: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    text-decoration: none; 
+
+    &:link, &:visited, &:hover, &:active, &:focus {
+        text-decoration: none !important;
+        outline: none;
+    }
+
+    .learnMore {
+        font-weight: 600;
+        text-decoration: none;
+        color: white;
+        font-size: 1.5rem;
+
+        &:link, &:visited, &:hover, &:active, &:focus {
+            text-decoration: none !important;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}

@@ -1,6 +1,7 @@
-import { committeesData } from "./data";
 import Link from "next/link";
 import styles from "./committees.module.scss";
+import { committeesData } from "../../components/committees-general-cards/data/committeesData";
+import CommitteeCard from "../../components/committees-general-cards/committeesGeneralCards";
 import { useState, useEffect } from "react";
 import { FaRegClock, FaRegCalendarAlt } from 'react-icons/fa';
 import { IoLocationOutline } from 'react-icons/io5';
@@ -27,7 +28,16 @@ export default function Committees() {
       </div>
 
       <div className={styles.committees_bottom}>
-        {/* Here will be committee cards map */}
+        <div className={styles.cardsGrid}>
+          {committeesData.map((committee) => (
+            <CommitteeCard
+              key={committee.id}
+              name={committee.name}
+              icon={committee.icon}
+              link={committee.link}
+            />
+          ))}
+        </div>
       </div>
 
     </div>

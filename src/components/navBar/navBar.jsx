@@ -26,9 +26,16 @@ export default function Navbar() {
       </a>
       <div className={styles.navButtons}>
         <a href="/" className = {styles.homeBtn}>Home</a>
-        <div className={`${styles.aboutDropdown} ${openMenu === "about" ? styles.active : ""}`} onClick={() => toggleMenu("about")}>
-          <button className={styles.aboutBtn}>About</button>
-          <img className={styles.dropdownArrow} src="/dropdown_arrow.svg" alt="dropdown arrow"/>
+        <div className={`${styles.aboutDropdown} ${openMenu === "about" ? styles.active : ""}`}>
+          <a href="/about" className={styles.aboutBtn}>About</a>
+          <img 
+            className={styles.dropdownArrow}
+            src="/dropdown_arrow.svg" alt="dropdown arrow"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleMenu("about");
+            }}/>
           <div className={styles.aboutDropdownMenu}>
             <a href="/history">History</a>
             <a href="/partnerships">Partnership</a>
