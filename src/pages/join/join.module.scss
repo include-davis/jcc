@@ -1,0 +1,60 @@
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    white 0%,
+    #DAD8F4 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bgImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-7.5deg);
+  width: 500px;
+  height: 500px;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #3C3B72;
+  margin-bottom: 1rem;
+}
+
+.subheading {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .subheading {
+    font-size: 1rem;
+  }
+
+  .bgImage {
+    width: 300px;
+    height: 300px;
+  }
+}

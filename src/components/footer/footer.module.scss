@@ -1,5 +1,174 @@
-@import "@/styles/mixins.scss";
+@use "@/styles/mixins.scss" as *;
+
+.linkReset {
+  text-decoration: none;
+  color: inherit;
+}
 
 .container {
   width: 100%;
+}
+
+.container h4 {
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.container p {
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+.subscribeContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.subscribeContainer p { 
+  max-width: 300px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 250px;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  width: fit-content;
+}
+
+.submitBttn {
+  display: flex;
+  align-items: center;
+
+  padding: 10px 16px;
+  height: 100%;
+
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.error {
+  position: absolute;
+  top: 110%;
+  color: red;
+  white-space: nowrap;
+}
+
+.success {
+  position: absolute;
+  top: 110%;
+  white-space: nowrap;
+}
+
+.subscribeContainer input {
+  border: none;
+  outline: none;
+
+  padding: 10px 12px;
+  width: 250px;
+  flex: 1;
+  min-width: 0;
+  font-size: 15px;
+}
+
+.subscribeContainer input::placeholder {
+  color: #3a3a3a;
+  font-size: 15px;
+}
+
+.linksContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.linksContainer div p {
+  margin-top: 20px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: fit-content;
+}
+
+.about h4 {
+  margin-bottom: 30px;
+}
+
+.about p {
+  max-width: 220px;
+}
+
+.about img {
+  width: 125px;
+  height: 125px;
+  margin-bottom: 10px;
+}
+
+.aboutText {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.aboutText h4 {
+  margin-top: 15px;
+}
+
+.home h4,
+.committees h4,
+.history h4,
+.contact h4 {
+  margin-bottom: 50px;
+}
+
+.copyright {
+  display: flex;
+  justify-content: space-between;
+
+  padding-left: 8%;
+  padding-right: 8%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.copyright h4 {
+  font-size: 20px;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
 }
