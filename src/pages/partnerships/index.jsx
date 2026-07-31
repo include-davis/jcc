@@ -14,6 +14,9 @@ const dmSans = DM_Sans({
   weight: ["300", "400", "500", "700"],
 })
 
+// TODO: replace with the real Google Form link for partner applications.
+const APPLY_FORM_LINK = "#";
+
 export default function Partnerships() {
   const [index, setIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -68,6 +71,25 @@ export default function Partnerships() {
 
   return (
     <div className={styles.container}>
+      {/* Hero Header */}
+      <section className={styles.hero}>
+        <div className={styles.heroTextContent}>
+          <h1 className={styles.heroTitle}>Become a Partner</h1>
+          <p className={styles.heroDescription}>
+            JCC collaborates with healthcare providers, community organizations, and industry
+            professionals to expand access to care for underserved youth. Our partners help us
+            address critical public health issues — from childhood obesity to mental health —
+            ensuring every child has the opportunity to thrive.
+          </p>
+          <div className={styles.heroButtons}>
+            <a href={APPLY_FORM_LINK} className={styles.heroBtn}>Apply Now</a>
+          </div>
+        </div>
+        <div className={styles.heroImageContainer}>
+          <img src="/Dark_Blue_Logo.png" alt="JCC Partnerships" className={styles.heroImage} />
+        </div>
+      </section>
+
       {/* Version 2: What we offer section */}
       <div className={styles.container1}>
         {/* Watermark circle */}
@@ -107,7 +129,6 @@ export default function Partnerships() {
                   key={partnership.key}
                   image={partnership.image}
                   title={partnership.title}
-                  committee={partnership.committee}
                   description={partnership.description}
                   websiteLink={partnership.websiteLink}
                 />
@@ -143,6 +164,20 @@ export default function Partnerships() {
           </div>
         </div>
       </div>
+
+      {/* Interested in Partnering? */}
+      <section className={styles.interestedSection}>
+        <div className={styles.interestedCard}>
+          <h2 className={styles.interestedTitle}>Interested in Partnering?</h2>
+          <p className={styles.interestedBody}>
+            Ready to make a lasting impact? By partnering with JCC, you&apos;ll join a passionate
+            community dedicated to improving the health and well-being of underserved youth.
+            Together, we can break down barriers to care and create meaningful change — one child
+            at a time.
+          </p>
+          <a href={APPLY_FORM_LINK} className={styles.interestedBtn}>Apply Now</a>
+        </div>
+      </section>
     </div>
   );
 }

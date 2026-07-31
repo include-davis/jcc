@@ -101,50 +101,6 @@ export default function Home() {
     },
   ];
 
-  const [currentSlide, setCurrentSlide] = useState(0); // using useState to move through the slides
-
-  // made a slides array for content of each slide
-  const slides = [
-    {
-      img: "/first.svg",
-      label: "OUR MISSION",
-      title: "High-quality care for those who need it most.",
-      subtitle: "We deliver care and assistance to underprivileged communities facing higher risk for toxic stress — using an intersectional approach that acknowledges the signs, symptoms, and risks of trauma..",
-      btnText: "Apply to Join",
-      tags: ["Leadership", "Empathy", "Responsibility"],
-      btnLink: "/join",
-      //align: "left",
-    },
-    {
-      img: "/second.jpg",
-      label: "OUR ALUMNI",
-      title: "The clinic stays with you.",
-      subtitle: "See where our alumni are today — from residencies to research, and the paths they carved after graduation.",
-      btnText: "Meet Our Alumni",
-      btnLink: "/events",
-      align: "left",
-    },
-    {
-      img: "/third.jpg",
-      label: "COMMITTEES",
-      title: "Every team keeps the clinic running.",
-      subtitle: "From outreach to operations, our committees are student-led groups that power every part of the clinic experience.",
-      btnText: "View Our Committees",
-      btnLink: "/committees",
-      align: "left",
-    },
-    {
-      img: "/JCC Tabling (10_17).jpg",
-      label: "OUR HISTORY",
-      title: "Founded by students. Still is.",
-      subtitle: "Learn how this clinic started, who built it, and the milestones that shaped what it is today.",
-      btnText: "Read Our History",
-      btnLink: "/history",
-      align: "left",
-      position: "center 70%",
-    },
-  ];
-
   return (
     <main className={styles.container}>
 
