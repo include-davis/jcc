@@ -1,0 +1,67 @@
+@import "@/styles/mixins.scss";
+
+.section {
+  max-width: 1300px;
+  margin: 2rem auto 5rem;
+  padding: 0 102px;
+}
+
+.card {
+  border-radius: 15px;
+  background: linear-gradient(to right, #3C3B72, #4B49A5, #6462BE);
+  padding: 64px 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+.title {
+  font-family: var(--font-dm-sans);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.body {
+  font-family: var(--font-khula);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  max-width: 820px;
+}
+
+.btn {
+  background: #ffffff;
+  color: rgba(60, 59, 114, 1);
+  border: none;
+  border-radius: 100px;
+  font-family: var(--font-khula);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 36px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(60, 59, 114, 0.25);
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@media (max-width: 56.25rem) {
+  .section {
+    padding: 0 40px;
+  }
+
+  .card {
+    padding: 48px 32px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}

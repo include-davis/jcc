@@ -3,6 +3,7 @@ import { committeesData } from "../../components/committees-general-cards/data/c
 import CommitteesIntro from "@/components/committees/committees-intro";
 import UpcomingEvents from "@/components/committees/committees-calender";
 import PastEvents from "@/components/committees/committees-past-events";
+import CommitteesHistoryCta from "@/components/committees/committees-history-cta";
 
 export default function CommitteePage() {
   const router = useRouter();
@@ -27,6 +28,7 @@ export default function CommitteePage() {
     />
     <UpcomingEvents />
     <PastEvents images={committee.pastEvents} />
+    <CommitteesHistoryCta />
     </>
   );
 }
