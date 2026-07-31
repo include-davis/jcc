@@ -36,12 +36,12 @@ export default function CommitteesIntro({
           <p className={dmSans.className}>Events</p>
         </div>
 
-        <div className={styles.button}>
+        <a href="#past-events" className={styles.button}>
           <div className={styles.icon}>
             <img src="/past_events.svg" alt="Events" />
           </div>
           <p className={dmSans.className}>Past Events</p>
-        </div>
+        </a>
 
         <div className={styles.button}>
           <div className={styles.icon}>

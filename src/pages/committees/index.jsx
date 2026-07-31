@@ -9,8 +9,6 @@ import { IoLocationOutline } from 'react-icons/io5';
 export default function Committees() {
   return (
     <div className={styles.container}>
-      Committees
-      
       <div className={styles.committees_top}>
         <div className={styles.committees_top_content}>
           <div className={styles.committees_top_content_left}>

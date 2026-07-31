@@ -106,6 +106,28 @@
   object-fit: contain;
 }
 
+.committees_bottom {
+  padding: 96px 102px 80px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 35rem));
+  justify-content: center;
+  gap: 3rem;
+}
+
+@media (max-width: 56.25rem) {
+  .committees_bottom {
+    padding: 64px 40px 60px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: minmax(0, 35rem);
+    gap: 2rem;
+  }
+}
+
 /* Card styles */
 .events_section {
   padding: 3rem 102px;

@@ -46,11 +46,11 @@ export default function Navbar() {
           <a href="/committees" className={styles.committeesBtn}>Committees</a>
           <img className={styles.dropdownArrow} src="/dropdown_arrow.svg" alt="dropdown arrow" onClick={() => toggleMenu("committees")}/>
           <div className={styles.committeeDropdownMenu}>
-            <a href="/committees/dental-health">Dental Committee</a>
-            <a href="/committees/mental-health">Mental Health & Wellness Committee</a>
-            <a href="/committees/physical-and-integrated-health">Physical Integrated Health Committee</a>
-            <a href="/committees/community-outreach">Community Outreach Committee</a>
-            <a href="/committees/sexual-and-reproductive-health">Sexual & Reproductive Committee</a>
+            <a href="/committees/dental">Dental Committee</a>
+            <a href="/committees/mental">Mental Health & Wellness Committee</a>
+            <a href="/committees/physical">Physical Integrated Health Committee</a>
+            <a href="/committees/community">Community Outreach Committee</a>
+            <a href="/committees/sexual">Sexual & Reproductive Committee</a>
           </div>
         </div>
         <a href="/contact" className={styles.contactBtn}>Contact Us</a>
