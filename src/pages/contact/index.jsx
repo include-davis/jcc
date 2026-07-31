@@ -1,6 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "./contact.module.scss";
 export default function Contact() {
+  const [formData,  setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    committee: '',
+    message: ''
+  });
+  const [successStatus, setSuccessStatus] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }))
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSuccessStatus('Sending your message...');
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSuccessStatus('Message sent successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          committee: '',
+          message: ''
+        });
+      } else {
+        setSuccessStatus('Failed to send message.');
+      }
+    } catch (error) {
+      setSuccessStatus('An error occurred while sending your message.');
+      console.error('Error submitting form:', error);
+    }
+  }
+
   return (
     <main className={styles.contactPage}>
       <section className={styles.contactContainer}>
@@ -11,33 +58,69 @@ export default function Contact() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
 
-          <form className={styles.form}>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="tel" placeholder="Phone Number" />
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <input 
+              type="text"
+              placeholder="Name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange} 
+              required
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+            />
 
-            <select>
-              <option>Committee</option>
-              <option>General</option>
-              <option>Events</option>
-              <option>Partnerships</option>
+            <select
+              name="committee"
+              value={formData.committee}
+              onChange={handleChange}
+              required
+            >
+              <option value="" disabled>
+                Select a Committee
+              </option>
+              <option value="Dental Committee">Dental Committee</option>
+              <option value="Mental Health & Wellness Committee">Mental Health & Wellness Committee</option>
+              <option value="Physical Integrated Health Committee">Physical Integrated Health Committee</option>
+              <option value="Community Outreach Committee">Community Outreach Committee</option>
+              <option value="Sexual & Reproductive Health Committee">Sexual & Reproductive Health Committee</option>
             </select>
 
-            <textarea placeholder="Your Message"></textarea>
+            <textarea
+              placeholder="Your Message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
 
-            <button type="button">Send</button>
+            <button type="submit">Send</button>
           </form>
         </div>
 
         <div className={styles.rightColumn}>
           <div className={styles.infoBox}>
             <h3 className={styles.infoTitle}>Email</h3>
-            <p className={styles.infoText}>ilovejcc@ucdavis.edu</p>
+            <p className={styles.infoText}>ucd.jcc@gmail.com</p>
           </div>
 
           <div className={styles.infoBox}>
             <h3 className={styles.infoTitle}>Phone</h3>
-            <p className={styles.infoText}>999-999-9999</p>
+            <p className={styles.infoText}>(530) 752-1011</p>
           </div>
 
           <div className={styles.infoBox}>
@@ -56,7 +139,6 @@ export default function Contact() {
               ></iframe>
             </div>
           </div>
-
 
           <div className={styles.icons}>
             <a
