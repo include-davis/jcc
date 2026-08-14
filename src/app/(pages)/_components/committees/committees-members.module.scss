@@ -1,0 +1,42 @@
+@import "@/styles/mixins.scss";
+
+.section {
+  padding: 3rem 102px 4rem;
+}
+
+.title {
+  @include heading-2;
+  color: #000000;
+  margin-bottom: 2rem;
+}
+
+.leadsRow {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.membersGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px 24px;
+  justify-items: center;
+}
+
+@media (max-width: 56.25rem) {
+  .section {
+    padding: 2rem 40px 3rem;
+  }
+
+  .leadsRow {
+    gap: 24px;
+  }
+
+  .membersGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

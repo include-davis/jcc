@@ -2,20 +2,16 @@
 
 .container {
   width: 100%;
-  margin-top: 200px;
+  margin-top: 64px;
 }
 
   .container h2 {
-    font-size: 45px;
-    letter-spacing: 1.5px;
+    @include heading-1;
     max-width: 550px;
   }
 
   .container p {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    letter-spacing: 0.5px;
+    @include body-text;
   }
 
 .content {

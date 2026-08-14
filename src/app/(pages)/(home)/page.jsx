@@ -18,19 +18,16 @@ export default async function Home() {
             <h2 className={styles.MissionTitle}>Our Mission</h2>
 
             <p className={styles.MissionText}>
-              <span className={styles.BoldIntro}>
-                In Juvenile Caduceus Clinic,
-              </span>{" "}
-              we aim to deliver high-quality care and assistance to the
-              underprivileged youth and older adolescents who are struggling and
-              seek help. Addressing the public health issues regarding a child's
-              well-being including but not limited to childhood obesity, physical
-              activity, cognitive health, and stress is fundamental in building
-              an environment for all children to thrive in. By integrating the
-              four pillars of leadership, humility, empathy, and responsibility,
-              our goal is to work together to provide equal care with respect to
-              social, mental, dental, and overall health to children in
-              adolescent institutions and programs.
+              Our organization is dedicated to delivering high-quality care and assistance to
+              underprivileged communities that pose a higher risk for toxic stress, with a primary
+              focus on the Winters Community. Addressing public health concerns related to
+              individuals&apos; well-being requires an intersectional approach that acknowledges,
+              understands, and responds to the signs, symptoms, and risks of trauma. Upholding a
+              trauma-informed approach is essential to how we effectively support the health needs
+              of patients who are at risk of having experienced Adverse Childhood Experiences
+              (ACEs) and toxic stress. By integrating the four pillars of leadership, humility,
+              empathy, and responsibility, our goal is to work together to provide equal care with
+              respect to the social, mental, and overall health of our communities.
             </p>
           </article>
 

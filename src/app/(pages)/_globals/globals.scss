@@ -33,7 +33,6 @@
   --font-family-ui: "Khula", system-ui, sans-serif;
 
   /* Figma text styles · sizes in rem (base 16px) */
-  --font-size-h1: 4.375rem; /* H1 · DM Sans Bold 70 */
   --font-size-nav: 1.5625rem; /* Nav · Khula Regular 25 */
   --font-size-s2-body-blurbs: 1.5rem; /* S2 body blurbs · DM Sans Regular 24 */
   --font-size-s1: 1.125rem; /* S1 · DM Sans Regular 18 */
@@ -42,6 +41,14 @@
   --font-weight-regular: 400;
   --font-weight-bold: 700;
   --line-height-tight: 1; /* Figma line height 100% on styles */
+
+  /* Standardized type scale — used by mixins.scss (heading-1/heading-2/
+     body-text/small-text), applied across all pages. */
+  --font-size-h1: 3.4375rem; /* 55px — matches the size already used independently across most page heroes/section titles */
+  --font-size-h2: 2.5rem; /* 40px — secondary section headings */
+  --font-size-body: 1.25rem; /* 20px — subtitle/description text under a heading-1 */
+  --font-size-small: 0.875rem; /* 14px — dense UI copy (forms, info boxes) */
+  --line-height-body: 1.6; /* unitless so it scales with font-size instead of needing per-size tuning */
 
   --edge-spacer: 24px;
 }
@@ -53,8 +60,14 @@
   margin: 0;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* full-bleed sections use width:100vw + negative
+    margins to break out of their parent's padding (e.g. home's
+    .OurCommitteesContainer, partnerships' .partnershipsCarousel); 100vw
+    includes the scrollbar's width in most browsers, unlike width:100%, so
+    without this those sections overflow the true viewport by a few px and
+    expose a sliver of the page's default white background on the right. */
 }
 
 button {

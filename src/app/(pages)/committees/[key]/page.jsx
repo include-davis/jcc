@@ -1,12 +1,15 @@
 import CommitteesIntro from "@/app/(pages)/_components/committees/committees-intro";
 import UpcomingEvents from "@/app/(pages)/_components/committees/committees-calender";
 import PastEvents from "@/app/(pages)/_components/committees/committees-past-events";
-import CommitteesHistoryCta from "@/app/(pages)/_components/committees/committees-history-cta";
-import { getCommittee } from "@/app/(pages)/_data/committees";
+import CommitteeMembers from "@/app/(pages)/_components/committees/CommitteeMembers";
+import { getCommittee, getCommitteeMembers } from "@/app/(pages)/_data/committees";
 
 export default async function CommitteePage({ params }) {
   const { key } = await params;
-  const committee = await getCommittee(key);
+  const [committee, { leads, members }] = await Promise.all([
+    getCommittee(key),
+    getCommitteeMembers(key),
+  ]);
 
   if (!committee) {
     return <div style={{ padding: "4rem", textAlign: "center" }}>Committee not found</div>;
@@ -21,7 +24,7 @@ export default async function CommitteePage({ params }) {
       />
       <UpcomingEvents />
       <PastEvents images={committee.pastEvents} />
-      <CommitteesHistoryCta />
+      <CommitteeMembers leads={leads} members={members} />
     </>
   );
 }

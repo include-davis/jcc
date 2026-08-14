@@ -1,7 +1,8 @@
 import styles from "./alumni.module.scss";
 import { DM_Sans, Khula } from 'next/font/google'
 import AlumniNews from '@/app/(pages)/_components/alumni/alumnNews';
-import { getAlumni } from "@/app/(pages)/_data/alumni";
+import Hero from "@/app/(pages)/_components/hero/Hero";
+import { getAlumni, getAlumniHeroImages } from "@/app/(pages)/_data/alumni";
 import { LOGO_SRC } from "@/app/(pages)/_data/site";
 
 const dmSans = DM_Sans({
@@ -9,33 +10,18 @@ const dmSans = DM_Sans({
 });
 
 export default async function Alumni() {
-  const alumniData = await getAlumni();
+  const [alumniData, heroImages] = await Promise.all([getAlumni(), getAlumniHeroImages()]);
 
   return (
     <div className={styles.alumniContainer}>
 
-      <div className={styles.topAlumniSection}> {/* Top section of the alumni page */}
-        <div className={styles.topAlumniContent}>
-          <div className={styles.topAlumniLeft}>
-            <h1 className={styles.topAlumniTitle}>See What Alumni Is Up To Now</h1>
-            <p className={styles.topAlumniText}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.
-            </p>
-            <div className={styles.topAlumniButtons}>
-              <a href="mailto:email@example.com" className={styles.button}>
-                Alumni
-              </a>
-              <a href="mailto:email@example.com" className={styles.button}>
-                Connecting
-              </a>
-            </div>
-          </div>
-          <div className={styles.topAlumniRight}>
-            <img src="/alumni.png" className={styles.topAlumniImage} />
-          </div>
-        </div>
-      </div>
-
+      <Hero
+        title="See What Alumni Is Up To Now"
+        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown."
+        tags={["Alumni", "Connecting"]}
+        images={heroImages}
+        imageAlt="JCC Alumni"
+      />
       <div className={styles.updateAlumniSection}> {/* Update card section */}
 
         <div className={styles.learnMoreCard}>
@@ -81,7 +67,7 @@ export default async function Alumni() {
           <p className={styles.shareText}>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
-          <a href="mailto:email@example.com" className={styles.learn_more_btn}>
+          <a href="mailto:email@example.com" className={styles.shareBtn}>
             Share Your Story
           </a>
         </div>

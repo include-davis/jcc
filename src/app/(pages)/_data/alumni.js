@@ -65,3 +65,31 @@ export async function getAlumni() {
     return alumniFallbackData;
   }
 }
+
+// Maps to the "alumni_hero_images" collection (see cms-schemas.md) — the
+// crossfade carousel shown in the Alumni page's hero section.
+export const alumniHeroImagesFallbackData = [
+  '/alumni.png',
+  '/history_img_5.jpg',
+  '/fourth.jpg',
+];
+
+export async function getAlumniHeroImages() {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/alumni_hero_images?_published=true`,
+      { next: { tags: ["cms"] } }
+    );
+    const data = await res.json();
+    if (!data.ok || !data.body) {
+      throw new Error(data.error);
+    }
+    if (data.body.length === 0) {
+      return [];
+    }
+    return data.body.map((item) => item.image?.[0]?.src).filter(Boolean);
+  } catch (e) {
+    console.error(`Failed to fetch alumni hero images: ${e.message}`);
+    return alumniHeroImagesFallbackData;
+  }
+}

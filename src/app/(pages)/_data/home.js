@@ -14,7 +14,7 @@ export const heroSlidesFallbackData = [
     title: "High-quality care for those who need it most.",
     subtitle: "We deliver care and assistance to underprivileged communities facing higher risk for toxic stress — using an intersectional approach that acknowledges the signs, symptoms, and risks of trauma..",
     btnText: "Apply to Join",
-    tags: ["Leadership", "Empathy", "Responsibility"],
+    tags: ["Leadership", "Humility", "Empathy", "Responsibility"],
     btnLink: "/join",
   },
   {

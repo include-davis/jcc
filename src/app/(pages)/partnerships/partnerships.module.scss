@@ -1,89 +1,12 @@
 @import "@/styles/mixins.scss";
 
-/*
-   Hero Header
-*/
-
-.hero {
+.container {
   width: 100%;
-  min-height: 597px;
-  background: linear-gradient(
-    135deg,
-    rgba(60, 59, 114, 1) 0%,
-    rgba(75, 73, 165, 1) 50%,
-    rgba(100, 98, 190, 1) 100%
-  );
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 80px 100px;
-  gap: 40px;
-}
-
-.heroTextContent {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  max-width: 627px;
-  flex-shrink: 0;
-}
-
-.heroTitle {
-  color: #ffffff;
-  font-family: var(--font-dm-sans);
-  font-size: 3.4375rem;
-  font-weight: 600;
-  line-height: 1;
-  margin-bottom: 24px;
-}
-
-.heroDescription {
-  color: #ffffff;
-  font-family: var(--font-khula);
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.375rem;
-  margin-bottom: 24px;
-}
-
-.heroButtons {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.heroBtn {
-  background: rgba(81, 129, 189, 1);
-  border: none;
-  border-radius: 100px;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 400;
-  padding: 12px 28px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.2s ease;
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.25);
-  }
-}
-
-.heroImageContainer {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.heroImage {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 16px;
-  object-fit: cover;
+  /* Matches .container1's gradient endpoint so the "Our Partners" section,
+     the auto-rotating marquee carousel below it, and the gaps around the
+     "Interested in Partnering?" card all read as one continuous light wash
+     instead of cutting back to white. */
+  background: #DAD8F4;
 }
 
 /*
@@ -92,8 +15,8 @@
 
 .interestedSection {
   max-width: 1300px;
-  margin: 2rem auto 5rem;
-  padding: 0 40px;
+  margin: 2rem auto 0rem;
+  padding: 0 40px 80px;
 }
 
 .interestedCard {
@@ -108,38 +31,19 @@
 }
 
 .interestedTitle {
-  font-family: var(--font-dm-sans);
-  font-size: 2.5rem;
-  font-weight: 700;
+  @include heading-2;
   color: #ffffff;
 }
 
 .interestedBody {
-  font-family: var(--font-khula);
-  font-size: 1.25rem;
-  font-weight: 400;
+  @include body-text;
   line-height: 1.5;
   color: #ffffff;
   max-width: 820px;
 }
 
 .interestedBtn {
-  background: #ffffff;
-  color: rgba(60, 59, 114, 1);
-  border: none;
-  border-radius: 100px;
-  font-family: var(--font-khula);
-  font-size: 16px;
-  font-weight: 700;
-  padding: 14px 36px;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: 0 4px 14px rgba(60, 59, 114, 0.25);
-  transition: background 0.2s ease;
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.8);
-  }
+  @include btn-inverse-purple;
 }
 
 .container1 {
@@ -167,15 +71,12 @@
 }
 
 .top h2 {
-  font-size: 36px;
-  font-weight: 600;
-  letter-spacing: 1.2;
+  @include heading-2;
   padding-bottom: 10px;
 }
 
 .top p {
-  font-size: 18px;
-  font-weight: 300;
+  @include body-text;
   color: #7c7c80;
   padding-bottom: 5px;
 }
@@ -268,31 +169,11 @@
   justify-content: center;
 }
 
-.heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  font-family: 'DM Sans Variable', sans-serif;
-}
-
-.subheading {
-  color: #666;
-  margin-bottom: 2.5rem;
-  max-width: 905px;
-  font-family: 'DM Sans Variable', sans-serif;
-}
-
-.offerCards {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  padding-bottom: 2rem;
-  font-family: 'DM Sans Variable', sans-serif;
-}
-
 .bgImage {
   position: absolute;
-  top: 180px;
+  /* Re-centered behind the partner cards now that "What we offer" (which
+     used to sit above them) was removed — cards start much higher up. */
+  top: 64px;
   right: 5px;
   width: 600px;
   height: 600px;
@@ -305,7 +186,7 @@
     drop-shadow(0px 30px 0px rgba(70, 60, 400, 1));
 }
 
-.heading, .subheading, .cards, .offerCards, .inner, .top, .arrows {
+.cards, .inner, .top, .arrows {
   position: relative;
   z-index: 1;
 }

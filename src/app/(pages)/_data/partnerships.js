@@ -65,3 +65,31 @@ export async function getPartnerships() {
     return partnershipsFallbackData;
   }
 }
+
+// Maps to the "partnerships_hero_images" collection (see cms-schemas.md) —
+// the crossfade carousel shown in the Partnerships page's hero section.
+export const partnershipsHeroImagesFallbackData = [
+  '/third.jpg',
+  '/history_img_1.jpg',
+  '/history_img_3.jpg',
+];
+
+export async function getPartnershipsHeroImages() {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/partnerships_hero_images?_published=true`,
+      { next: { tags: ["cms"] } }
+    );
+    const data = await res.json();
+    if (!data.ok || !data.body) {
+      throw new Error(data.error);
+    }
+    if (data.body.length === 0) {
+      return [];
+    }
+    return data.body.map((item) => item.image?.[0]?.src).filter(Boolean);
+  } catch (e) {
+    console.error(`Failed to fetch partnerships hero images: ${e.message}`);
+    return partnershipsHeroImagesFallbackData;
+  }
+}

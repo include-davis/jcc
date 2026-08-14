@@ -1,7 +1,7 @@
 @import "@/styles/mixins.scss";
 
 .contactPage { /* container */
-  padding: 120px 10% 80px;
+  padding: 64px 10% 80px;
   background: #ffffff;
 }
 
@@ -18,9 +18,7 @@
 }
 
 .title { /* title in left column */
-  font-size: 55px;
-  font-weight: 530;
-  line-height: 1;
+  @include heading-1;
   color: #3c3b72;
   margin-bottom: 18px;
   text-align: center;
@@ -32,8 +30,8 @@
 }
 
 .description { /* description text in left column */
+  @include small-text;
   max-width: 595px;
-  font-size: 13px;
   line-height: 1.7;
   color: #444444;
   margin-bottom: 22px;

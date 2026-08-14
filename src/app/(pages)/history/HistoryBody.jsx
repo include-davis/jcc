@@ -16,12 +16,6 @@ export default function HistoryBody({ years }) {
   const [scrollTargetYear, setScrollTargetYear] = useState(null);
   const yearItemRefs = useRef({});
 
-  const scrollToTop = () => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
   const toggleYear = (year) => {
     setExpandedYears((prev) => ({ ...prev, [year]: !prev[year] }));
   };
@@ -183,14 +177,6 @@ export default function HistoryBody({ years }) {
           })}
         </div>
       </section>
-
-      {/* Back to Top */}
-      <div className={styles.backToTopWrapper}>
-        <button className={styles.backToTopBtn} onClick={scrollToTop}>
-          <img src="/back_to_top_arrow.png" alt="" className={styles.backToTopIcon} />
-          Back to Top
-        </button>
-      </div>
     </section>
   );
 }

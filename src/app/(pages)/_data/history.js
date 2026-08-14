@@ -84,3 +84,31 @@ export async function getHistoryYears() {
     return historyYearsFallbackData;
   }
 }
+
+// Maps to the "history_hero_images" collection (see cms-schemas.md) —
+// the crossfade carousel shown in the History page's hero section.
+export const historyHeroImagesFallbackData = [
+  '/second.jpg',
+  '/history_img_2.jpg',
+  '/history_img_4.jpg',
+];
+
+export async function getHistoryHeroImages() {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/history_hero_images?_published=true`,
+      { next: { tags: ["cms"] } }
+    );
+    const data = await res.json();
+    if (!data.ok || !data.body) {
+      throw new Error(data.error);
+    }
+    if (data.body.length === 0) {
+      return [];
+    }
+    return data.body.map((item) => item.image?.[0]?.src).filter(Boolean);
+  } catch (e) {
+    console.error(`Failed to fetch history hero images: ${e.message}`);
+    return historyHeroImagesFallbackData;
+  }
+}

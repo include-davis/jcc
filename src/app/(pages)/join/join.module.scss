@@ -1,3 +1,5 @@
+@import "@/styles/mixins.scss";
+
 .container {
   position: relative;
   width: 100%;
@@ -32,15 +34,13 @@
 }
 
 .heading {
-  font-size: 2.5rem;
-  font-weight: 700;
+  @include heading-2;
   color: #3C3B72;
   margin-bottom: 1rem;
 }
 
 .subheading {
-  font-size: 1.25rem;
-  font-weight: 400;
+  @include body-text;
   color: #666;
 }
 

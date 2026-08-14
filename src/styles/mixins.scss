@@ -21,3 +21,80 @@
     @content;
   }
 }
+
+// Standardized type scale — sizes/weights come from globals.scss tokens.
+// Color is intentionally NOT set here: hero sections need white text on
+// purple/dark backgrounds, other sections need black/purple text on white,
+// so color stays a per-page concern.
+
+@mixin heading-1 {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-h1);
+  font-weight: 600;
+  line-height: var(--line-height-tight);
+}
+
+@mixin heading-2 {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+@mixin body-text {
+  font-family: var(--font-family-ui);
+  font-size: var(--font-size-body);
+  font-weight: 400;
+  line-height: var(--line-height-body);
+}
+
+@mixin small-text {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-small);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+// Standard "primary" CTA button — white background, purple text. Meant to
+// sit on a colored/purple background (hero sections, gradient cards) so it
+// reads as the highest-contrast action on the page.
+@mixin btn-inverse-purple {
+  background: #ffffff;
+  color: rgba(60, 59, 114, 1);
+  border: none;
+  border-radius: 100px;
+  font-family: var(--font-khula);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 36px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(60, 59, 114, 0.25);
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+}
+
+// Same size/font/shape as btn-inverse-purple, colors swapped — purple
+// background, white text. Used where the button needs to stand out against
+// a lighter/photo background instead of a colored one (home hero carousel).
+@mixin btn-solid-purple {
+  background: #3c3b72;
+  color: #ffffff;
+  border: none;
+  border-radius: 100px;
+  font-family: var(--font-khula);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 36px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(60, 59, 114, 0.25);
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #4B49A5;
+  }
+}

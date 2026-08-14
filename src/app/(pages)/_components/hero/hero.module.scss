@@ -1,0 +1,136 @@
+@import "@/styles/mixins.scss";
+
+.hero {
+  width: 100%;
+  min-height: 597px;
+  background: linear-gradient(
+    135deg,
+    rgba(60, 59, 114, 1) 0%,
+    rgba(75, 73, 165, 1) 50%,
+    rgba(100, 98, 190, 1) 100%
+  );
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 100px;
+  gap: 40px;
+}
+
+.heroTextContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 627px;
+  flex-shrink: 0;
+}
+
+.heroTitle {
+  @include heading-1;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.heroDescription {
+  @include body-text;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.heroTags {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.heroTag {
+  background: #5181BD;
+  color: white;
+  padding: 0.3rem 1.25rem 0.1rem 1.25rem;
+  border-radius: 12.5px;
+  font-size: 1rem;
+  font-family: var(--font-khula);
+  backdrop-filter: blur(4px);
+}
+
+.heroButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.heroBtn {
+  @include btn-inverse-purple;
+}
+
+.heroImageContainer {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  max-width: 500px;
+  height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 0.6s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.heroImageActive {
+  opacity: 1;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.heroImageHovered {
+  transform: scale(1.08);
+}
+
+.dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1.5px solid #ffffff;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease;
+}
+
+.dotActive {
+  background: #ffffff;
+}
+
+@media (max-width: 56.25rem) {
+  .hero {
+    flex-direction: column;
+    padding: 60px 40px;
+  }
+
+  .heroImageContainer {
+    max-width: 100%;
+    height: 300px;
+  }
+}

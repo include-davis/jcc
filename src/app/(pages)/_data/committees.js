@@ -145,3 +145,63 @@ export async function getCommittee(key) {
     return { ...committee, pastEvents: fallback?.pastEvents || [] };
   }
 }
+
+// Maps to the "committee_members" collection (see cms-schemas.md) — one
+// collection for both leads and regular members, split here by is_lead.
+const GENERIC_MEMBER_PHOTOS = [
+  '/history_img_1.jpg', '/history_img_2.jpg', '/history_img_3.jpg', '/history_img_4.jpg',
+  '/history_img_5.jpg', '/second.jpg', '/third.jpg', '/fourth.jpg',
+];
+
+function buildFallbackMembers() {
+  return {
+    leads: [
+      { name: "Lead Member 1", photo: GENERIC_MEMBER_PHOTOS[0], role: "President", email: "placeholder@jcc.org" },
+      { name: "Lead Member 2", photo: GENERIC_MEMBER_PHOTOS[1], role: "Vice President", email: "placeholder@jcc.org" },
+    ],
+    members: Array.from({ length: 6 }, (_, i) => ({
+      name: `Committee Member ${i + 1}`,
+      photo: GENERIC_MEMBER_PHOTOS[(i + 2) % GENERIC_MEMBER_PHOTOS.length],
+    })),
+  };
+}
+
+export const committeeMembersFallbackData = {
+  dental: buildFallbackMembers(),
+  mental: buildFallbackMembers(),
+  physical: buildFallbackMembers(),
+  community: buildFallbackMembers(),
+  sexual: buildFallbackMembers(),
+};
+
+// Returns { leads: [...], members: [...] } for a given committee key.
+// leads is expected to be 1-3 people (rendered as a single row); members
+// is the rest (rendered as a grid, name-only).
+export async function getCommitteeMembers(key) {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/committee_members?_published=true`,
+      { next: { tags: ["cms"] } }
+    );
+    const data = await res.json();
+    if (!data.ok || !data.body) {
+      throw new Error(data.error);
+    }
+    const all = data.body
+      .filter((m) => m.committee_key === key)
+      .map((m) => ({
+        name: m.name,
+        photo: m.photo?.[0]?.src,
+        role: m.role || undefined,
+        email: m.email || undefined,
+        isLead: m.is_lead === "true" || m.is_lead === true,
+      }));
+    return {
+      leads: all.filter((m) => m.isLead).map(({ isLead, ...rest }) => rest),
+      members: all.filter((m) => !m.isLead).map(({ isLead, ...rest }) => rest),
+    };
+  } catch (e) {
+    console.error(`Failed to fetch committee members for ${key}: ${e.message}`);
+    return committeeMembersFallbackData[key] || { leads: [], members: [] };
+  }
+}
