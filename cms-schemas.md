@@ -73,7 +73,7 @@ Frontend: `src/app/(pages)/_data/committees.js` → `getCommitteeMembers(key)`. 
 | `committee_key` | SHORT_TEXT | Must match a `committees.key` value, same correlation pattern as `committee_past_events` |
 | `name` | SHORT_TEXT | |
 | `photo` | MEDIA_LIST | |
-| `is_lead` | SHORT_TEXT | `"true"`/`"false"` — no confirmed boolean field type, so stored as text and compared loosely on the frontend. Expect 1–3 people per committee flagged true. |
+| `is_lead` | BOOLEAN | `"true"`/`"false"` — Expect 1–3 people per committee flagged true. |
 | `role` | SHORT_TEXT | Only meaningful/shown for leads (e.g. "President") — leave blank for regular members |
 | `email` | SHORT_TEXT | Only meaningful/shown for leads — leave blank for regular members. Displayed as plain text on the frontend, not a mailto link. |
 
