@@ -137,12 +137,14 @@ Note: the homepage also shows a 5-card committee grid, but that's just the `comm
 
 ## 6. `site_settings` (singleton)
 
-Global site chrome — logo and a few standalone CTA links. Frontend: `src/app/(pages)/_data/site.js` (logo only, hardcoded for now).
+Global site chrome — logo and a couple of standalone CTA links. Frontend: `src/app/(pages)/_data/site.js` → `getSiteSettings()`. Assumes the API returns this the same shape as a collection (`{ ok, body: [...] }`) and just reads `body[0]` — adjust once the real singleton API contract is confirmed, since hearth's singleton response shape hasn't been verified yet.
 
 | Field | Type | Notes |
 |---|---|---|
-| `logo` | MEDIA_LIST | Used in the navbar, footer, and as a watermark on several pages |
-| `apply_form_link` | SHORT_TEXT | Google Form URL — currently a `"#"` placeholder in `src/app/(pages)/partnerships/page.jsx` (`APPLY_FORM_LINK`), used by both partnerships CTA buttons |
+| `logo` | MEDIA_LIST | Used in the navbar, footer, and as a watermark on several pages. **Not yet fetched** — the frontend still uses the hardcoded `LOGO_SRC` constant in `site.js`, since wiring this up would require making every page that imports `LOGO_SRC` async. Flagging as a follow-up. |
+| `partnership_form_link` | SHORT_TEXT | Google Form URL for partner applications (renamed from `apply_form_link` for clarity — it's specifically for partnerships, not any other kind of application). Fetched and used by both of Partnerships' "Apply Now" buttons (`src/app/(pages)/partnerships/page.jsx`). |
+| `join_form_link` | SHORT_TEXT | Google Form URL for member recruitment — a separate form from the other two (prospective members, not partners or alumni). Used by the navbar's "Join Us" link (opens in a new tab) and the home page hero's "Apply to Join" button. There used to be a static `/join` page for this; it's been removed entirely in favor of linking straight to the form. |
+| `alumni_form_link` | SHORT_TEXT | Google Form URL for alumni to share their story — a separate form from the other two. Used by the "Share Your Story" button in the Alumni page's "Share Your JCC Experience" section (`src/app/(pages)/alumni/page.jsx`), replacing what used to be a `mailto:` link. Opens in a new tab. |
 
 **Not included here**: the full navbar link structure (Home / About dropdown / Committees dropdown / Contact / Join), currently in `src/app/(pages)/_data/navLinks.js`. That's a nested structure — two of the five nav items have their own sub-menus — which needs either a repeater-of-repeaters or is just left hardcoded in the frontend rather than CMS-driven. Flagging this as a decision to make once repeater/relation support is confirmed, rather than guessing at a shape now.
 

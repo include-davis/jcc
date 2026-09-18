@@ -21,5 +21,8 @@ export const navLinks = {
     ],
   },
   contact: { label: "Contact Us", href: "/contact" },
-  join: { label: "Join Us", href: "/join" },
+  // "Join Us" no longer points at an internal page — its href comes from
+  // site_settings.join_form_link (see _data/site.js, cms-schemas.md), a
+  // Google Form URL, passed into navBar.jsx as a prop from the root layout.
+  join: { label: "Join Us" },
 };

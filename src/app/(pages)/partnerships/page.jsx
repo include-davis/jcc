@@ -2,16 +2,14 @@ import styles from "./partnerships.module.scss";
 import PartnershipsCarouselCards from "@/app/(pages)/_components/partnerships/partnerships-carousel-cards";
 import PartnersCarousel from "@/app/(pages)/_components/partnerships/partners-carousel";
 import Hero from "@/app/(pages)/_components/hero/Hero";
-import { LOGO_SRC } from "@/app/(pages)/_data/site";
+import { LOGO_SRC, getSiteSettings } from "@/app/(pages)/_data/site";
 import { getPartnerships, getPartnershipsHeroImages } from "@/app/(pages)/_data/partnerships";
 
-// TODO: replace with the real Google Form link for partner applications.
-const APPLY_FORM_LINK = "#";
-
 export default async function PartnershipsPage() {
-  const [partnerships, heroImages] = await Promise.all([
+  const [partnerships, heroImages, { partnershipFormLink }] = await Promise.all([
     getPartnerships(),
     getPartnershipsHeroImages(),
+    getSiteSettings(),
   ]);
   const repeatedPartners = [...partnerships, ...partnerships, ...partnerships];
 
@@ -20,7 +18,7 @@ export default async function PartnershipsPage() {
       <Hero
         title="Become a Partner"
         description="JCC collaborates with healthcare providers, community organizations, and industry professionals to expand access to care for underserved youth. Our partners help us address critical public health issues — from childhood obesity to mental health — ensuring every child has the opportunity to thrive."
-        buttons={[{ label: "Apply Now", href: APPLY_FORM_LINK }]}
+        buttons={[{ label: "Apply Now", href: partnershipFormLink }]}
         images={heroImages}
         imageAlt="JCC Partnerships"
       />
@@ -73,7 +71,7 @@ export default async function PartnershipsPage() {
             Together, we can break down barriers to care and create meaningful change — one child
             at a time.
           </p>
-          <a href={APPLY_FORM_LINK} className={styles.interestedBtn}>Apply Now</a>
+          <a href={partnershipFormLink} className={styles.interestedBtn}>Apply Now</a>
         </div>
       </section>
     </div>

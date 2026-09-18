@@ -15,6 +15,9 @@ export const heroSlidesFallbackData = [
     subtitle: "We deliver care and assistance to underprivileged communities facing higher risk for toxic stress — using an intersectional approach that acknowledges the signs, symptoms, and risks of trauma..",
     btnText: "Apply to Join",
     tags: ["Leadership", "Humility", "Empathy", "Responsibility"],
+    // "/join" here is a sentinel, not a real route — (home)/page.jsx swaps
+    // it for the CMS-provided Google Form link (site_settings.join_form_link)
+    // before rendering. There is no /join page anymore.
     btnLink: "/join",
   },
   {

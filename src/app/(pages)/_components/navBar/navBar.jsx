@@ -5,7 +5,7 @@ import styles from "./navBar.module.scss";
 import { navLinks } from "@/app/(pages)/_data/navLinks";
 import { LOGO_SRC } from "@/app/(pages)/_data/site";
 
-export default function Navbar() {
+export default function Navbar({ joinFormLink = "#" }) {
   const [openMenu, setOpenMenu] = useState(null);
   const navRef = useRef(null);
 
@@ -56,7 +56,7 @@ export default function Navbar() {
           </div>
         </div>
         <a href={navLinks.contact.href} className={styles.contactBtn}>{navLinks.contact.label}</a>
-        <a href={navLinks.join.href} className = {styles.joinBtn}>{navLinks.join.label}</a>
+        <a href={joinFormLink} target="_blank" rel="noopener noreferrer" className = {styles.joinBtn}>{navLinks.join.label}</a>
       </div>
     </div>
   );

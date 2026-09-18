@@ -47,7 +47,13 @@ export default function HeroSlideshow({ slides }) {
           {/* Div element for the button with that links to different pages for more information
           got its txt from the slides array
           */}
-          <Link href={slides[currentSlide].btnLink} className={styles.learn_more_btn}>
+          <Link
+            href={slides[currentSlide].btnLink}
+            className={styles.learn_more_btn}
+            {...(slides[currentSlide].btnLink?.startsWith("http")
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
+          >
             <span>
               {slides[currentSlide].btnText}
               <span className={styles.arrow}>

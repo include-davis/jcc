@@ -3,14 +3,18 @@ import { DM_Sans, Khula } from 'next/font/google'
 import AlumniNews from '@/app/(pages)/_components/alumni/alumnNews';
 import Hero from "@/app/(pages)/_components/hero/Hero";
 import { getAlumni, getAlumniHeroImages } from "@/app/(pages)/_data/alumni";
-import { LOGO_SRC } from "@/app/(pages)/_data/site";
+import { LOGO_SRC, getSiteSettings } from "@/app/(pages)/_data/site";
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
 });
 
 export default async function Alumni() {
-  const [alumniData, heroImages] = await Promise.all([getAlumni(), getAlumniHeroImages()]);
+  const [alumniData, heroImages, { alumniFormLink }] = await Promise.all([
+    getAlumni(),
+    getAlumniHeroImages(),
+    getSiteSettings(),
+  ]);
 
   return (
     <div className={styles.alumniContainer}>
@@ -67,7 +71,7 @@ export default async function Alumni() {
           <p className={styles.shareText}>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
-          <a href="mailto:email@example.com" className={styles.shareBtn}>
+          <a href={alumniFormLink} target="_blank" rel="noopener noreferrer" className={styles.shareBtn}>
             Share Your Story
           </a>
         </div>

@@ -1,16 +1,25 @@
 import Link from "next/link";
 import styles from "./home.module.scss";
 import HeroSlideshow from "./HeroSlideshow";
-import { LOGO_SRC } from "@/app/(pages)/_data/site";
+import { LOGO_SRC, getSiteSettings } from "@/app/(pages)/_data/site";
 import { getHeroSlides } from "@/app/(pages)/_data/home";
 import { getCommittees } from "@/app/(pages)/_data/committees";
 
 export default async function Home() {
-  const [slides, committees] = await Promise.all([getHeroSlides(), getCommittees()]);
+  const [slides, committees, { joinFormLink }] = await Promise.all([
+    getHeroSlides(),
+    getCommittees(),
+    getSiteSettings(),
+  ]);
+  // The "Apply to Join" hero slide used to link to the (now-removed) /join
+  // page — point it at the same CMS-provided Google Form the navbar uses.
+  const heroSlides = slides.map((slide) =>
+    slide.btnLink === "/join" ? { ...slide, btnLink: joinFormLink } : slide
+  );
 
   return (
     <main className={styles.container}>
-      <HeroSlideshow slides={slides} />
+      <HeroSlideshow slides={heroSlides} />
 
       <section className={styles.sectionMiddle}>
         <section className={styles.OurMissionContainer}>
@@ -39,43 +48,43 @@ export default async function Home() {
             />
           </figure>
         </section>
+      </section>
 
-        <section className={styles.OurCommitteesContainer}>
-          <header className={styles.OurCommitteesTopContent}>
-            <h2 className={styles.OurCommitteesTitle}>Our Committees</h2>
+      <section className={styles.OurCommitteesContainer}>
+        <header className={styles.OurCommitteesTopContent}>
+          <h2 className={styles.OurCommitteesTitle}>Our Committees</h2>
 
-            <p className={styles.OurCommitteesDescription}>
-              Our Clinic consists of 5 different committees all focused on a
-              different area of health care. Learn more about each committee by
-              clicking the links below
-            </p>
-          </header>
+          <p className={styles.OurCommitteesDescription}>
+            Our Clinic consists of 5 different committees all focused on a
+            different area of health care. Learn more about each committee by
+            clicking the links below:
+          </p>
+        </header>
 
 
-          <section className={styles.OurCommitteesBottomContent}>
-            {committees.map((committee) => (
-              <article className={styles.CommitteeItem} key={committee.link}>
+        <section className={styles.OurCommitteesBottomContent}>
+          {committees.map((committee) => (
+            <article className={styles.CommitteeItem} key={committee.link}>
+              <img
+                className={styles.CommitteeIcon}
+                src={committee.icon}
+                alt="Committee logo"
+              />
+
+              <Link href={committee.link} className={styles.CommitteeButton}>
+                <span className={styles.CommitteeButtonText}>
+                  {committee.name}
+                </span>
+
                 <img
-                  className={styles.CommitteeIcon}
-                  src={committee.icon}
-                  alt="Committee logo"
+                  className={styles.CommitteeArrowIcon}
+                  src="/Our_Committees_Arrow.svg"
+                  alt=""
+                  aria-hidden="true"
                 />
-
-                <Link href={committee.link} className={styles.CommitteeButton}>
-                  <span className={styles.CommitteeButtonText}>
-                    {committee.name}
-                  </span>
-
-                  <img
-                    className={styles.CommitteeArrowIcon}
-                    src="/Our_Committees_Arrow.svg"
-                    alt=""
-                    aria-hidden="true"
-                  />
-                </Link>
-              </article>
-            ))}
-          </section>
+              </Link>
+            </article>
+          ))}
         </section>
       </section>
 

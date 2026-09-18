@@ -1,6 +1,7 @@
 import { Inter, DM_Sans, Khula } from "next/font/google";
 import Navbar from "./_components/navBar/navBar";
 import Footer from "./_components/footer/footer";
+import { getSiteSettings } from "./_data/site";
 import "./_globals/globals.scss";
 
 const inter = Inter({
@@ -44,11 +45,13 @@ export const viewport = {
   themeColor: "#ffffff",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const { joinFormLink } = await getSiteSettings();
+
   return (
     <html lang="en">
       <body className={`${inter.variable} ${dmSans.variable} ${khula.variable}`}>
-        <Navbar />
+        <Navbar joinFormLink={joinFormLink} />
         {children}
         <Footer />
       </body>
