@@ -61,7 +61,7 @@ export async function getHeroSlides() {
       throw new Error(data.error);
     }
     if (data.body.length === 0) {
-      return [];
+      throw new Error("No hero slides published yet");
     }
     return data.body.map((item) => ({
       img: item.image?.[0]?.src,

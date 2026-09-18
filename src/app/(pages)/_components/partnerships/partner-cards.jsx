@@ -31,7 +31,7 @@ export default function PartnerCards({
         <img src={image} alt={title} />
         <h2>{title}</h2>
         <p className={`${dmMono.className} ${styles.committee}`}>{committee}</p>
-        <p className={`${khula.className} ${styles.description}`}>{description}</p>
+        <p className={`${khula.className} ${styles.description}`} dangerouslySetInnerHTML={{ __html: description }} />
       </div>
       <div className={styles.bottom}>
         <div className={styles.divider}></div>

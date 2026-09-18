@@ -59,7 +59,9 @@ export async function getHistoryYears() {
       throw new Error(yearsData.error);
     }
     if (yearsData.body.length === 0) {
-      return [];
+      // CMS reachable, but no years published yet — fall back instead of
+      // showing an empty section.
+      throw new Error("No history years published yet");
     }
     const photosByYear = (photosData.body || []).reduce((acc, p) => {
       const src = p.image?.[0]?.src;
@@ -104,7 +106,7 @@ export async function getHistoryHeroImages() {
       throw new Error(data.error);
     }
     if (data.body.length === 0) {
-      return [];
+      throw new Error("No history hero images published yet");
     }
     return data.body.map((item) => item.image?.[0]?.src).filter(Boolean);
   } catch (e) {

@@ -22,7 +22,7 @@ export default function AlumniNews({ name, workplace, testimony, image }) {
             <p style={khula.style}>{workplace}</p>
           </div>
         </div>
-        <p style={khula.style}>{testimony}</p>
+        <p style={khula.style} dangerouslySetInnerHTML={{ __html: testimony }} />
       </div>
     </div>
   )

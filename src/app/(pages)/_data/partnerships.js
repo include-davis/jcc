@@ -51,7 +51,7 @@ export async function getPartnerships() {
       throw new Error(data.error);
     }
     if (data.body.length === 0) {
-      return [];
+      throw new Error("No partnerships published yet");
     }
     return data.body.map((item) => ({
       key: item._id,
@@ -85,7 +85,7 @@ export async function getPartnershipsHeroImages() {
       throw new Error(data.error);
     }
     if (data.body.length === 0) {
-      return [];
+      throw new Error("No partnerships hero images published yet");
     }
     return data.body.map((item) => item.image?.[0]?.src).filter(Boolean);
   } catch (e) {

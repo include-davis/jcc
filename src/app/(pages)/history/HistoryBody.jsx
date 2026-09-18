@@ -45,7 +45,7 @@ export default function HistoryBody({ years }) {
   }, [scrollTargetYear, expandedYears]);
 
   return (
-    <section className={styles.timelineSection}>
+    <section id="our-past" className={styles.timelineSection}>
       <h2 className={styles.sectionTitle}>Our Past History</h2>
 
       <div className={styles.timeline}>
@@ -85,7 +85,7 @@ export default function HistoryBody({ years }) {
       </div>
 
       {/* Our Future */}
-      <div className={styles.ourFuture}>
+      <div id="our-future" className={styles.ourFuture}>
         <div className={styles.ourFutureInner}>
           <h2 className={styles.futureTitle}>Our Future</h2>
           <p className={styles.futureBody}>
@@ -169,7 +169,7 @@ export default function HistoryBody({ years }) {
                       </button>
                     </div>
 
-                    <p className={styles.yearDescription}>{entry.description}</p>
+                    <p className={styles.yearDescription} dangerouslySetInnerHTML={{ __html: entry.description }} />
                   </div>
                 )}
               </div>

@@ -51,7 +51,7 @@ export async function getAlumni() {
       throw new Error(data.error);
     }
     if (data.body.length === 0) {
-      return [];
+      throw new Error("No alumni published yet");
     }
     return data.body.map((item) => ({
       id: item._id,
@@ -85,7 +85,7 @@ export async function getAlumniHeroImages() {
       throw new Error(data.error);
     }
     if (data.body.length === 0) {
-      return [];
+      throw new Error("No alumni hero images published yet");
     }
     return data.body.map((item) => item.image?.[0]?.src).filter(Boolean);
   } catch (e) {

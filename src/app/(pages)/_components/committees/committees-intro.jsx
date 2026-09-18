@@ -24,7 +24,7 @@ export default function CommitteesIntro({
 
         <div className={styles.text}>
           <h2 className={`${styles.title}`}>{title}</h2>
-          <p className={`${khula.className}`}>{description}</p>
+          <p className={`${khula.className}`} dangerouslySetInnerHTML={{ __html: description }} />
         </div>
       </div>
 

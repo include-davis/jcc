@@ -35,7 +35,7 @@ export default function HeroSlideshow({ slides }) {
             {}}>
           <p className={styles.slide_label}>{slides[currentSlide].label}</p>
           <h1 className={styles.clinic_heading}>{slides[currentSlide].title}</h1>
-          <p className={styles.clinic_subheading}>{slides[currentSlide].subtitle}</p>
+          <p className={styles.clinic_subheading} dangerouslySetInnerHTML={{ __html: slides[currentSlide].subtitle }} />
           {slides[currentSlide].tags && (
             <div className={styles.tags}>
               {slides[currentSlide].tags.map((tag) => (

@@ -29,7 +29,9 @@ export async function getBoardMembers() {
       throw new Error(data.error);
     }
     if (data.body.length === 0) {
-      return [];
+      // CMS reachable, but no records published yet — treat the same as
+      // unreachable/broken and fall back, rather than showing nothing.
+      throw new Error("No board members published yet");
     }
     return data.body.map((item) => ({
       name: item.name,

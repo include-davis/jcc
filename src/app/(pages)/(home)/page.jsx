@@ -22,7 +22,7 @@ export default async function Home() {
       <HeroSlideshow slides={heroSlides} />
 
       <section className={styles.sectionMiddle}>
-        <section className={styles.OurMissionContainer}>
+        <section id="our-mission" className={styles.OurMissionContainer}>
           <article className={styles.OurMissionLeftContent}>
             <h2 className={styles.MissionTitle}>Our Mission</h2>
 
@@ -50,7 +50,7 @@ export default async function Home() {
         </section>
       </section>
 
-      <section className={styles.OurCommitteesContainer}>
+      <section id="our-committees" className={styles.OurCommitteesContainer}>
         <header className={styles.OurCommitteesTopContent}>
           <h2 className={styles.OurCommitteesTitle}>Our Committees</h2>
 
@@ -88,7 +88,7 @@ export default async function Home() {
         </section>
       </section>
 
-      <div className={styles.sectionBottom}>
+      <div id="recruitment" className={styles.sectionBottom}>
         <div className={styles.learnMoreCard}>
           <h2 className={styles.learnMoreTitle}>Recruitment</h2>
 

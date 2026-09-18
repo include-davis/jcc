@@ -8,6 +8,7 @@ import { HiOutlineChevronRight } from "react-icons/hi";
 import { MdEmail } from "react-icons/md";
 import { DM_Sans } from 'next/font/google'
 import { LOGO_SRC } from "@/app/(pages)/_data/site";
+import { navLinks } from "@/app/(pages)/_data/navLinks";
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -59,26 +60,30 @@ export default function Footer() {
 
   return (
     <div className={`${styles.container} ${dmSans.className}`}>
-      <div className={styles.subscribeContainer}>
-        <h4>Subscribe to our Newsletter!</h4>
-        <p>Enter your email to get notified about our new solutions</p>
-        <div className={styles.inputContainer}>
-          <div className={styles.inputWrapper}>
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <button href="/" className={`${styles.linkReset} ${styles.submitBttn}`} onClick={handleSubmit}>
-              <HiOutlineChevronRight style={{ fontSize: "20px" }} />
-            </button>
+      {/* Newsletter subscribe UI removed from display (client request) — the
+          form-handling logic above (email/error/success state, validateEmail,
+          handleSubmit) and the /api/subscribe route are left intact in case
+          this gets re-enabled later. To bring it back, re-add:
+          <div className={styles.subscribeContainer}>
+            <h4>Subscribe to our Newsletter!</h4>
+            <p>Enter your email to get notified about our new solutions</p>
+            <div className={styles.inputContainer}>
+              <div className={styles.inputWrapper}>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <button href="/" className={`${styles.linkReset} ${styles.submitBttn}`} onClick={handleSubmit}>
+                  <HiOutlineChevronRight style={{ fontSize: "20px" }} />
+                </button>
+              </div>
+              {error && <p className={styles.error}>{error}</p>}
+              {success && <p className={styles.success}>{success}</p>}
+            </div>
           </div>
-          {error && <p className={styles.error}>{error}</p>}
-          {success && <p className={styles.success}>{success}</p>}
-        </div>
-      </div>
-
+      */}
 
       <div className={styles.linksContainer}>
         <div className={styles.about}>
@@ -92,77 +97,46 @@ export default function Footer() {
 
         <div className={styles.home}>
           <h4>Home</h4>
-          <Link href="/"
-            className={styles.linkReset}
-            onClick={() => console.log("Home section clicked")}>
-            <p>Section</p>
+          <Link href="/#our-mission" className={styles.linkReset}>
+            <p>Our Mission</p>
           </Link>
-          <Link href="/" 
-            className={styles.linkReset}
-            onClick={() => console.log("Home section clicked")}>
-            <p>Section</p>
+          <Link href="/#our-committees" className={styles.linkReset}>
+            <p>Our Committees</p>
           </Link>
-          <Link href="/"
-            className={styles.linkReset}
-            onClick={() => console.log("Home section clicked")}>
-            <p>Section</p>
+          <Link href="/#recruitment" className={styles.linkReset}>
+            <p>Recruitment</p>
           </Link>
         </div>
 
         <div className={styles.committees}>
           <h4>Committees</h4>
-          <Link href="/committees"
-            className={styles.linkReset}
-            onClick={() => console.log("Committees section clicked")}>
-            <p>Section</p>
-          </Link>
-          <Link href="/committees"
-            className={styles.linkReset}
-            onClick={() => console.log("Committees section clicked")}>
-            <p>Section</p>
-          </Link>
-          <Link href="/committees"
-            className={styles.linkReset}
-            onClick={() => console.log("Committees section clicked")}>
-            <p>Section</p>
-          </Link>
+          {navLinks.committees.items.map((item) => (
+            <Link key={item.href} href={item.href} className={styles.linkReset}>
+              <p>{item.label}</p>
+            </Link>
+          ))}
         </div>
 
         <div className={styles.history}>
           <h4>History</h4>
-          <Link href="/history"
-            className={styles.linkReset}
-            onClick={() => console.log("History section clicked")}>
-            <p>Section</p>
+          <Link href="/history#our-past" className={styles.linkReset}>
+            <p>Our Past</p>
           </Link>
-          <Link href="/history"
-            className={styles.linkReset}
-            onClick={() => console.log("History section clicked")}>
-            <p>Section</p>
-          </Link>
-          <Link href="/history"
-            className={styles.linkReset}
-            onClick={() => console.log("History section clicked")}>
-            <p>Section</p>
+          <Link href="/history#our-future" className={styles.linkReset}>
+            <p>Our Future</p>
           </Link>
         </div>
 
         <div className={styles.contact}>
           <h4>Contact</h4>
-          <Link href="/contact"
-            className={styles.linkReset}
-            onClick={() => console.log("Contact section clicked")}>
-            <p>Section</p>
+          <Link href="/contact#form" className={styles.linkReset}>
+            <p>Send a Message</p>
           </Link>
-          <Link href="/contact"
-            className={styles.linkReset}
-            onClick={() => console.log("Contact section clicked")}>
-            <p>Section</p>
+          <Link href="/contact#info" className={styles.linkReset}>
+            <p>Contact Info</p>
           </Link>
-          <Link href="/contact"
-            className={styles.linkReset}
-            onClick={() => console.log("Contact section clicked")}>
-            <p>Section</p>
+          <Link href="/contact#map" className={styles.linkReset}>
+            <p>Visit Us</p>
           </Link>
         </div>
       </div>

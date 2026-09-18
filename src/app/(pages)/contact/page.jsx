@@ -8,7 +8,7 @@ export default async function Contact() {
   return (
     <main className={styles.contactPage}>
       <section className={styles.contactContainer}>
-        <div className={styles.leftColumn}>
+        <div id="form" className={styles.leftColumn}>
           <h1 className={styles.title}>Contact Us</h1>
 
           <p className={styles.description}>
@@ -19,7 +19,7 @@ export default async function Contact() {
         </div>
 
         <div className={styles.rightColumn}>
-          <div className={styles.infoBox}>
+          <div id="info" className={styles.infoBox}>
             <h3 className={styles.infoTitle}>Email</h3>
             <p className={styles.infoText}>ucd.jcc@gmail.com</p>
           </div>
@@ -34,7 +34,7 @@ export default async function Contact() {
             <p className={styles.infoText}>1 Shields Ave, Davis, <br /> CA 95616</p>
           </div>
 
-          <div className={styles.mapBox}>
+          <div id="map" className={styles.mapBox}>
             <div className={styles.mapContainer}>
               <iframe
                 className={styles.mapFrame}

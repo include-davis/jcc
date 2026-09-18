@@ -103,7 +103,7 @@ export async function getCommittees() {
       throw new Error(data.error);
     }
     if (data.body.length === 0) {
-      return [];
+      throw new Error("No committees published yet");
     }
     return data.body.map((item) => ({
       id: item._id,
@@ -138,6 +138,9 @@ export async function getCommittee(key) {
     const pastEvents = data.body
       .filter((p) => p.committee_key === key)
       .map((p) => ({ image: p.image?.[0]?.src, caption: p.caption }));
+    if (pastEvents.length === 0) {
+      throw new Error(`No past events published yet for ${key}`);
+    }
     return { ...committee, pastEvents };
   } catch (e) {
     console.error(`Failed to fetch past events for ${key}: ${e.message}`);
@@ -196,6 +199,9 @@ export async function getCommitteeMembers(key) {
         email: m.email || undefined,
         isLead: m.is_lead === "true" || m.is_lead === true,
       }));
+    if (all.length === 0) {
+      throw new Error(`No members published yet for ${key}`);
+    }
     return {
       leads: all.filter((m) => m.isLead).map(({ isLead, ...rest }) => rest),
       members: all.filter((m) => !m.isLead).map(({ isLead, ...rest }) => rest),

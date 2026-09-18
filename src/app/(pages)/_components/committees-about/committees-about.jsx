@@ -24,7 +24,7 @@ export default function CommitteesAbout({
         <div className={styles.content}>
           <div className={styles.text}>
             <h2 className={styles.title}>{title}</h2>
-            <p className={`${khula.className} ${styles.description}`}>{description}</p>
+            <p className={`${khula.className} ${styles.description}`} dangerouslySetInnerHTML={{ __html: description }} />
           </div>
           <div className={styles.button}>
             <Link href={'/history'} className={styles.cta}>{buttonText}</Link>
