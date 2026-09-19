@@ -1,11 +1,10 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request) {
   const { name, email, phone, committee, message } = await request.json();
 
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const data = await resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>',
       to: 'ucd.jcc@gmail.com',

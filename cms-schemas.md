@@ -51,6 +51,7 @@ Frontend: `src/app/(pages)/_data/committees.js` → `getCommittees()` / `getComm
 | `icon` | MEDIA_LIST | Small logo shown on the committee list page |
 | `page_img` | MEDIA_LIST | Larger image shown on the committee's own page header |
 | `description` | LONG_TEXT | |
+| `calendar_id` | SHORT_TEXT | Each subcommittee has its own separate Google Calendar. This is that calendar's ID (e.g. `abcd1234@group.calendar.google.com` — from that calendar's Settings and sharing → Integrate calendar → Calendar ID), used to fetch that committee's Upcoming Events. The calendar itself must be set to public in Google Calendar's sharing settings for the API-key-based fetch to work. If left blank, that committee's page just shows "No upcoming events." instead of erroring. Note: the Google API key used to authenticate the fetch (`GOOGLE_API_KEY`) is a single shared env var, not per-committee — it's a general Cloud project credential, not tied to any one calendar. |
 
 ### 2a. `committee_past_events` (child collection — workaround if no repeater/relation type)
 

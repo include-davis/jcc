@@ -5,13 +5,23 @@ import { FaRegClock, FaRegCalendarAlt } from 'react-icons/fa';
 import { IoLocationOutline } from 'react-icons/io5';
 import styles from "@/app/(pages)/committees/committees.module.scss";
 
-export default function UpcomingEvents() {
+export default function UpcomingEvents({ calendarId }) {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    fetch('/api/events')
+    // No calendar configured for this committee yet (e.g. calendar_id not
+    // set on this committee in the CMS) — show "No upcoming events."
+    // rather than making a request that can't succeed.
+    if (!calendarId) {
+      setEvents([]);
+      setLoading(false);
+      return;
+    }
+
+    setLoading(true);
+    fetch(`/api/events?calendarId=${encodeURIComponent(calendarId)}`)
       .then(res => res.json())
       .then(data => {
         const formatted = data.map(event => ({
@@ -29,7 +39,7 @@ export default function UpcomingEvents() {
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, []);
+  }, [calendarId]);
 
   const visible = showAll ? events : events.slice(0, 2);
 

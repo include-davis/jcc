@@ -22,7 +22,7 @@ export default async function CommitteePage({ params }) {
         title={committee.name}
         description={committee.description}
       />
-      <UpcomingEvents />
+      <UpcomingEvents calendarId={committee.calendarId} />
       <PastEvents images={committee.pastEvents} />
       <CommitteeMembers leads={leads} members={members} />
     </>

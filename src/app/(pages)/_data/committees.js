@@ -113,6 +113,7 @@ export async function getCommittees() {
       page_img: item.page_img?.[0]?.src,
       link: `/committees/${item.key}`,
       description: item.description,
+      calendarId: item.calendar_id || null,
     }));
   } catch (e) {
     console.error(`Failed to fetch committees: ${e.message}`);
