@@ -2,6 +2,8 @@
 // main_image (MEDIA_LIST), title (SHORT_TEXT), website_link (SHORT_TEXT),
 // description (LONG_TEXT).
 
+import { cmsUrl } from "./cms";
+
 export const partnershipsFallbackData = [
   {
     key: "afghan_clinic",
@@ -42,10 +44,7 @@ export const partnershipsFallbackData = [
 
 export async function getPartnerships() {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/partnerships?_published=true`,
-      { next: { tags: ["cms"] } }
-    );
+    const res = await fetch(cmsUrl("partnerships"), { next: { tags: ["cms"] } });
     const data = await res.json();
     if (!data.ok || !data.body) {
       throw new Error(data.error);
@@ -76,10 +75,7 @@ export const partnershipsHeroImagesFallbackData = [
 
 export async function getPartnershipsHeroImages() {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/partnerships_hero_images?_published=true`,
-      { next: { tags: ["cms"] } }
-    );
+    const res = await fetch(cmsUrl("partnerships_hero_images"), { next: { tags: ["cms"] } });
     const data = await res.json();
     if (!data.ok || !data.body) {
       throw new Error(data.error);

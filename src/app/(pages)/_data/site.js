@@ -1,3 +1,5 @@
+import { cmsUrl } from "./cms";
+
 export const LOGO_SRC = "/Dark_Blue_Logo.svg";
 
 // Maps to the "site_settings" singleton (see cms-schemas.md). Only the link
@@ -12,10 +14,7 @@ export const siteSettingsFallbackData = {
 
 export async function getSiteSettings() {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/site_settings?_published=true`,
-      { next: { tags: ["cms"] } }
-    );
+    const res = await fetch(cmsUrl("site_settings"), { next: { tags: ["cms"] } });
     const data = await res.json();
     if (!data.ok || !data.body || data.body.length === 0) {
       throw new Error(data.error);
