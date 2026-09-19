@@ -7,6 +7,8 @@
 // data here — it reuses getCommittees() from ./committees so there isn't a
 // 4th copy of committee names/images floating around the codebase.
 
+import { cmsUrl } from "./cms";
+
 export const heroSlidesFallbackData = [
   {
     img: "/first.svg",
@@ -52,10 +54,7 @@ export const heroSlidesFallbackData = [
 
 export async function getHeroSlides() {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/hero_slides?_published=true`,
-      { next: { tags: ["cms"] } }
-    );
+    const res = await fetch(cmsUrl("hero_slides"), { next: { tags: ["cms"] } });
     const data = await res.json();
     if (!data.ok || !data.body) {
       throw new Error(data.error);

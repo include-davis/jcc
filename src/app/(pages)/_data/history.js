@@ -5,6 +5,8 @@
 // additionalInfoData) keyed by the same year — merged here into one shape
 // so there's a single source of truth per year.
 
+import { cmsUrl } from "./cms";
+
 export const historyYearsFallbackData = [
   {
     year: '2021',
@@ -46,12 +48,8 @@ export const historyYearsFallbackData = [
 export async function getHistoryYears() {
   try {
     const [yearsRes, photosRes] = await Promise.all([
-      fetch(`${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/history_years?_published=true`, {
-        next: { tags: ["cms"] },
-      }),
-      fetch(`${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/history_year_photos?_published=true`, {
-        next: { tags: ["cms"] },
-      }),
+      fetch(cmsUrl("history_years"), { next: { tags: ["cms"] } }),
+      fetch(cmsUrl("history_year_photos"), { next: { tags: ["cms"] } }),
     ]);
     const yearsData = await yearsRes.json();
     const photosData = await photosRes.json();
@@ -97,10 +95,7 @@ export const historyHeroImagesFallbackData = [
 
 export async function getHistoryHeroImages() {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/history_hero_images?_published=true`,
-      { next: { tags: ["cms"] } }
-    );
+    const res = await fetch(cmsUrl("history_hero_images"), { next: { tags: ["cms"] } });
     const data = await res.json();
     if (!data.ok || !data.body) {
       throw new Error(data.error);

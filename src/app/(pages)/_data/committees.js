@@ -4,6 +4,8 @@
 // correlated by the committee's key, since a nested repeater/relation field
 // type wasn't confirmed to exist in hearth).
 
+import { cmsUrl } from "./cms";
+
 export const committeesFallbackData = [
   {
     id: 1,
@@ -94,10 +96,7 @@ export const committeesFallbackData = [
 
 export async function getCommittees() {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/committees?_published=true`,
-      { next: { tags: ["cms"] } }
-    );
+    const res = await fetch(cmsUrl("committees"), { next: { tags: ["cms"] } });
     const data = await res.json();
     if (!data.ok || !data.body) {
       throw new Error(data.error);
@@ -128,10 +127,7 @@ export async function getCommittee(key) {
   if (!committee) return null;
 
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/committee_past_events?_published=true`,
-      { next: { tags: ["cms"] } }
-    );
+    const res = await fetch(cmsUrl("committee_past_events"), { next: { tags: ["cms"] } });
     const data = await res.json();
     if (!data.ok || !data.body) {
       throw new Error(data.error);
@@ -183,10 +179,7 @@ export const committeeMembersFallbackData = {
 // is the rest (rendered as a grid, name-only).
 export async function getCommitteeMembers(key) {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/committee_members?_published=true`,
-      { next: { tags: ["cms"] } }
-    );
+    const res = await fetch(cmsUrl("committee_members"), { next: { tags: ["cms"] } });
     const data = await res.json();
     if (!data.ok || !data.body) {
       throw new Error(data.error);

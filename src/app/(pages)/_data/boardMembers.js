@@ -1,6 +1,8 @@
 // Maps to the "board_members" collection (see cms-schemas.md):
 // name/title/email (SHORT_TEXT), photo (MEDIA_LIST).
 
+import { cmsUrl } from "./cms";
+
 const GENERIC_BOARD_PHOTOS = [
   '/history_img_1.jpg', '/history_img_2.jpg', '/history_img_3.jpg', '/history_img_4.jpg',
   '/history_img_5.jpg', '/second.jpg', '/third.jpg', '/fourth.jpg',
@@ -20,10 +22,7 @@ export const boardMembersFallbackData = Array.from({ length: 8 }, (_, i) => ({
 
 export async function getBoardMembers() {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/board_members?_published=true`,
-      { next: { tags: ["cms"] } }
-    );
+    const res = await fetch(cmsUrl("board_members"), { next: { tags: ["cms"] } });
     const data = await res.json();
     if (!data.ok || !data.body) {
       throw new Error(data.error);

@@ -2,6 +2,8 @@
 // name (SHORT_TEXT), workplace (SHORT_TEXT), testimony (LONG_TEXT),
 // photo (MEDIA_LIST).
 
+import { cmsUrl } from "./cms";
+
 export const alumniFallbackData = [
   {
     id: 1,
@@ -42,10 +44,7 @@ export const alumniFallbackData = [
 
 export async function getAlumni() {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/alumni?_published=true`,
-      { next: { tags: ["cms"] } }
-    );
+    const res = await fetch(cmsUrl("alumni"), { next: { tags: ["cms"] } });
     const data = await res.json();
     if (!data.ok || !data.body) {
       throw new Error(data.error);
@@ -76,10 +75,7 @@ export const alumniHeroImagesFallbackData = [
 
 export async function getAlumniHeroImages() {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/alumni_hero_images?_published=true`,
-      { next: { tags: ["cms"] } }
-    );
+    const res = await fetch(cmsUrl("alumni_hero_images"), { next: { tags: ["cms"] } });
     const data = await res.json();
     if (!data.ok || !data.body) {
       throw new Error(data.error);
