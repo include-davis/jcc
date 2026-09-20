@@ -16,5 +16,11 @@ export async function GET(request) {
     { cache: "no-store" }
   );
   const data = await response.json();
+
+  if (!response.ok) {
+    console.error(`Failed to fetch events for calendar ${calendarId}: ${data.error?.message || response.statusText}`);
+    return Response.json([]);
+  }
+
   return Response.json(data.items || []);
 }
