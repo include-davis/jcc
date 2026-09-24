@@ -5,7 +5,7 @@ export async function POST(request) {
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const data = await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>',
       to: 'ucd.jcc@gmail.com',
       replyTo: email,
@@ -20,6 +20,10 @@ export async function POST(request) {
         <p style="white-space: pre-wrap; padding: 10px; background: #f4f4f4; border-radius: 4px;">${message}</p>
       `
     });
+    if (error) {
+      console.error('Resend API returned an error:', error);
+      return Response.json({ error: 'Internal server failed to dispatch email' }, { status: 500 });
+    }
     return Response.json({ success: true, id: data.id });
   } catch (error) {
     console.error('Error sending email:', error);
