@@ -14,6 +14,7 @@ export const committeesFallbackData = [
     icon: "/dental_health_logo_whitebg.svg",
     page_img: "/dental_health_logo.png",
     link: "/committees/dental",
+    calendarId: "f6cc281b6ab6366e02fe89b9c897faac2f2bfe32af047ecf6e43efd293955521@group.calendar.google.com",
     description: "The Dental Health Committee's mission is to promote oral health and dental hygiene among adolescents who utilize our clinic's services. They aim to raise awareness, organize informative workshops, provide dental care access, and create a welcoming environment for all students. Their goal is to enhance overall well-being by prioritizing dental and oral health.",
     pastEvents: [
       { image: "/history_img_1.jpg", caption: "Members leading a dental hygiene workshop for local students." },
@@ -29,6 +30,7 @@ export const committeesFallbackData = [
     icon: "/mental_health_logo_whitebg.svg",
     page_img: "/mental_health_and_wellness_logo.png",
     link: "/committees/mental",
+    calendarId: "91c29aaba96a41673013a0c0ba1cda74433e76f4993ce95f1f3687c4ff2d874b@group.calendar.google.com",
     description: "The Mental Health Committee is dedicated to fostering a supportive and informed community by deconstructing the stigma surrounding mental health illnesses. Our mission includes prioritizing mental health education, reducing stigma, and enhancing awareness and resources for the well-being of youth and adolescents. The Mental Health Committee members plan events and workshops that are committed to prioritizing mental health and wellness in the community. The committee also does work to increase awareness of available resources, providing educational posts and encouraging open dialogue about mental health.",
     pastEvents: [
       { image: "/history_img_3.jpg", caption: "Members hosting a stress-relief workshop during finals week." },
@@ -45,6 +47,7 @@ export const committeesFallbackData = [
     icon: "/physical_health_logo_whitebg.svg",
     page_img: "/physical_and_integrated_health_logo.png",
     link: "/committees/physical",
+    calendarId: "6a734edee2028afb16f8688ec224eb50aa4cff86239f4e8e6e1e7df92e2b9c9c@group.calendar.google.com",
     description: "The Physical and Integrated Health Committee is dedicated to promoting holistic well-being for adolescents by addressing the interconnected aspects of health. As a committee we plan panels, workshops, and events that emphasize physical, mental, emotional and social health. Through education and collaboration, we aim to provide comprehensive healthcare solutions and approachable resources to the youth.",
     pastEvents: [
       { image: "/history_img_2.jpg", caption: "Committee members leading a group fitness session." },
@@ -62,6 +65,7 @@ export const committeesFallbackData = [
     icon: "/community_outreach_logo_whitebg.svg",
     page_img: "/community_outreach_logo.png",
     link: "/committees/community",
+    calendarId: "d0ec279000fe604b357cc058eba33c67ed90579a4b6a97f9821838298e045d91@group.calendar.google.com",
     description: "The Community Outreach Committee is committed to making a positive impact in the Davis/Sacramento community, enhancing patient education, and addressing public health needs. They create infographics and pamphlets to address health disparities and share information about available resources as well as lesson plans for workshops. Their goals include forging enduring connections with organizations, both locally and within UC Davis, and establishing a notable presence in the community.",
     pastEvents: [
       { image: "/history_img_1.jpg", caption: "Volunteers distributing health pamphlets in the community." },
@@ -80,6 +84,7 @@ export const committeesFallbackData = [
     icon: "/sexual_health_logo_whitebg.svg",
     page_img: "/sexual_and_reproductive_health_logo.png",
     link: "/committees/sexual",
+    calendarId: "e55829a6c8d725b74b775371806b2ce85ae790b40c43e54a38b09267b0e807bd@group.calendar.google.com",
     description: "The Sexual and Reproductive Health Committee is committed to promoting reproductive health, supporting the community, and fostering collaboration for a healthier future. They plan sexual health and hygiene drives and events to support underprivileged communities in Davis/Sacramento and collaborate with UC Davis organizations and clinics.ing mental health and wellness in the community. The committee also does work to increase awareness of available resources, providing educational posts and encouraging open dialogue about mental health.",
     pastEvents: [
       { image: "/history_img_5.jpg", caption: "Committee members hosting a sexual health awareness drive." },

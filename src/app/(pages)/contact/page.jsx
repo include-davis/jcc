@@ -12,7 +12,7 @@ export default async function Contact() {
           <h1 className={styles.title}>Contact Us</h1>
 
           <p className={styles.description}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Have questions about the Juvenile Caduceus Clinic or want to get involved with our mission? We’d love to hear from you! Whether you’re interested in volunteering, partnering with us, or collaborating on community events, feel free to reach out!
           </p>
 
           <ContactForm committees={committees} />
