@@ -25,7 +25,7 @@ const khula = Khula({
 export const metadata = {
   title: "Juvenile Caduceus Clinic",
   description:
-    "We are a student-run clinic from UC Davis that delivers care and assistance to underprivileged communities in Sacramento who arefacing higher risk for toxic stress — using an intersectional approach that acknowledges the signs, symptoms, and risks of trauma.",
+    "We are a student-run clinic from UC Davis that delivers care and assistance to underprivileged communities in Sacramento who are facing higher risk for toxic stress — using an intersectional approach that acknowledges the signs, symptoms, and risks of trauma.",
   keywords:
     "davis, clinic, healthcare, volunteer, preventative health, sacramento, student, community, dental health, uc davis, davis, sexual health, physical health, mental health, doctors, medical assistants, free care, youth, growth, club",
   manifest: "/site.webmanifest",
