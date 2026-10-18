@@ -26,7 +26,7 @@ export default function Navbar({ joinFormLink = "#" }) {
   return (
     <div className={styles.navShell} ref={navRef}>
       <a href={navLinks.home.href} className={styles.logoLink}>
-        <img src={LOGO_SRC} alt="JCC logo" />
+        <img src={LOGO_SRC} alt="Juvenile Caduceus Clinic" />
       </a>
       <div className={styles.navButtons}>
         <a href={navLinks.home.href} className = {styles.homeBtn}>{navLinks.home.label}</a>

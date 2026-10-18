@@ -11,6 +11,19 @@ Every collection is fetched with `next: { tags: ["cms"] }`, so a `GET` to
 later, that's a separate tag per collection — not set up yet, out of scope
 for now.
 
+**Root-caused a 2026-10-17 incident**: the live site kept showing stale
+fallback data for `history_years` after real content was published (the CMS
+had real entries, but the frontend kept serving pre-populated-state fallback
+indefinitely). Cause: the CMS's GitHub Actions/env var for the webhook target
+was misnamed `REVALIDATION_URL` instead of whatever name the workflow
+actually reads — so the webhook never fired, and this frontend's
+`next: { tags: ["cms"] }` fetch cache (no time-based expiry, purely
+on-demand via `/api/revalidate`) never got invalidated. Manually hitting
+`/api/revalidate` fixed it immediately, confirming this is purely a cache
+problem, not a code or connectivity bug. Worth double-checking the exact env
+var name the CMS's revalidate-webhook step expects whenever that workflow
+changes.
+
 The frontend is fully on the App Router now, under `src/app/(pages)/`. All
 fetch functions + fallback data live in `src/app/(pages)/_data/`, one file
 per domain.

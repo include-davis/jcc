@@ -25,9 +25,9 @@ const khula = Khula({
 export const metadata = {
   title: "Juvenile Caduceus Clinic",
   description:
-    "We are a UC Davis community of web developers and designers dedicated to fostering collaboration, growth and the creation of creative digital solutions.",
+    "We are a student-run clinic from UC Davis that delivers care and assistance to underprivileged communities in Sacramento who are facing higher risk for toxic stress — using an intersectional approach that acknowledges the signs, symptoms, and risks of trauma.",
   keywords:
-    "include, computer science, cs, design, figma, next, react, software, development, uc davis, davis, community, web, developers, designers, dedicated, fostering, collaboration, growth, club",
+    "davis, clinic, healthcare, volunteer, preventative health, sacramento, student, community, dental health, uc davis, davis, sexual health, physical health, mental health, doctors, medical assistants, free care, youth, growth, club",
   manifest: "/site.webmanifest",
   icons: {
     apple: "/apple-touch-icon.png",
