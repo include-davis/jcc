@@ -25,13 +25,19 @@ const khula = Khula({
 export const metadata = {
   title: "Juvenile Caduceus Clinic",
   description:
-    "We are a student-run clinic from UC Davis that delivers care and assistance to underprivileged communities in Sacramento who are facing higher risk for toxic stress — using an intersectional approach that acknowledges the signs, symptoms, and risks of trauma.",
+    "We are a student-run clinic that delivers care and assistance to underprivileged communities in Sacramento who are facing high risk of toxic stress.",
   keywords:
     "davis, clinic, healthcare, volunteer, preventative health, sacramento, student, community, dental health, uc davis, davis, sexual health, physical health, mental health, doctors, medical assistants, free care, youth, growth, club",
   manifest: "/site.webmanifest",
   icons: {
     apple: "/apple-touch-icon.png",
     icon: [
+      // Google's favicon guidelines note 16x16/32x32 are often skipped in
+      // search results in favor of 48x48+ (ideally a multiple of 48px) —
+      // listed first since Next.js renders <link> tags in array order and
+      // some crawlers/consumers just take the first icon entry.
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
