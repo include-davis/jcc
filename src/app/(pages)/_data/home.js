@@ -14,7 +14,7 @@ export const heroSlidesFallbackData = [
     img: "/first.svg",
     label: "OUR MISSION",
     title: "High-quality care for those who need it most.",
-    subtitle: "We deliver care and assistance to underprivileged communities facing higher risk for toxic stress — using an intersectional approach that acknowledges the signs, symptoms, and risks of trauma..",
+    subtitle: "We deliver care and assistance to underprivileged communities facing higher risk for toxic stress — using an intersectional approach that acknowledges the signs, symptoms, and risks of trauma.",
     btnText: "Apply to Join",
     tags: ["Leadership", "Humility", "Empathy", "Responsibility"],
     // "/join" here is a sentinel, not a real route — (home)/page.jsx swaps
