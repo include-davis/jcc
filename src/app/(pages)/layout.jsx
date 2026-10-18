@@ -23,6 +23,7 @@ const khula = Khula({
 });
 
 export const metadata = {
+  title: "Juvenile Caduceus Clinic",
   description:
     "We are a UC Davis community of web developers and designers dedicated to fostering collaboration, growth and the creation of creative digital solutions.",
   keywords:
