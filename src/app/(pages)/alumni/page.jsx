@@ -69,7 +69,7 @@ export default async function Alumni() {
         <div className={styles.shareCard}>
           <h2 className={styles.shareTitle}>Share Your JCC Experience</h2>
           <p className={styles.shareText}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            We’d love to hear about your experience with JCC and how it has shaped your journey! Fill out our alumni form to share your story and be featured on our website.
           </p>
           <a href={alumniFormLink} target="_blank" rel="noopener noreferrer" className={styles.shareBtn}>
             Share Your Story
