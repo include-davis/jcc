@@ -109,19 +109,21 @@ export async function getCommittees() {
     if (data.body.length === 0) {
       throw new Error("No committees published yet");
     }
-    return data.body.map((item) => ({
-      id: item._id,
-      key: item.key,
-      name: item.name,
-      icon: item.icon?.[0]?.src,
-      page_img: item.page_img?.[0]?.src,
-      link: `/committees/${item.key}`,
-      description: item.description,
-      calendarId: item.calendar_id || null,
-    }));
+    return data.body
+      .map((item) => ({
+        id: item._id,
+        key: item.key,
+        name: item.name,
+        icon: item.icon?.[0]?.src,
+        page_img: item.page_img?.[0]?.src,
+        link: `/committees/${item.key}`,
+        description: item.description,
+        calendarId: item.calendar_id || null,
+      }))
+      .sort((a, b) => a.name.localeCompare(b.name));
   } catch (e) {
     console.error(`Failed to fetch committees: ${e.message}`);
-    return committeesFallbackData;
+    return [...committeesFallbackData].sort((a, b) => a.name.localeCompare(b.name));
   }
 }
 

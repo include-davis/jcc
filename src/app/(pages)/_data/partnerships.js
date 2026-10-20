@@ -23,21 +23,21 @@ export const partnershipsFallbackData = [
     key: "healing_grove_health_center",
     image: "/HealingGroveHealthCenterCarousel.png",
     title: "Healing Grove Health Center",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    description: "Healing Grove Health Center is dedicated to promoting genuine healing through individualized, holistic healthcare that supports patients' physical, mental, and overall well-being. JCC has partnered with Healing Grove's Afghan Clinic since 2023 and its Concierge Clinic in Vacaville since 2025. Through these partnerships, JCC members volunteer at both locations to support daily clinic operations, assist with patient check-in, prepare examination rooms, help with pharmacy tasks, and contribute to patient care through additional responsibilities after training.",
     websiteLink: "https://healinggrove.org"
   },
   {
     key: "princeton_review",
     image: "/ThePrincetonReviewCarousel.png",
     title: "The Princeton Review",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    description: "The Princeton Review is an educational services organization that provides test preparation, admissions counseling, and academic support for students pursuing higher education. JCC has partnered with The Princeton Review since 2025 to provide members with discounted test preparation and admissions resources, guest presentations on pre-health pathways, and hands-on suturing workshops.",
     websiteLink: "https://www.princetonreview.com"
   },
   {
     key: "winters_middle_school",
     image: "/WintersMiddleSchoolCarousel.png",
     title: "Winters Middle School",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    description: "Winters Middle School is a local educational institution dedicated to supporting students' academic, social, and personal development. JCC has partnered with Winters Middle School since 2026, providing monthly health education presentations that emphasize holistic health, including physical, dental, mental, and overall well-being.",
     websiteLink: "https://wms.wintersjusd.org/en-US"
   },
 ];

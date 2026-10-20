@@ -15,6 +15,11 @@
   padding: 2.3125rem 5rem;
   background-color: #ffffff;
   z-index: 1000;
+
+  @include phone {
+    padding: 1.25rem 1.5rem;
+    position: relative;
+  }
 }
 
 .navButtons {
@@ -22,6 +27,133 @@
   margin-left: auto;
   align-items: center;
   gap: 0.05rem;
+
+  @include phone {
+    display: none;
+  }
+}
+
+.hamburgerBtn {
+  display: none;
+  margin-left: auto;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3125rem;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #0C0B0B;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  &.open {
+    span:nth-child(1) {
+      transform: translateY(0.4375rem) rotate(45deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: translateY(-0.4375rem) rotate(-45deg);
+    }
+  }
+
+  @include phone {
+    display: flex;
+  }
+}
+
+.mobileMenu {
+  display: none;
+
+  @include phone {
+    &.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      padding: 1rem 1.5rem 1.5rem;
+      gap: 0.25rem;
+      z-index: 999;
+
+      > a {
+        text-decoration: none;
+        color: inherit;
+        font-family: 'Khula', sans-serif;
+        font-size: 1.25rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #eee;
+      }
+    }
+  }
+}
+
+.mobileDropdown {
+  border-bottom: 1px solid #eee;
+}
+
+.mobileDropdownHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0.75rem 0;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Khula', sans-serif;
+    font-size: 1.25rem;
+    border-bottom: none !important;
+    padding: 0 !important;
+  }
+
+  .dropdownArrow {
+    width: 1.5rem;
+    transition: transform 0.2s ease;
+
+    &.rotated {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.mobileDropdownItems {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0.5rem;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Khula', sans-serif;
+    font-size: 1.0625rem;
+    padding: 0.5rem 0 0.5rem 1rem;
+    border-bottom: none !important;
+  }
+}
+
+.mobileJoinBtn {
+  background: linear-gradient(to right, #3C3B72, #4B49A5, #6462BE);
+  color: #f1f1f1 !important;
+  border-radius: 1rem;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  border-bottom: none !important;
 }
 
 .logoLink {

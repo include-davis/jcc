@@ -89,12 +89,7 @@ export default function HistoryBody({ years }) {
         <div className={styles.ourFutureInner}>
           <h2 className={styles.futureTitle}>Our Future</h2>
           <p className={styles.futureBody}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
+            We aim to continue expanding our services and outreach, focusing on holistic health and wellness for the communities we serve. Our future initiatives include increasing our volunteer base, enhancing our partnerships, and supporting the next generation of healthcare professionals. Join us in making a lasting impact on the health and well-being of our community.
           </p>
         </div>
       </div>

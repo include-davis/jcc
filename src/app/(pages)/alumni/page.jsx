@@ -10,7 +10,7 @@ const dmSans = DM_Sans({
 });
 
 export default async function Alumni() {
-  const [alumniData, heroImages, { alumniFormLink }] = await Promise.all([
+  const [alumniData, heroImages, { alumniFormLink, joinFormLink }] = await Promise.all([
     getAlumni(),
     getAlumniHeroImages(),
     getSiteSettings(),
@@ -21,7 +21,7 @@ export default async function Alumni() {
 
       <Hero
         title="See What Alumni Is Up To Now"
-        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown."
+        description="JCC has 100+ alumni who have gone on to pursue careers in medicine, public health, and other fields. Many of their journeys are inspired by their time at JCC. Read their stories and see how they are making a difference in the world."
         tags={["Alumni", "Connecting"]}
         images={heroImages}
         imageAlt="JCC Alumni"
@@ -34,7 +34,7 @@ export default async function Alumni() {
           <p className={styles.learnMoreText}>
             Want to learn more about our clinic and how to get involved? Click here to learn more about our recruitment process.
           </p>
-          <a href="mailto:email@example.com" className={styles.learn_more_btn}>
+          <a href={joinFormLink} target="_blank" rel="noopener noreferrer" className={styles.learn_more_btn}>
             Join Us
           </a>
         </div>

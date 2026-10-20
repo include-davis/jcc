@@ -15,7 +15,7 @@ const khula = Khula({
 
 export default function CommitteesAbout({
   title = 'Learn About JCC\'s History',
-  description = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+  description = 'Our clinic consists of five distinct committees, each specializing in a different area of health. Each team collaborates together to bring support and care for the Davis community through its wellness initiatives.',
   buttonText = 'Learn Our Story',
 }) {
   return (

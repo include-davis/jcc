@@ -1,6 +1,7 @@
 import styles from "./contact.module.scss";
 import ContactForm from "./ContactForm";
 import { getCommittees } from "@/app/(pages)/_data/committees";
+import { FaLinkedin } from "react-icons/fa";
 
 export default async function Contact() {
   const committees = await getCommittees();
@@ -25,11 +26,6 @@ export default async function Contact() {
           </div>
 
           <div className={styles.infoBox}>
-            <h3 className={styles.infoTitle}>Phone</h3>
-            <p className={styles.infoText}>(530) 752-1011</p>
-          </div>
-
-          <div className={styles.infoBox}>
             <h3 className={styles.infoTitle}>Location</h3>
             <p className={styles.infoText}>1 Shields Ave, Davis, <br /> CA 95616</p>
           </div>
@@ -48,7 +44,7 @@ export default async function Contact() {
 
           <div className={styles.icons}>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/jcclinic/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -60,15 +56,12 @@ export default async function Contact() {
             </a>
 
             <a
-              href="https://indeed.com"
+              href="https://www.linkedin.com/company/juvenile-caduceus"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
             >
-            <img
-              src="/icons/indeed.png"
-              alt="Indeed"
-              className={styles.iconImage}
-              />
+              <FaLinkedin className={styles.iconImage} />
             </a>
             </div>
 

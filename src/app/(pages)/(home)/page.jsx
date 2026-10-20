@@ -95,7 +95,7 @@ export default async function Home() {
           <p className={styles.learnMoreText}>
             Want to learn more about our clinic and how to get involved? Click here to learn more about our recruitment process.
           </p>
-          <Link href="/contact" className={styles.secondaryButton}>
+          <Link href={joinFormLink} target="_blank" rel="noopener noreferrer" className={styles.secondaryButton}>
             Join Us
           </Link>
         </div>
