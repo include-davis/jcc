@@ -11,7 +11,7 @@ export default async function History() {
 
       <Hero
         title="History"
-        description="Learn more about how our journey has shaped our clinic. This highlights past events, community involvement, and key moments that reflect our commitment to healthcare and growth."
+        description="Learn more about how our journey has shaped our clinic. Check out past events, community involvement, and key moments that reflect our commitment to healthcare and growth."
         tags={["History", "Past Events"]}
         images={heroImages}
         imageAlt="JCC History"
