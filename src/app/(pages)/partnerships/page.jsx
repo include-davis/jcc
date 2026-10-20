@@ -17,7 +17,7 @@ export default async function PartnershipsPage() {
     <div className={styles.container}>
       <Hero
         title="Become a Partner"
-        description="JCC collaborates with healthcare providers, community organizations, and industry professionals to expand access to care for underserved youth. Our partners help us address critical public health issues — from childhood obesity to mental health — ensuring every child has the opportunity to thrive."
+        description="JCC collaborates with healthcare providers, community organizations, and industry professionals to expand access to care for underserved youth. Our partners help us address critical public health issues. From childhood obesity to mental health, let's ensure every child has the opportunity to thrive."
         buttons={[{ label: "Apply Now", href: partnershipFormLink }]}
         images={heroImages}
         imageAlt="JCC Partnerships"
@@ -68,8 +68,7 @@ export default async function PartnershipsPage() {
           <p className={styles.interestedBody}>
             Ready to make a lasting impact? By partnering with JCC, you&apos;ll join a passionate
             community dedicated to improving the health and well-being of underserved youth.
-            Together, we can break down barriers to care and create meaningful change — one child
-            at a time.
+            Together, we can break down barriers to care and create meaningful change for the community.
           </p>
           <a href={partnershipFormLink} className={styles.interestedBtn}>Apply Now</a>
         </div>

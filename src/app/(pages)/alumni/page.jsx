@@ -10,7 +10,7 @@ const dmSans = DM_Sans({
 });
 
 export default async function Alumni() {
-  const [alumniData, heroImages, { alumniFormLink, joinFormLink }] = await Promise.all([
+  const [alumniData, heroImages, { alumniFormLink }] = await Promise.all([
     getAlumni(),
     getAlumniHeroImages(),
     getSiteSettings(),
@@ -26,21 +26,6 @@ export default async function Alumni() {
         images={heroImages}
         imageAlt="JCC Alumni"
       />
-      <div className={styles.updateAlumniSection}> {/* Update card section */}
-
-        <div className={styles.learnMoreCard}>
-          <h2 className={styles.learnMoreTitle}>Get the Latest Updates!</h2>
-
-          <p className={styles.learnMoreText}>
-            Want to learn more about our clinic and how to get involved? Click here to learn more about our recruitment process.
-          </p>
-          <a href={joinFormLink} target="_blank" rel="noopener noreferrer" className={styles.learn_more_btn}>
-            Join Us
-          </a>
-        </div>
-
-      </div>
-
       <div className={styles.carouselContainer}>
         <img src={LOGO_SRC} alt="JCC Logo" className={styles.jccLogo} />
         <div className={styles.alumniNewsWrapper}>

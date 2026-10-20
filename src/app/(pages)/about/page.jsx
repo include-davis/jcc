@@ -37,11 +37,11 @@ export default async function About() {
 
       <div className={styles.cards}>
         {sections.map((section) => (
-          <Link key={section.href} href={section.href} className={styles.card}>
+          <div key={section.href} className={styles.card}>
             <h2 className={styles.cardTitle}>{section.title}</h2>
             <p className={styles.cardDescription}>{section.description}</p>
-            <span className={styles.cardLink}>Learn More</span>
-          </Link>
+            <Link href={section.href} className={styles.cardButton}>Learn More</Link>
+          </div>
         ))}
       </div>
 

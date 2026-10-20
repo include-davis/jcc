@@ -40,13 +40,6 @@
   border: 1px solid #000000;
   border-radius: 15px;
   background: #ffffff;
-  text-decoration: none;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-
-  &:hover {
-    box-shadow: 2px 8px 15px 8px rgba(187, 186, 220, 0.5);
-    transform: translateY(-2px);
-  }
 }
 
 .cardTitle {
@@ -61,11 +54,9 @@
   color: #444444;
 }
 
-.cardLink {
-  @include body-text;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #3c3b72;
+.cardButton {
+  @include btn-solid-purple;
+  margin-top: 8px;
 }
 
 .boardSection {

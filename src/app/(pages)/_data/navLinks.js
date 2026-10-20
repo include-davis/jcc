@@ -5,7 +5,7 @@ export const navLinks = {
     href: "/about",
     items: [
       { label: "History", href: "/history" },
-      { label: "Partnership", href: "/partnerships" },
+      { label: "Partnerships", href: "/partnerships" },
       { label: "Alumni", href: "/alumni" },
     ],
   },

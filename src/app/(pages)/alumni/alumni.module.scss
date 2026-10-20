@@ -12,11 +12,11 @@
 }
 .carouselContainer{
   position: relative;
-  min-height: 8-0vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
 }
 
 .alumniNewsWrapper {
@@ -92,59 +92,12 @@
   }
 }
 
-.updateAlumniSection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 8rem 1.5rem 10rem;
-  background: transparent;
-}
-
-.learnMoreCard {
-  width: min(100%,75rem);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1.5rem;
-  background: #ffffff;
-  border: 1px solid #000000;
-  border-radius: 1.1rem;
-  padding: 1.8rem 2.4rem 2.2rem;
-}
-
-.learnMoreTitle {
-  @include heading-2;
-  color: #3C3B72;
-}
-
-.learnMoreText {
-  @include body-text;
-  max-width: 56rem;
-  color: #000000;
-}
-
-.learn_more_btn {
-  border: 1px solid #000000;
-  border-radius: 999px;
-  padding: 0.5rem 2rem;
-  background: #ffffff;
-  color: #3c3b72;
-  font-size: 1.2rem;
-  font-weight: 700;
-  line-height: 1;
-
-  text-decoration: none;
-}
-
-
 .bottomAlumniSection {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 10rem 1.5rem 80px;
+  padding: 4rem 1.5rem 80px;
   background: transparent;
 }
 .shareCard {
